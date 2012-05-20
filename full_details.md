@@ -1,3 +1,5 @@
+#Syntax details:
+
 1. Introduce new "geometry" keyword for layer collections. Can be applied to class and id selectors and can receive their own styling defaults. They are special key words like "zoom".
 
         WHY: Different rendering assumptions about styles applied to different geometries is unclear, not future-proof/predictable. The terms icon/marker/point are confusing between languages. But actually visualizing point data should be easy for new users.
@@ -142,7 +144,7 @@
         * stats
         * layering/data-ordering:
                        for data you don't control
-                       especially for shorting city townspots, labels
+                       especially for sorting city townspots, labels
                        YES: primitive like Order by ASC/DESC like SQL
                        YES: adding something to the Layer def properties???
                        NO: z-index as an expression (for a feature per layer, or across layers?)
