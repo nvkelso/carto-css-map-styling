@@ -10,6 +10,8 @@
             EXAMPLES IN USE: 
             ---------------- #layer line {}
             ---------------- .class line {}
+            
+        Note: All these technically refer to single- or multi- collections. If you need to grab one in a multi-, there are now selectors for that specifically.
 
 2. Default symbolizers (avoid confusing terms like markers and points):
     
@@ -80,34 +82,34 @@
         -------- QUESTION:
         ---------------- can I give any "color" attribute RGBA, gradient, or urls to png, svg, etc? Why do I need separate "image" bits?
     
-4. Complex styles can be viewed in an expanded form.
+3. Complex styles can be viewed in an expanded form.
 
-5. Allow remote reference to stylesheet bits (add import directive).
+4. Allow remote reference to stylesheet bits (add import directive).
 
-6. @variables for Appearance stuff
+5. @variables for Appearance stuff
         -------- Color swatches (rbga)
         -------- Graphic styles (per geometry type?)
         -------- Text character styles
 
-7. Named color swatch groups: from http://colorbrewer2.org/
+6. Named color swatch groups: from http://colorbrewer2.org/
         
         -------- Classification steps: 3 to 12 steps; continuous
         -------- Data type: sequential, diverging, qualitative
         -------- Color scheme: multi-hue, single-hue
 
-8. Gradients
+7. Gradients
         -------- Are like Named color swatch groups, just with continuous tone between the stops.
         -------- Tied to absolute or relative data values.
         -------- If relative %s, might have a cached version that uses the actual data values for the dataset it's applied against.
         -------- Can symbolize raster grids, too. Or symbolize geometries versus data.
 
-9. Data statistic keywords:
+8. Data statistic keywords:
         -------- MIN, MAX, MEAN
         -------- Others?
 
-10. The Less attachements and filtering, etc
+9. The Less attachements and filtering, etc
 
-11. When something is defined, what is the default options. When they are defined. When they need to be updated.
+10. When something is defined, what is the default options. When they are defined. When they need to be updated.
 
 
 # Implementation:
