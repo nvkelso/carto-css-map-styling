@@ -1,7 +1,9 @@
-Carto 2.0
+CSS Inspired Map Styling
 =====================
 
 _Notes, sketches, and frameworks inspired by October 2011 map styling workshop held in SF_
+
+Question: Core bits should be universal. Extras should be wrapped in a Carto 2.0 designator?
 
 ===
 
