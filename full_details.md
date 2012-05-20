@@ -10,8 +10,8 @@
         * Grid/Interaction
         
             EXAMPLES IN USE: 
-            ---------------- #layer line {}
-            ---------------- .class line {}
+                #layer line {}
+                .class line {}
             
         Note: All these technically refer to single- or multi- collections. If you need to grab one in a multi-, there are now selectors for that specifically.
 
@@ -23,7 +23,7 @@
         * stroke-dash-array
         * fill-color
         * fill-opacity
-        * marker
+        * anchor/marker/point ack, see below
         
         The examples:
         fill: url(...) #9f0 1.0;
@@ -90,27 +90,27 @@
 
 5. @variables for Appearance stuff
 
-        -------- Color swatches (rbga)
-        -------- Graphic styles (per geometry type?)
-        -------- Text character styles
+        * Color swatches (rbga)
+        * Graphic styles (per geometry type?)
+        * Text character styles
 
 6. Named color swatch groups: from http://colorbrewer2.org/
         
-        -------- Classification steps: 3 to 12 steps; continuous
-        -------- Data type: sequential, diverging, qualitative
-        -------- Color scheme: multi-hue, single-hue
+        * Classification steps: 3 to 12 steps; continuous
+        * Data type: sequential, diverging, qualitative
+        * Color scheme: multi-hue, single-hue
 
 7. Gradients
 
-        -------- Are like Named color swatch groups, just with continuous tone between the stops.
-        -------- Tied to absolute or relative data values.
-        -------- If relative %s, might have a cached version that uses the actual data values for the dataset it's applied against.
-        -------- Can symbolize raster grids, too. Or symbolize geometries versus data.
+        * Are like Named color swatch groups, just with continuous tone between the stops.
+        * Tied to absolute or relative data values.
+        * If relative %s, might have a cached version that uses the actual data values for the dataset it's applied against.
+        * Can symbolize raster grids, too. Or symbolize geometries versus data.
 
 8. Data statistic keywords:
 
-        -------- MIN, MAX, MEAN
-        -------- Others?
+        * MIN, MAX, MEAN
+        * Others?
 
 9. The Less attachements and filtering, etc
 
