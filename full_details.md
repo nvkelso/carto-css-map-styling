@@ -12,72 +12,73 @@
         ---------------- .class line {}
 
 2. Default symbolizers (avoid confusing terms like markers and points):
--------- stroke-width
--------- stroke-color
--------- stroke-opacity
--------- stroke-dash-array
--------- fill-color
--------- fill-opacity
--------- marker
-The examples:
-fill: url(...) #9f0 1.0;
-    expands to:
-        fill-image: url(...);
-        fill-color: #9f0;
-        fill-opacity: 1.0;
-    placement w/respect to geometry:
-        polygon inside
-stroke: url(...) #9f0 repeat 20.0;
-    expands to:
-        stroke-image: url(...);
-        stroke-color: #9f0;
-        repeat: 20.0;
-    placement w/respect to geometry:
-        polygon edge
-        line edge
-***mark(er)***: url(...)
-    what do we call this fracking thing?
-        marker < good for GMaps people, kinda Mapnik, too
-        dot < Ha, Stamen default
-        icon < Windows and Mac finder/explorer
-        symbol < good for Illustrator and Flash and SVG people
-        spot
-        anchor < more html
-    expands to:
-        fill: #f90;
-        fill: url(...);
-    default placement w/respect to geometry:
-        marker-placement (anchor)
-        polygons - centroid/onsurface
-        lines - centroid/onsurface
-        points - centroid/onsurface
-    awesome placement w/respect to geometry:
-        vertex:first
-        vertex:last
-        vertext (implied all)
-        rings of polys?
-??????        
--------- point-image
----------------- point-width
----------------- point-color
----------------- point-opacity 
----------------- point-placement
----------------- DO THESE REPEAT FOR stroke and fill images???
--------- stroke-image
--------- fill-image
--------- annotation/text???
----------------- shield is a child???
--------- NOTE: Want another stroke or fill, etc? Use an arbitrary attribute.
--------- DEPRECIATE (in syntax): 
----------------- marker
----------------- polygon-fill
----------------- line-pattern
----------------- polygon-pattern
----------------- shield
----------------- QUESTION: What about buildings? Ignore for now?
--------- QUESTION:
----------------- can I give any "color" attribute RGBA, gradient, or urls to png, svg, etc? Why do I need separate "image" bits?
-
+    * stroke-width
+    * stroke-color
+    * stroke-opacity
+    * stroke-dash-array
+    * fill-color
+    * fill-opacity
+    * marker
+    
+    The examples:
+    fill: url(...) #9f0 1.0;
+        expands to:
+            fill-image: url(...);
+            fill-color: #9f0;
+            fill-opacity: 1.0;
+        placement w/respect to geometry:
+            polygon inside
+    stroke: url(...) #9f0 repeat 20.0;
+        expands to:
+            stroke-image: url(...);
+            stroke-color: #9f0;
+            repeat: 20.0;
+        placement w/respect to geometry:
+            polygon edge
+            line edge
+    ***mark(er)***: url(...)
+        what do we call this fracking thing?
+            marker < good for GMaps people, kinda Mapnik, too
+            dot < Ha, Stamen default
+            icon < Windows and Mac finder/explorer
+            symbol < good for Illustrator and Flash and SVG people
+            spot
+            anchor < more html
+        expands to:
+            fill: #f90;
+            fill: url(...);
+        default placement w/respect to geometry:
+            marker-placement (anchor)
+            polygons - centroid/onsurface
+            lines - centroid/onsurface
+            points - centroid/onsurface
+        awesome placement w/respect to geometry:
+            vertex:first
+            vertex:last
+            vertext (implied all)
+            rings of polys?
+    ??????        
+    -------- anchor-image _(was point-image)_
+    ---------------- anchor-width _(was point-width)_
+    ---------------- anchor-color _(was point-color)_
+    ---------------- anchor-opacity _(was point-opacity)_
+    ---------------- anchor-placement _(was point-placement)_
+    ---------------- DO THESE REPEAT FOR stroke and fill images???
+    -------- stroke-image
+    -------- fill-image
+    -------- annotation/text???
+    ---------------- shield is a child???
+    -------- NOTE: Want another stroke or fill, etc? Use an arbitrary attribute.
+    -------- DEPRECIATE (in syntax): 
+    ---------------- marker
+    ---------------- polygon-fill
+    ---------------- line-pattern
+    ---------------- polygon-pattern
+    ---------------- shield
+    ---------------- QUESTION: What about buildings? Ignore for now?
+    -------- QUESTION:
+    ---------------- can I give any "color" attribute RGBA, gradient, or urls to png, svg, etc? Why do I need separate "image" bits?
+    
 4. Complex styles can be viewed in an expanded form.
 
 5. Allow remote reference to stylesheet bits (add import directive).
@@ -86,35 +87,40 @@ stroke: url(...) #9f0 repeat 20.0;
 -------- Color swatches (rbga)
 -------- Graphic styles (per geometry type?)
 -------- Text character styles
-G7) Named color swatch groups: from http://colorbrewer2.org/
+
+7. Named color swatch groups: from http://colorbrewer2.org/
 -------- Classification steps: 3 to 12 steps; continuous
 -------- Data type: sequential, diverging, qualitative
 -------- Color scheme: multi-hue, single-hue
-G8) Gradients
+
+8. Gradients
 -------- Are like Named color swatch groups, just with continuous tone between the stops.
 -------- Tied to absolute or relative data values.
 -------- If relative %s, might have a cached version that uses the actual data values for the dataset it's applied against.
 -------- Can symbolize raster grids, too. Or symbolize geometries versus data.
-G9) Data statistic keywords:
+
+9. Data statistic keywords:
 -------- MIN, MAX, MEAN
 -------- Others?
-G10) The Less attachements and filtering, etc
-G11) When something is defined, what is the default options. When they are defined. When they need to be updated.
 
-Implementation:
+10. The Less attachements and filtering, etc
+
+11. When something is defined, what is the default options. When they are defined. When they need to be updated.
+
+# Implementation:
 
 C1) Implemented first in Mapnik.
 C3) Abstract enough that is can easily be implementable in other applications. Examples: Google Maps API, Google Earth (kml), ArcMap, MapServer, GeoServer, CartoDB.
 C4) Allow for streaming vectors.
 C5) Think about server versus client. Wither the browser (ever powerful and resurgent).
 
-Avoids:
+# Avoids:
 
 D1) Callbacks like f(eval) --- from Mike
 
-Open questions:
+# Open questions:
 
-E0) What doesn't work in the browser
+0. What doesn't work in the browser
 -------- DEMOS: high roads, OSM styles.
 -------- end of thing, or end of clipped bit (for line caps)
 -------- stats
@@ -169,18 +175,22 @@ E0) What doesn't work in the browser
                             }
                         }
                     }
-E1) How is data statistics (metadata) stored (cached)?
+1. How is data statistics (metadata) stored (cached)?
 -------- MIN, MAX, MEAN, STDDEV, others?
 -------- similar to CSS conditionals (fallbacks) with cached hints of those values?
 -------- This needs to be a parellel spec?
-E2) How is data statistics (metadata) calculated, updated? How would I ask the server for this? An external local application? How does this fail? How does it recover?
+
+2. How is data statistics (metadata) calculated, updated? How would I ask the server for this? An external local application? How does this fail? How does it recover?
 -------- Using all the data? Part of the data? 
 -------- In view or arbitrary bbox?
 -------- If my file is less than X file size, do this quick thing. Else that slow thing.
 -------- Extent hard coded???
-E3) Are "min" styles simply an expanded form of normal/complex styles?
-E4) Are "min" styles a recommendation for showing complex rendering with a simple fallback version?
-E5) What is the "awesome" syntax for saying: "take this data, classify it into 4 buckets using natural breaks, and color using these colorbrewer.org swatches". D3 from Bostok seems to be good at this.
+
+3. Are "min" styles simply an expanded form of normal/complex styles?
+
+4. Are "min" styles a recommendation for showing complex rendering with a simple fallback version?
+
+5. What is the "awesome" syntax for saying: "take this data, classify it into 4 buckets using natural breaks, and color using these colorbrewer.org swatches". D3 from Bostok seems to be good at this.
 -------- EASY: polygon-fill: [population] 10 f00 100 #f90 1000 #ff0;
             but can I use % instead of 10, 100, 1000?
             but can I say MIN, MAX, etc?
@@ -222,24 +232,36 @@ E5) What is the "awesome" syntax for saying: "take this data, classify it into 4
 ---------------- <LayerGroup class="roads">
                            <layer name ="highway3"></layer>
                 </LayerGroup>
-E6) The "Map" object needs to be made less special.
+
+6. The "Map" object needs to be made less special.
 -------- Should treat more as a tile0 polygon to style
 -------- Should carry just projection data, units, and the like
-E7) Normalize new TextSymbolizer syntax?
-E8) Are arbitrary attributes iterable only over the layer or over features? (Mike, add more here)
+
+7. Normalize new TextSymbolizer syntax?
+
+8. Are arbitrary attributes iterable only over the layer or over features? (Mike, add more here)
 ======= z-order is only modifiable for objects within a data layer.
-E9) How is display:none implemented. Let's see some examples for layers, geometries, symbolizers, class, id selectors.
+
+9. How is display:none implemented. Let's see some examples for layers, geometries, symbolizers, class, id selectors.
         https://github.com/mapnik/mapnik/issues/925
-E10) Legends (haha)
-E11) Page layout for print (haha)
-E12) Webkit ideal for debug environment (Dane)
-E13) Use of : for polygon:hover. Use of :: for arbitrary attributes. What else?
-E14) Legal to say: stroke: "1px red";???
-E15) Can I give any "color" attribute RGBA (no, just RGB, A is taken care of with opacity key) gradient, or urls to png, svg, etc? Why do I need separate "image" bits?
-E16) Shield syntax:
+
+10. Legends (haha)
+
+11. Page layout for print (haha)
+
+12. Webkit ideal for debug environment (Dane)
+
+13. Use of : for polygon:hover. Use of :: for arbitrary attributes. What else?
+
+14. Is it legal to say: stroke: "1px red";???
+
+15. Can I give any "color" attribute RGBA (no, just RGB, A is taken care of with opacity key) gradient, or urls to png, svg, etc? Why do I need separate "image" bits?
+
+16. Shield syntax:
 -------- ¿¿ Townspot { point-width: 10; point-color: red; text-on: point; text-dx: 10; }
 -------- ¿¿ Shield { stroke-image: url(shield.png) 100; text-on:stroke-image; text-face-name: Deja Vu; text-name: ref; }
-E17) Bindings/Pairings/Overflow/Depends-on
+
+17. Bindings/Pairings/Overflow/Depends-on
 -------- .thing { 
               stroke-image: url(shield.png);
               stroke & {
@@ -287,7 +309,7 @@ E17) Bindings/Pairings/Overflow/Depends-on
 > https://github.com/mapnik/mapnik/issues/794
 > https://github.com/mapnik/carto-spec/issues/3
 
-Carto basic show/hiding logic
+# Carto basic show/hiding logic
 
 * per layer (already in mapnik, and in the data file, needs to be in the style file, basically turns all symbolizers for that layer off)
 * per symbolizer display-none: on/off
