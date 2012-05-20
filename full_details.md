@@ -1,14 +1,17 @@
+1. Introduce new "geometry" keyword for layer collections. Can be applied to class and id selectors and can receive their own styling defaults. They are special key words like "zoom".
 
-G1) Introduce new "geometry" keyword for layer collections. Can be applied to class and id selectors and can receive their own styling defaults. They are special key words like "zoom".
-WHY: Different rendering assumptions about styles applied to different geometries is unclear, not future-proof/predictable. The terms icon/marker/point are confusing between languages. But actually visualizing point data should be easy for new users.
--------- Point
--------- Line
--------- Polygon
--------- Grid
--------- EXAMPLES IN USE: 
----------------- #layer line {}
----------------- .class line {}
-G2) Default symbolizers (avoid confusing terms like markers and points):
+    WHY: Different rendering assumptions about styles applied to different geometries is unclear, not future-proof/predictable. The terms icon/marker/point are confusing between languages. But actually visualizing point data should be easy for new users.
+
+    * Point
+    * Line
+    * Polygon
+    * Grid/Interaction
+    
+        EXAMPLES IN USE: 
+        ---------------- #layer line {}
+        ---------------- .class line {}
+
+2. Default symbolizers (avoid confusing terms like markers and points):
 -------- stroke-width
 -------- stroke-color
 -------- stroke-opacity
@@ -74,9 +77,12 @@ stroke: url(...) #9f0 repeat 20.0;
 ---------------- QUESTION: What about buildings? Ignore for now?
 -------- QUESTION:
 ---------------- can I give any "color" attribute RGBA, gradient, or urls to png, svg, etc? Why do I need separate "image" bits?
-G4) Complex styles can be viewed in an expanded form.
-G5) Allow remote reference to stylesheet bits (add import directive).
-G6) @variables for Appearance stuff
+
+4. Complex styles can be viewed in an expanded form.
+
+5. Allow remote reference to stylesheet bits (add import directive).
+
+6. @variables for Appearance stuff
 -------- Color swatches (rbga)
 -------- Graphic styles (per geometry type?)
 -------- Text character styles
