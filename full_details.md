@@ -380,7 +380,7 @@ Should have reasonable SYMBOL representation defaults, below.
     }
 
 
-#Carto Nitpicks
+#Carto 1.x Nitpicks
 
 1. Formalize:
 

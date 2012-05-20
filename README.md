@@ -85,7 +85,7 @@ NOTE: Extensions might include data formats (csv, shp in zip), data statistics (
 
 [Read more »](https://github.com/nvkelso/carto-css-map-styling/blob/master/full_details.md)
 
-Syntax details, implementation recommendations, avoids, demos, open questions, housekeeping, quotes, display:none, carto nitpicks, more questions.
+Syntax details, implementation recommendations, avoids, demos, open questions, housekeeping, quotes, display:none, carto 1.x nitpicks, more questions.
 
 
 #Sketches
