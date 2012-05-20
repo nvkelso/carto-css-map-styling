@@ -20,7 +20,7 @@ _Notes, sketches, and frameworks inspired by October 2011 map styling workshop h
 4. Should have reasonable style defaults / implementation routines that make sense for the designer and for the renderer. Reasonable defaults make it quick to explore a dataset (not just present the final results). Example: draw points to see a distribution, classify points, lines and polygons by thematic attribute and color quickly.
 5. Core syntax is interoperable with other style languages. Extensions allow extra awesome things. 
 6. Clearly identify ambiguities (and document recommended solutions).
-7. Adheres to [Semantic Versioning](http://semver.org/). Watch background video ([youtube](http://www.youtube.com/watch?v=k2h2lvhzMDc)). - MM and NVK add 18 May 2012.
+7. Standard adhers to [Semantic Versioning](http://semver.org/). Watch background video ([youtube](http://www.youtube.com/watch?v=k2h2lvhzMDc)). - MM and NVK add 18 May 2012.
 8. First principles so it's easy to implement across software. -- NVK add 19 May 2012.
 
 NOTE: Extensions might include data formats (csv, shp in zip), data statistics (count, min, max), data locations (local/remote/offline), experimental styling keywords (feature class heigherachy ala scalemaster.org?), styles with absolute and relative values (gradients, choropleth/quantiles/nat'lbreaks/etc, lighter, darker, smaller text, larger text), and rendering (like for shields?), interactivity (one layer, multiple layers).
