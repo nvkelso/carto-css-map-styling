@@ -126,25 +126,25 @@
 
 0. What doesn't work in the browser
 
-    -------- DEMOS: high roads, OSM styles.
-    -------- end of thing, or end of clipped bit (for line caps)
-    -------- stats
-    -------- layering/data-ordering:
+    * DEMOS: high roads, OSM styles.
+    * end of thing, or end of clipped bit (for line caps)
+    * stats
+    * layering/data-ordering:
                    for data you don't control
                    especially for shorting city townspots, labels
                    YES: primitive like Order by ASC/DESC like SQL
                    YES: adding something to the Layer def properties???
                    NO: z-index as an expression (for a feature per layer, or across layers?)
-    -------- label placements (ref. Tom Carden)
-    -------- inability to have all geodata in the DOM, streaming data, real time data
+    * label placements (ref. Tom Carden)
+    * inability to have all geodata in the DOM, streaming data, real time data
                    browser implementation knows that min/max aren't available. Therefore the stylesheet becomes invalid. Does it warn and draw or just fail. Or option to go get min/max?
                 also for streamed vector data when it is streamed by tile to the browser...
                     where are the tile edges? (masking is the key)
-    -------- remixing CSS on the fly
-    -------- not sure where <Layer group="xyz"> syntax went. Mike??
-    -------- generalized geometries, streamed geometries, data topologies (typologies)
-    -------- 80% common data: eg "roads" - data hints on source data, then styling (auto?)
-    -------- how do you prefix the (syntax) things that aren't core?
+    * remixing CSS on the fly
+    * not sure where <Layer group="xyz"> syntax went. Mike??
+    * generalized geometries, streamed geometries, data topologies (typologies)
+    * 80% common data: eg "roads" - data hints on source data, then styling (auto?)
+    * how do you prefix the (syntax) things that aren't core?
                    especially relevant for sharing, to be easy for the end user and for helping experts troubleshoot
                    YES core is not prefixed
                    YES awesome (experimental) is
@@ -152,7 +152,7 @@
                    helps with validation, warnings, errors, optimizations per app implementation.
                    minimal grammar for carto (repository that doesn't have a ref. implmentation). with no properties.
                    then ...
-    -------- StyleHub
+    * StyleHub - https://github.com/nvkelso/geo-how-to/wiki/Style-Hub
                    need to copy-paste and mostly work.
                    shoul just work for "80% common" data
                    should be able to use's design:
@@ -200,10 +200,10 @@
 
 5. What is the "awesome" syntax for saying: "take this data, classify it into 4 buckets using natural breaks, and color using these colorbrewer.org swatches". D3 from Bostok seems to be good at this.
 
-    EASY: polygon-fill: [population] 10 f00 100 #f90 1000 #ff0;
+    * EASY: polygon-fill: [population] 10 f00 100 #f90 1000 #ff0;
                 but can I use % instead of 10, 100, 1000?
                 but can I say MIN, MAX, etc?
-    HARD: polygon-fill: choropleth([POPULATION], bins=5, natural-breaks, @colors);
+    * HARD: polygon-fill: choropleth([POPULATION], bins=5, natural-breaks, @colors);
                 need a tool that turns this into the easy bit, parellel project to this?
                 @colors {
                     @color1: #000;
@@ -218,8 +218,8 @@
                     auto
                     none
                     daily, weekly, montly, annual
-    Appearance style mix-ins:
-    Use Less.js options for preprocessing
+    * Appearance style mix-ins:
+    * Use Less.js options for preprocessing
              TIP: Carto should support this, but it's broken right now.
                 @import "roads.mss" <<< someone else's road styling
                             which has
@@ -236,7 +236,7 @@
                               mapCSS huh?
                     option 3:
                               use of polygon, line geometry bits in styling. Migurski!!!
-    Data side:
+    * Data side:
         <Layer class="roads">
         <LayerGroup class="roads">
                                <layer name ="highway3"></layer>
