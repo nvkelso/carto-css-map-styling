@@ -1,83 +1,84 @@
 1. Introduce new "geometry" keyword for layer collections. Can be applied to class and id selectors and can receive their own styling defaults. They are special key words like "zoom".
 
-    WHY: Different rendering assumptions about styles applied to different geometries is unclear, not future-proof/predictable. The terms icon/marker/point are confusing between languages. But actually visualizing point data should be easy for new users.
-
-    * Point
-    * Line
-    * Polygon
-    * Grid/Interaction
+        WHY: Different rendering assumptions about styles applied to different geometries is unclear, not future-proof/predictable. The terms icon/marker/point are confusing between languages. But actually visualizing point data should be easy for new users.
     
-        EXAMPLES IN USE: 
-        ---------------- #layer line {}
-        ---------------- .class line {}
+        * Point
+        * Line
+        * Polygon
+        * Grid/Interaction
+        
+            EXAMPLES IN USE: 
+            ---------------- #layer line {}
+            ---------------- .class line {}
 
 2. Default symbolizers (avoid confusing terms like markers and points):
-    * stroke-width
-    * stroke-color
-    * stroke-opacity
-    * stroke-dash-array
-    * fill-color
-    * fill-opacity
-    * marker
     
-    The examples:
-    fill: url(...) #9f0 1.0;
-        expands to:
-            fill-image: url(...);
-            fill-color: #9f0;
-            fill-opacity: 1.0;
-        placement w/respect to geometry:
-            polygon inside
-    stroke: url(...) #9f0 repeat 20.0;
-        expands to:
-            stroke-image: url(...);
-            stroke-color: #9f0;
-            repeat: 20.0;
-        placement w/respect to geometry:
-            polygon edge
-            line edge
-    ***mark(er)***: url(...)
-        what do we call this fracking thing?
-            marker < good for GMaps people, kinda Mapnik, too
-            dot < Ha, Stamen default
-            icon < Windows and Mac finder/explorer
-            symbol < good for Illustrator and Flash and SVG people
-            spot
-            anchor < more html
-        expands to:
-            fill: #f90;
-            fill: url(...);
-        default placement w/respect to geometry:
-            marker-placement (anchor)
-            polygons - centroid/onsurface
-            lines - centroid/onsurface
-            points - centroid/onsurface
-        awesome placement w/respect to geometry:
-            vertex:first
-            vertex:last
-            vertext (implied all)
-            rings of polys?
-    ??????        
-    -------- anchor-image _(was point-image)_
-    ---------------- anchor-width _(was point-width)_
-    ---------------- anchor-color _(was point-color)_
-    ---------------- anchor-opacity _(was point-opacity)_
-    ---------------- anchor-placement _(was point-placement)_
-    ---------------- DO THESE REPEAT FOR stroke and fill images???
-    -------- stroke-image
-    -------- fill-image
-    -------- annotation/text???
-    ---------------- shield is a child???
-    -------- NOTE: Want another stroke or fill, etc? Use an arbitrary attribute.
-    -------- DEPRECIATE (in syntax): 
-    ---------------- marker
-    ---------------- polygon-fill
-    ---------------- line-pattern
-    ---------------- polygon-pattern
-    ---------------- shield
-    ---------------- QUESTION: What about buildings? Ignore for now?
-    -------- QUESTION:
-    ---------------- can I give any "color" attribute RGBA, gradient, or urls to png, svg, etc? Why do I need separate "image" bits?
+        * stroke-width
+        * stroke-color
+        * stroke-opacity
+        * stroke-dash-array
+        * fill-color
+        * fill-opacity
+        * marker
+        
+        The examples:
+        fill: url(...) #9f0 1.0;
+            expands to:
+                fill-image: url(...);
+                fill-color: #9f0;
+                fill-opacity: 1.0;
+            placement w/respect to geometry:
+                polygon inside
+        stroke: url(...) #9f0 repeat 20.0;
+            expands to:
+                stroke-image: url(...);
+                stroke-color: #9f0;
+                repeat: 20.0;
+            placement w/respect to geometry:
+                polygon edge
+                line edge
+        ***mark(er)***: url(...)
+            what do we call this fracking thing?
+                marker < good for GMaps people, kinda Mapnik, too
+                dot < Ha, Stamen default
+                icon < Windows and Mac finder/explorer
+                symbol < good for Illustrator and Flash and SVG people
+                spot
+                anchor < more html
+            expands to:
+                fill: #f90;
+                fill: url(...);
+            default placement w/respect to geometry:
+                marker-placement (anchor)
+                polygons - centroid/onsurface
+                lines - centroid/onsurface
+                points - centroid/onsurface
+            awesome placement w/respect to geometry:
+                vertex:first
+                vertex:last
+                vertext (implied all)
+                rings of polys?
+        ??????        
+        -------- anchor-image _(was point-image)_
+        ---------------- anchor-width _(was point-width)_
+        ---------------- anchor-color _(was point-color)_
+        ---------------- anchor-opacity _(was point-opacity)_
+        ---------------- anchor-placement _(was point-placement)_
+        ---------------- DO THESE REPEAT FOR stroke and fill images???
+        -------- stroke-image
+        -------- fill-image
+        -------- annotation/text???
+        ---------------- shield is a child???
+        -------- NOTE: Want another stroke or fill, etc? Use an arbitrary attribute.
+        -------- DEPRECIATE (in syntax): 
+        ---------------- marker
+        ---------------- polygon-fill
+        ---------------- line-pattern
+        ---------------- polygon-pattern
+        ---------------- shield
+        ---------------- QUESTION: What about buildings? Ignore for now?
+        -------- QUESTION:
+        ---------------- can I give any "color" attribute RGBA, gradient, or urls to png, svg, etc? Why do I need separate "image" bits?
     
 4. Complex styles can be viewed in an expanded form.
 
@@ -107,143 +108,154 @@
 
 11. When something is defined, what is the default options. When they are defined. When they need to be updated.
 
+
 # Implementation:
 
-C1) Implemented first in Mapnik.
-C3) Abstract enough that is can easily be implementable in other applications. Examples: Google Maps API, Google Earth (kml), ArcMap, MapServer, GeoServer, CartoDB.
-C4) Allow for streaming vectors.
-C5) Think about server versus client. Wither the browser (ever powerful and resurgent).
+1. Implemented first in Mapnik.
+2. Abstract enough that is can easily be implementable in other applications. Examples: Google Maps API, Google Earth (kml), ArcMap, MapServer, GeoServer, CartoDB.
+3. Allow for streaming vectors.
+4. Think about server versus client. Wither the browser (ever powerful and resurgent).
+
 
 # Avoids:
 
-D1) Callbacks like f(eval) --- from Mike
+1. Callbacks like f(eval) --- from Mike
+
 
 # Open questions:
 
 0. What doesn't work in the browser
--------- DEMOS: high roads, OSM styles.
--------- end of thing, or end of clipped bit (for line caps)
--------- stats
--------- layering/data-ordering:
-               for data you don't control
-               especially for shorting city townspots, labels
-               YES: primitive like Order by ASC/DESC like SQL
-               YES: adding something to the Layer def properties???
-               NO: z-index as an expression (for a feature per layer, or across layers?)
--------- label placements (ref. Tom Carden)
--------- inability to have all geodata in the DOM, streaming data, real time data
-               browser implementation knows that min/max aren't available. Therefore the stylesheet becomes invalid. Does it warn and draw or just fail. Or option to go get min/max?
-            also for streamed vector data when it is streamed by tile to the browser...
-                where are the tile edges? (masking is the key)
--------- remixing CSS on the fly
--------- not sure where <Layer group="xyz"> syntax went. Mike??
--------- generalized geometries, streamed geometries, data topologies (typologies)
--------- 80% common data: eg "roads" - data hints on source data, then styling (auto?)
--------- how do you prefix the (syntax) things that aren't core?
-               especially relevant for sharing, to be easy for the end user and for helping experts troubleshoot
-               YES core is not prefixed
-               YES awesome (experimental) is
-               where is that line drawn (har har)
-               helps with validation, warnings, errors, optimizations per app implementation.
-               minimal grammar for carto (repository that doesn't have a ref. implmentation). with no properties.
-               then ...
--------- StyleHub
-               need to copy-paste and mostly work.
-               shoul just work for "80% common" data
-               should be able to use's design:
-                    @import "style.mss"; 
-                    and refernce styles in there in your main stylesheet. same as css.
-               if it doesn't work, the syntax should make it more obvious
-               polygon-fill: chloropleth( bins=8, [POPULATION], colors)
-                   which expands/cached? to something like
-               popuation-fill: "population" 10 #f00 100 #f90 1000 #ff0
-               and the 10, 100, 1000 could be % instead?
-               ¿ Question about CSS gradient syntax??? Seems similar?
-               ¿ What is the FusionTable syntax???
-               KEY: Differnce: data exploration (data discovery) or final data presentation/publishing ;)
-                       Kinda need a python thing to call that points at data source and stubs out a quick CSS of that with random colors (or using color paramater). NVK MM Tom
-                       Kinda like the facet tool.
-                use of @ variables in
-                    .roads( @classified ) {
-                        stroke-width: @classified;
-                    }
-                    #roads( [FIELD] ) {
-                        .polygon,
-                        #lakes {
-                            set tag = blah;
-                            set eleemnts = .polygon;
+
+    -------- DEMOS: high roads, OSM styles.
+    -------- end of thing, or end of clipped bit (for line caps)
+    -------- stats
+    -------- layering/data-ordering:
+                   for data you don't control
+                   especially for shorting city townspots, labels
+                   YES: primitive like Order by ASC/DESC like SQL
+                   YES: adding something to the Layer def properties???
+                   NO: z-index as an expression (for a feature per layer, or across layers?)
+    -------- label placements (ref. Tom Carden)
+    -------- inability to have all geodata in the DOM, streaming data, real time data
+                   browser implementation knows that min/max aren't available. Therefore the stylesheet becomes invalid. Does it warn and draw or just fail. Or option to go get min/max?
+                also for streamed vector data when it is streamed by tile to the browser...
+                    where are the tile edges? (masking is the key)
+    -------- remixing CSS on the fly
+    -------- not sure where <Layer group="xyz"> syntax went. Mike??
+    -------- generalized geometries, streamed geometries, data topologies (typologies)
+    -------- 80% common data: eg "roads" - data hints on source data, then styling (auto?)
+    -------- how do you prefix the (syntax) things that aren't core?
+                   especially relevant for sharing, to be easy for the end user and for helping experts troubleshoot
+                   YES core is not prefixed
+                   YES awesome (experimental) is
+                   where is that line drawn (har har)
+                   helps with validation, warnings, errors, optimizations per app implementation.
+                   minimal grammar for carto (repository that doesn't have a ref. implmentation). with no properties.
+                   then ...
+    -------- StyleHub
+                   need to copy-paste and mostly work.
+                   shoul just work for "80% common" data
+                   should be able to use's design:
+                        @import "style.mss"; 
+                        and refernce styles in there in your main stylesheet. same as css.
+                   if it doesn't work, the syntax should make it more obvious
+                   polygon-fill: chloropleth( bins=8, [POPULATION], colors)
+                       which expands/cached? to something like
+                   popuation-fill: "population" 10 #f00 100 #f90 1000 #ff0
+                   and the 10, 100, 1000 could be % instead?
+                   ¿ Question about CSS gradient syntax??? Seems similar?
+                   ¿ What is the FusionTable syntax???
+                   KEY: Differnce: data exploration (data discovery) or final data presentation/publishing ;)
+                           Kinda need a python thing to call that points at data source and stubs out a quick CSS of that with random colors (or using color paramater). NVK MM Tom
+                           Kinda like the facet tool.
+                    use of @ variables in
+                        .roads( @classified ) {
+                            stroke-width: @classified;
+                        }
+                        #roads( [FIELD] ) {
+                            .polygon,
+                            #lakes {
+                                set tag = blah;
+                                set eleemnts = .polygon;
+                                }
                             }
                         }
-                    }
+                        
 1. How is data statistics (metadata) stored (cached)?
--------- MIN, MAX, MEAN, STDDEV, others?
--------- similar to CSS conditionals (fallbacks) with cached hints of those values?
--------- This needs to be a parellel spec?
+    
+    * MIN, MAX, MEAN, STDDEV, others?
+    * similar to CSS conditionals (fallbacks) with cached hints of those values?
+    * This needs to be a parellel spec?
 
 2. How is data statistics (metadata) calculated, updated? How would I ask the server for this? An external local application? How does this fail? How does it recover?
--------- Using all the data? Part of the data? 
--------- In view or arbitrary bbox?
--------- If my file is less than X file size, do this quick thing. Else that slow thing.
--------- Extent hard coded???
+    
+    * Using all the data? Part of the data? 
+    * In view or arbitrary bbox?
+    * If my file is less than X file size, do this quick thing. Else that slow thing.
+    * Extent hard coded???
 
 3. Are "min" styles simply an expanded form of normal/complex styles?
 
 4. Are "min" styles a recommendation for showing complex rendering with a simple fallback version?
 
 5. What is the "awesome" syntax for saying: "take this data, classify it into 4 buckets using natural breaks, and color using these colorbrewer.org swatches". D3 from Bostok seems to be good at this.
--------- EASY: polygon-fill: [population] 10 f00 100 #f90 1000 #ff0;
-            but can I use % instead of 10, 100, 1000?
-            but can I say MIN, MAX, etc?
--------- HARD: polygon-fill: choropleth([POPULATION], bins=5, natural-breaks, @colors);
-            need a tool that turns this into the easy bit, parellel project to this?
-            @colors {
-                @color1: #000;
-                @color2: #111;
-                @color3: #222;
-                @color4: #333;
-                @color5: #444;
-            }
-            cached as??
-            refresh: [interval]
-                date/time
-                auto
-                none
-                daily, weekly, montly, annual
--------- Appearance style mix-ins:
--------- Use Less.js options for preprocessing
-         TIP: Carto should support this, but it's broken right now.
----------------- @import "roads.mss" <<< someone else's road styling
-                        which has
-                        .roads { stroke... }
----------------- #my_roads{ .roads; }
----------------- parameters
-                           .roads( @classified) {
-                               stroke-width: @classified;
-                            }
-                            #my-roads {
-                                .roads( [MY_CLASS] );
-                            }
-                option 2:
-                          mapCSS huh?
-                option 3:
-                          use of polygon, line geometry bits in styling. Migurski!!!
--------- Data side:
----------------- <Layer class="roads">
----------------- <LayerGroup class="roads">
-                           <layer name ="highway3"></layer>
-                </LayerGroup>
+
+    EASY: polygon-fill: [population] 10 f00 100 #f90 1000 #ff0;
+                but can I use % instead of 10, 100, 1000?
+                but can I say MIN, MAX, etc?
+    HARD: polygon-fill: choropleth([POPULATION], bins=5, natural-breaks, @colors);
+                need a tool that turns this into the easy bit, parellel project to this?
+                @colors {
+                    @color1: #000;
+                    @color2: #111;
+                    @color3: #222;
+                    @color4: #333;
+                    @color5: #444;
+                }
+                cached as??
+                refresh: [interval]
+                    date/time
+                    auto
+                    none
+                    daily, weekly, montly, annual
+    Appearance style mix-ins:
+    Use Less.js options for preprocessing
+             TIP: Carto should support this, but it's broken right now.
+                @import "roads.mss" <<< someone else's road styling
+                            which has
+                            .roads { stroke... }
+                #my_roads{ .roads; }
+                parameters
+                               .roads( @classified) {
+                                   stroke-width: @classified;
+                                }
+                                #my-roads {
+                                    .roads( [MY_CLASS] );
+                                }
+                    option 2:
+                              mapCSS huh?
+                    option 3:
+                              use of polygon, line geometry bits in styling. Migurski!!!
+    Data side:
+        <Layer class="roads">
+        <LayerGroup class="roads">
+                               <layer name ="highway3"></layer>
+                    </LayerGroup>
 
 6. The "Map" object needs to be made less special.
--------- Should treat more as a tile0 polygon to style
--------- Should carry just projection data, units, and the like
+
+    * Should treat more as a tile0 polygon to style
+    * Should carry just projection data, units, and the like
 
 7. Normalize new TextSymbolizer syntax?
 
 8. Are arbitrary attributes iterable only over the layer or over features? (Mike, add more here)
-======= z-order is only modifiable for objects within a data layer.
+
+    * z-order is only modifiable for objects within a data layer.
 
 9. How is display:none implemented. Let's see some examples for layers, geometries, symbolizers, class, id selectors.
-        https://github.com/mapnik/mapnik/issues/925
+        
+    https://github.com/mapnik/mapnik/issues/925
 
 10. Legends (haha)
 
@@ -262,25 +274,26 @@ D1) Callbacks like f(eval) --- from Mike
 -------- ¿¿ Shield { stroke-image: url(shield.png) 100; text-on:stroke-image; text-face-name: Deja Vu; text-name: ref; }
 
 17. Bindings/Pairings/Overflow/Depends-on
--------- .thing { 
-              stroke-image: url(shield.png);
-              stroke & {
-                    text-name: [bla];
-              }
-        }
-        
-        .thing.successor {
-            stroke & {
-                text-face-name: Deja Vu;
-            }
-        }
-        
-        .thing {
-            point-image: url(city.png);
-            point -> {
+    
+    .thing { 
+          stroke-image: url(shield.png);
+          stroke & {
                 text-name: [bla];
-            }
+          }
+    }
+    
+    .thing.successor {
+        stroke & {
+            text-face-name: Deja Vu;
         }
+    }
+    
+    .thing {
+        point-image: url(city.png);
+        point -> {
+            text-name: [bla];
+        }
+    }
 
 ###Housekeeping:
 
@@ -344,6 +357,7 @@ point {
     }
 }
 
+
 #Carto Nitpicks
 
 ###Formalize:
@@ -358,12 +372,14 @@ Note: When a property expects a string, you need to wrap "[FIELD]", but not necc
 We want to insist on [FIELD] because it makes syntax highlighting easier (and thus code easier to write and to interpret when rendering).
 no way to know if [FIELD] is real or not unless at runtime. But that's okay.
 
+
 ###What needs to be expanded?
 
 * variables get replaced
 * inheretance gets replaced
 
 Can't really do unquoted variables -- "[FIELD]" versus [FIELD] -- unless Mapnik supports natively.
+
 
 ###Woops, that doesn't exist:
 
@@ -372,6 +388,7 @@ warnings (silent or obvious), or treat as errors and fail completely as error
 html/css will make it look funny if it's not right, but it'll kinda work (we like this)
 return empty string or undefined or?? now it throws an error and won't run at all
 Why is this important: sharing styles between similar datasets should work (now they don't at all).
+
 
 ###Mapnik variable filters
 
@@ -385,14 +402,17 @@ same as
 [] are used both for FIELDS and doing evals?
 "Ghostly manifestations of things that are in Mapnik"
 
+
 ###KEY
 
 * How do you make a choropleth map?
 * Can I say this data, these colors, with quantiles/naturalbreaks
 
+
 ###Operations:
 
 = >= <= < > !=
+
 
 ###Document this:
 
@@ -400,6 +420,7 @@ Concatenate is a + not &
 but
 "Name: [FIRST] [MIDDLE] [LAST]" is also valid, but doesn't work now. But it should.
 "Name: [FIRST + ',' + FIELD2]" Ack, is that valid?
+
 
 ###Magic constant:
 
@@ -410,10 +431,13 @@ Example: Empty strings, NULL in number columns for Shps, etc.
 Does Mapnik have other types of Nulls? Typecasting magic by Mapnik now... ack!
 So make sure Mapnik is being a good citizen, then tell others about that.
 
+
 ###Expression tokens:
 tk tk tk
 
+
 ###Filters:
+
 5 classes, what are the breaks, what are the colors.
 #rule[ A="5" ][ B>= 7 ]
 same as:
@@ -426,6 +450,7 @@ not liking:
 (it's better to do that type of stuff on the SQL bits)
 #rule[ [A]="5" OR [B]>= 7 ]
 
+
 ###Filters extra:
 
 Okay to compare
@@ -433,6 +458,7 @@ variable to variable, variable to [FIELD], variable to constant, variable to "",
 [FIELD] to [FIELD]
 constant to constant
 Note: If the property expects a string, you need to wrap the thing in the string by saying "[FIELD]".
+
 
 ###Special filter:
 
@@ -445,14 +471,17 @@ or
 What are the special keywords for DATA STATS:
 Dane can fill us in? "What would Dane do?" @aaronofmontreal
 
+
 ###Variables are good:
 
-they accomplish stylesheet type of things
+They accomplish stylesheet type of things. Examples:
+
 @color: #xxx;
 @textStyle {
     text-color: #yyy;
     text-fixe: 12;
 }
+
 
 ###What to do with variable side effects.
 
@@ -462,7 +491,8 @@ App logic for merging reusabel styles: recommendation to error detect on merge a
 
 > https://github.com/mapbox/carto/issues/116
 
-###Questions:
+
+#Questions:
 
 What can we do without Mapnik in Carto. 
 What is dependent on Mapnik3?
@@ -472,19 +502,17 @@ Is the goal of to make Mapnik only read Carto+ or to have a built in interpretor
 
 Yes, XML should still be okay for MML files (says Dane).
 
-FRIDAY
+###FRIDAY
 
-Granularity of the syntax
-Don't have all the data
-Data stats MIN, MAX, etc.
-Browser specific bits client side (canvas w/ hardware acceleration seems to be the future, svg was hard, but we're kinda there)
-How do we keep it in the 20% time: 
-Compliant with simple version, but can hop up (to attachments, etc).
-MapGL... no public API. How might that be styled.
-FusionTables are stylable, but not fun.
-Maps API is stylable, but not fun.
-Default map styling for classes (blue rivers).
+* Granularity of the syntax
+* Edge case: Don't have all the data
+* Data stats: MIN, MAX, etc.
+* Browser specific bits client side (canvas w/ hardware acceleration seems to be the future, svg was hard, but we're kinda there)
+* How do we keep it in the 20% time: 
+* Compliant with simple version, but can hop up (to attachments, etc).
+* MapGL... no public API. How might that be styled.
+* FusionTables are stylable, but not fun.
+* Maps API is stylable, but not fun.
+* Default map styling for classes (blue rivers).
 
 Styling KML is not fun. Earth implements as the opposite. Each feature looks for style.
-
-
