@@ -318,13 +318,13 @@
 
 ###Will this work? Let's truth squad and ask:
 
-* Tab Atkins, Google
+* Tab Atkins, G
 * Shawn Allen, Stamen
 * TMCW, DevSeed
-* Brenden, Google?
+* Brenden, G?
 * Mike Bostok, D3 land
 * Darfa, MapCSS, Kofik? < draw shields dynamically
-* Gmaps engineers
+* Gmps engineers
 
 
 ##Quotes:
