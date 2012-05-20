@@ -90,14 +90,14 @@ Syntax details, implementation recommendations, avoids, demos, open questions, h
 
 #Sketches
 
-Basic:
+**Basic:**
 
 ![Carto2_basic](https://github.com/nvkelso/carto-css-map-styling/raw/master/images/carto_simple.png)
 
-Medium:
+**Medium:**
 
 ![Carto2_medium](https://github.com/nvkelso/carto-css-map-styling/raw/master/images/carto_medium.png)
 
-Complex:
+**Complex:**
 
 ![Carto2_complex](https://github.com/nvkelso/carto-css-map-styling/raw/master/images/carto_complex.png)
