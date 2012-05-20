@@ -128,11 +128,16 @@
 1. Callbacks like f(eval) --- from Mike
 
 
+# DEMOS given:
+
+* high roads
+* OSM styles
+
+
 # Open questions:
 
-0. What doesn't work in the browser
+1. What doesn't work in the browser
 
-        * DEMOS: high roads, OSM styles.
         * end of thing, or end of clipped bit (for line caps)
         * stats
         * layering/data-ordering:
@@ -158,7 +163,7 @@
                        helps with validation, warnings, errors, optimizations per app implementation.
                        minimal grammar for carto (repository that doesn't have a ref. implmentation). with no properties.
                        then ...
-        * StyleHub - https://github.com/nvkelso/geo-how-to/wiki/Style-Hub
+        * StyleHub proposal - stubbed out later here: https://github.com/nvkelso/geo-how-to/wiki/Style-Hub
                        need to copy-paste and mostly work.
                        shoul just work for "80% common" data
                        should be able to use's design:
@@ -187,25 +192,27 @@
                                 }
                             }
                         
-1. How is data statistics (metadata) stored (cached)?
+2. How is data statistics (metadata) stored (cached)?
     
         * MIN, MAX, MEAN, STDDEV, others?
         * similar to CSS conditionals (fallbacks) with cached hints of those values?
         * This needs to be a parellel spec?
 
-2. How is data statistics (metadata) calculated, updated? How would I ask the server for this? An external local application? How does this fail? How does it recover?
+3. How is data statistics (metadata) calculated, updated? How would I ask the server for this? An external local application? How does this fail? How does it recover?
     
         * Using all the data? Part of the data? 
         * In view or arbitrary bbox?
         * If my file is less than X file size, do this quick thing. Else that slow thing.
         * Extent hard coded???
 
-3. Are "min" styles simply an expanded form of normal/complex styles?
+4. Are "min" styles simply an expanded form of normal/complex styles?
 
-4. Are "min" styles a recommendation for showing complex rendering with a simple fallback version?
+5. Are "min" styles a recommendation for showing complex rendering with a simple fallback version?
 
-5. What is the "awesome" syntax for saying: "take this data, classify it into 4 buckets using natural breaks, and color using these colorbrewer.org swatches". D3 from Bostok seems to be good at this.
+6. What is the "awesome" syntax for saying: "take this data, classify it into 4 buckets using natural breaks, and color using these colorbrewer.org swatches". D3 from Bostok seems to be good at this.
 
+        * Partially implemented: https://github.com/nvkelso/thematic-carto-tools
+        
         * EASY: polygon-fill: [population] 10 f00 100 #f90 1000 #ff0;
                     but can I use % instead of 10, 100, 1000?
                     but can I say MIN, MAX, etc?
@@ -248,39 +255,39 @@
                                    <layer name ="highway3"></layer>
                         </LayerGroup>
 
-6. The "Map" object needs to be made less special.
+7. The "Map" object needs to be made less special.
 
         * Should treat more as a tile0 polygon to style
         * Should carry just projection data, units, and the like
 
-7. Normalize new TextSymbolizer syntax?
+8. Normalize new TextSymbolizer syntax?
 
-8. Are arbitrary attributes iterable only over the layer or over features? (Mike, add more here)
+9. Are arbitrary attributes iterable only over the layer or over features? (Mike, add more here)
 
         * z-order is only modifiable for objects within a data layer.
 
-9. How is display:none implemented. Let's see some examples for layers, geometries, symbolizers, class, id selectors.
+10. How is display:none implemented. Let's see some examples for layers, geometries, symbolizers, class, id selectors.
         
         https://github.com/mapnik/mapnik/issues/925
 
-10. Legends (haha)
+11. Legends (haha)
 
-11. Page layout for print (haha)
+12. Page layout for print (haha)
 
-12. Webkit ideal for debug environment (Dane)
+13. Webkit ideal for debug environment (Dane)
 
-13. Use of : for polygon:hover. Use of :: for arbitrary attributes. What else?
+14. Use of : for polygon:hover. Use of :: for arbitrary attributes. What else?
 
-14. Is it legal to say: stroke: "1px red";???
+15. Is it legal to say: stroke: "1px red";???
 
-15. Can I give any "color" attribute RGBA (no, just RGB, A is taken care of with opacity key) gradient, or urls to png, svg, etc? Why do I need separate "image" bits?
+16. Can I give any "color" attribute RGBA (no, just RGB, A is taken care of with opacity key) gradient, or urls to png, svg, etc? Why do I need separate "image" bits?
 
-16. Shield syntax:
+17. Shield syntax:
         
         * ¿¿ Townspot { point-width: 10; point-color: red; text-on: point; text-dx: 10; }
         * ¿¿ Shield { stroke-image: url(shield.png) 100; text-on:stroke-image; text-face-name: Deja Vu; text-name: ref; }
 
-17. Bindings/Pairings/Overflow/Depends-on
+18. Bindings/Pairings/Overflow/Depends-on
     
         .thing { 
               stroke-image: url(shield.png);
@@ -320,17 +327,18 @@
 
 ##Quotes:
 
-"Mmmm, smells like an attractive nuisance!" --Mike
-"In the future, we will have hover" --Dane?
-"&! (and not), outrageous" --Mike?
+* "Mmmm, smells like an attractive nuisance!" --Mike
+* "In the future, we will have hover" --Dane?
+* "&! (and not), outrageous" --Mike?
 
 
+
+# Is this Friday notes now?
 ========
-Is this Friday now?
-========
 
-> https://github.com/mapnik/mapnik/issues/794
-> https://github.com/mapnik/carto-spec/issues/3
+* https://github.com/mapnik/mapnik/issues/794
+* https://github.com/mapnik/carto-spec/issues/3
+
 
 # Carto basic show/hiding logic
 
@@ -458,6 +466,7 @@ So make sure Mapnik is being a good citizen, then tell others about that.
 
 
 ###Expression tokens:
+
 tk tk tk
 
 
@@ -538,7 +547,7 @@ They accomplish stylesheet type of things. Examples:
 
 * Yes, XML should still be okay for MML files (says Dane).
 
-###FRIDAY
+###FRIDAY todos:
 
 * Granularity of the syntax
 * Edge case: Don't have all the data
