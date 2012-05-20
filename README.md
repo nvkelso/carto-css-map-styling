@@ -26,13 +26,13 @@ _Notes, sketches, and frameworks inspired by October 2011 map styling workshop h
 NOTE: Extensions might include data formats (csv, shp in zip), data statistics (count, min, max), data locations (local/remote/offline), experimental styling keywords (feature class heigherachy ala scalemaster.org?), styles with absolute and relative values (gradients, choropleth/quantiles/nat'lbreaks/etc, lighter, darker, smaller text, larger text), and rendering (like for shields?), interactivity (one layer, multiple layers).
 
 
-#Atomic bits (nouns):
+#Atomic bits (nouns, verbs):
 
 * **Object geometry type**: point, line, polygon, continuous-field aka raster. _Even the component polys, rings, & vertex_
 * **CSS target**: anchor, stroke, fill, label/text, data
 * **Rendering target** (optional/implied in 2.0): (pivots off geometry type) registration, edge, interior, LABEL, INTERACTIVITY. _With optional masks and positioning/attachment hints._
-* **Ink with**: rgb, cmyk, hsv, gradient, image (with repeat options). _With alpha._
-* **Size**: anchors, strokes, and labels have a 2d extrusion measurement (eg: 2px) _For images, the size is implied by a non-repeat dimension of the source image. Others are determined by default style CSS._
+* **Ink with**: rgb, cmyk, hsv, gradient, image (with repeat options). _With alpha. All color spaces/images/gradient are coallpsed in "ink" in Carto 2.0_
+* **Size by**: anchors, strokes, and labels have a 2d extrusion measurement (eg: 2px) _For images, the size is implied by a non-repeat dimension of the source image. Others are determined by default style CSS._
 
 
 #Selectors, attachments, rules, filters, features, data.
@@ -44,6 +44,7 @@ NOTE: Extensions might include data formats (csv, shp in zip), data statistics (
 * new  carto  2.0: **Selectors** for object **geometry type** (point, line, polygon, raster) and -advanced- **geometry components: inner outer rings, vertex index and first, last. eg: .class geom_type { }
 * new  carto  2.0: **Rendering/compositing targets** are implied but can be explicate or overridden: fill-, stroke-, anchor-, and data-. color:#hex is implied as fill-color:#hex.
 * from carto  2.0: **Dependant attachments** (&&) depend on the previous bits being rendered in that selection. Useful for text labels to require the anchor symbolization being placed. eg: point&&stroke
+
 
 #Reasonable defaults:
 
