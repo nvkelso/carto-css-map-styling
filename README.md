@@ -7,7 +7,7 @@ _Notes, sketches, and frameworks inspired by October 2011 map styling workshop h
 
 #Goals:
 
-1. CSS-like map design language. Syntax extends the foundation laid by Cascadenik and Carto (implied 1.0) and the power of Less.js
+1. CSS-like map design language. Syntax extends the foundation laid by [Cascadenik](https://github.com/mapnik/Cascadenik/wiki/Dictionary) and [Carto](https://github.com/mapbox/carto) (implied 1.0) and the power of Less.js
 2. Better support for reference-style maps by formalizing the use of @variables for color swatches, graphic styles, and text character styles
 3. ¿Add support for thematic data cartography with data statistics like MIN, MAX, MEAN and use of those keywords in high-level filters that are under a dozen lines of code? Allow for both loose and hard connections between data and symbology.
 
@@ -37,14 +37,19 @@ NOTE: Extensions might include data formats (csv, shp in zip), data statistics (
 
 #Selectors, attachments, rules, filters, features, data.
 
-* from cascadenik: **Filters** for feature attributes (FIELDNAME=value)
-* from carto  1.0: **Attachments** (::) are a repeated version of the exact selection, but with a different appearance styling.
+* from cascadenik: **Filters** for feature attributes (FIELDNAME=value or FIELDNAME>value)
+* from carto  1.x: **RegEx filters** this a new, unversioned bit, grrr. Awesome, though. _Optional?_
+* from carto  1.0: **Nested style attachments** (::) are a repeated version of the exact selection, but with a different appearance styling on a new virtual layer.
+* from carto  1.0: **instances** similar to nested styles, but within the same original layer. 
+* from carto  1.0: **@variables** for color swatches
+* from carto  1.0: **expressions** for modifying color swatches, stroke-widths, etc.
+* from carto  1.0: **nested styles** from Less.js: tk tk from TMCW and AJ
+* from carto  1.0: **FontSets**: very important for multilingual characters and UTF-8 labels, font fallbacks
 * new  carto  2.0: **Point geoms have an edge** available for stroking.
 * new  carto  2.0: **Special rendering targets w/r/t attachemtns**: interior, edge, registration.
 * new  carto  2.0: **Selectors** for object **geometry type** (point, line, polygon, raster) and _advanced_ **geometry components**: inner outer rings, vertex index and first, last. eg: _.classname geom_type_selector { ... }_
 * new  carto  2.0: **Rendering/compositing targets** are implied but can be explicate or overridden: fill-, stroke-, anchor-, and data-. _Note: color:#hex is implied as fill-color:#hex._
 * new  carto  2.0: **Dependant attachments** (&&) depend on the previous bits being rendered in that selection. Useful for text labels to require the anchor symbolization being placed. eg: point&&stroke
-* from carto  1.0: **@variables** for color swatches
 * new  carto  2.0: **@variables** for graphic styles, and text character styles (kinda in 1.0? AJ please elaborate)
 
 #File structure
