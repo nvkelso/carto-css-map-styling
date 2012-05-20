@@ -44,6 +44,7 @@ NOTE: Extensions might include data formats (csv, shp in zip), data statistics (
 * from carto  1.0: **FontSets**: very important for multilingual characters and UTF-8 labels, font fallbacks
 * new  carto  2.0: **Point geoms have an edge** available for stroking.
 * new  carto  2.0: **@variables** for graphic styles, and text character styles (kinda in 1.0? AJ please elaborate)
+* new  carto  2.0: Expressable both as style="" and { ... } with first being implied based on the geom type, the second explicate with geom type?
 
 #Advanced syntax:
 
