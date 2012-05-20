@@ -61,7 +61,7 @@ NOTE: Extensions might include data formats (csv, shp in zip), data statistics (
 #File structure
 
 * MSS for the CSS styling definition. _with new 2.0 syntax_
-* MML for the datasources and their layering. _Carto 2.0 allows both JSON and XML formats
+* MML for the datasources and their layering. _Carto 2.0 allows both JSON and XML formats_
 * cascadnik/carto 2.0: data source definition can be inline or an import in the MML. _easy in XML format, harder in JSON?_
 
 
