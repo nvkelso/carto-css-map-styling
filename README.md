@@ -51,7 +51,7 @@ NOTE: Extensions might include data formats (csv, shp in zip), data statistics (
 * from carto  1.0: **nested styles** from Less.js: tk tk from TMCW and AJ, is this a dup of next point?
 * from carto  1.0: **Nested style attachments** (::) are a repeated version of the exact selection, but with a different appearance styling on a new virtual layer.
 * from carto  1.0: **instances** similar to nested styles, but within the same original layer. 
-* from carto  1.0: **expressions** for modifying color swatches, stroke-widths, etc.
+* from carto  1.0: **expressions** for modifying color swatches, stroke-widths, and @variables, etc.
 * new  carto  2.0: **Special rendering targets w/r/t attachements**: interior, edge, registration.
 * new  carto  2.0: **Selectors** for object **geometry type** (point, line, polygon, raster) and _advanced_ **geometry components**: inner outer rings, vertex index and first, last. eg: _.classname geom_type_selector { ... }_
 * new  carto  2.0: **Rendering/compositing targets** are implied but can be explicate or overridden: fill-, stroke-, anchor-, and data-. _Note: color:#hex is implied as fill-color:#hex._
