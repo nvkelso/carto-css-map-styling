@@ -21,7 +21,7 @@ _Notes, sketches, and frameworks inspired by October 2011 map styling workshop h
 5. Core syntax is interoperable with other style languages. Extensions allow extra awesome things. 
 6. Clearly identify ambiguities (and document recommended solutions).
 7. Standard adhers to [Semantic Versioning](http://semver.org/). Watch background video ([youtube](http://www.youtube.com/watch?v=k2h2lvhzMDc)). _- MM and NVK add 18 May 2012._
-8. First principles so it's easy to implement across software. _- NVK add 19 May 2012._
+8. First principles based so it's easy to implement across software. _- NVK add 19 May 2012._
 
 NOTE: Extensions might include data formats (csv, shp in zip), data statistics (count, min, max), data locations (local/remote/offline), experimental styling keywords (feature class heigherachy ala scalemaster.org?), styles with absolute and relative values (gradients, choropleth/quantiles/nat'lbreaks/etc, lighter, darker, smaller text, larger text), and rendering (like for shields?), interactivity (one layer, multiple layers).
 
@@ -49,8 +49,8 @@ NOTE: Extensions might include data formats (csv, shp in zip), data statistics (
 
 #File structure
 
-* MSS for the CSS styling definition
-* MML for the datasources and their layering
+* MSS for the CSS styling definition (with new 2.0 syntax)
+* MML for the datasources and their layering (Carto 2.0 allows both JSON and XML formats)
 * cascadnik/carto 2.0: data source definition can be inline or an import in the MML (easy in XML format, harder in JSON?)
 
 
