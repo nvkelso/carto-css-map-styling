@@ -382,56 +382,56 @@ Should have reasonable SYMBOL representation defaults, below.
 
 #Carto Nitpicks
 
-###Formalize:
+1. Formalize:
 
-when we're looking at FIELDS, we always use
-    [FIELD]
-
-if you need to escape
-    /[foo\]
-
-This is easy to remember and 
-
-Note: When a property expects a string, you need to wrap "[FIELD]", but not necc. @var.
-
-We want to insist on [FIELD] because it makes syntax highlighting easier (and thus code easier to write and to interpret when rendering).
-
-no way to know if [FIELD] is real or not unless at runtime. But that's okay.
-
-
-###What needs to be expanded?
-
-* variables get replaced
-* inheretance gets replaced
-
-Can't really do unquoted variables -- [FIELD] versus "[FIELD]" -- unless Mapnik supports natively.
+        when we're looking at FIELDS, we always use
+            `[FIELD]`
+        
+        if you need to escape
+            `/[foo\]`
+        
+        This is easy to remember and 
+        
+        Note: When a property expects a string, you need to wrap "[FIELD]", but not necc. @var.
+        
+        We want to insist on [FIELD] because it makes syntax highlighting easier (and thus code easier to write and to interpret when rendering).
+        
+        no way to know if [FIELD] is real or not unless at runtime. But that's okay.
 
 
-###Woops, that doesn't exist:
+2. What needs to be expanded?
 
-When [FIELD] isn't valid, what to do?
-
-* warnings (silent or obvious), or treat as errors and fail completely as error
-* html/css will make it look funny if it's not right, but it'll kinda work (we like this)
-* return empty string or undefined or?? now it throws an error and won't run at all
-
-Why is this important: sharing styles between similar datasets should work (now they don't at all).
+        * variables get replaced
+        * inheretance gets replaced
+        
+        Can't really do unquoted variables -- [FIELD] versus "[FIELD]" -- unless Mapnik supports natively.
 
 
-###Mapnik variable filters
+3. Woops, that doesn't exist:
 
-(more powerful than CSS before, after pseudo selectors)
-    #rule[THING]>value]
+        When [FIELD] isn't valid, what to do?
+        
+        * warnings (silent or obvious), or treat as errors and fail completely as error
+        * html/css will make it look funny if it's not right, but it'll kinda work (we like this)
+        * return empty string or undefined or?? now it throws an error and won't run at all
+        
+        Why is this important: sharing styles between similar datasets should work (now they don't at all).
 
-same as
-    #rule[[THING]]>value]
 
-same as
-    #rule[[THING11]]>[THING2]]
+4. Mapnik variable filters
 
-[] are used both for FIELDS and doing evals?
-
-"Ghostly manifestations of things that are in Mapnik"
+        (more powerful than CSS before, after pseudo selectors)
+            `#rule[THING]>value]`
+        
+        same as
+            `#rule[[THING]]>value]`
+        
+        same as
+            `#rule[[THING11]]>[THING2]]`
+        
+        [] are used both for FIELDS and doing evals?
+        
+        "Ghostly manifestations of things that are in Mapnik"
 
 
 ###KEY (concept? likely NVK)
@@ -439,6 +439,8 @@ same as
 * How do you make a choropleth map?
 * Can I say this data, these colors, with quantiles/naturalbreaks
 
+
+#Back to basic syntax:
 
 ###Operations:
 
@@ -464,6 +466,7 @@ but
 Example: Empty strings, NULL in number columns for Shps, etc.
 
 Question: Does Mapnik have other types of Nulls? Typecasting magic by Mapnik now... ack!
+
 So make sure Mapnik is being a good citizen, then tell others about that.
 
 
@@ -474,20 +477,20 @@ tk tk tk
 
 ###Filters:
 
-5 classes, what are the breaks, what are the colors.
-    #rule[ A="5" ][ B>= 7 ]
-
-same as:
-    #rule[ A="5" ],
-    #rule[ B>= 7]
-
-not liking:
-(it's better to do that type of stuff on the SQL bits)
-    #rule[ A="5" OR B>= 7 ]
-
-not liking:
-(it's better to do that type of stuff on the SQL bits)
-    #rule[ [A]="5" OR [B]>= 7 ]
+    5 classes, what are the breaks, what are the colors.
+        #rule[ A="5" ][ B>= 7 ]
+    
+    same as:
+        #rule[ A="5" ],
+        #rule[ B>= 7]
+    
+    not liking:
+    (it's better to do that type of stuff on the SQL bits)
+        #rule[ A="5" OR B>= 7 ]
+    
+    not liking:
+    (it's better to do that type of stuff on the SQL bits)
+        #rule[ [A]="5" OR [B]>= 7 ]
 
 
 ###Filters extra:
@@ -512,7 +515,7 @@ or
     [zoom() = 1]
 
 What are the special keywords for DATA STATS:
-Dane can fill us in? 
+    `Dane can fill us in?`
 
 Need to make explicate and document: "What would Dane do?" @aaronofmontreal
 
