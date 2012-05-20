@@ -26,12 +26,12 @@ _Notes, sketches, and frameworks inspired by October 2011 map styling workshop h
 NOTE: Extensions might include data formats (csv, shp in zip), data statistics (count, min, max), data locations (local/remote/offline), experimental styling keywords (feature class heigherachy ala scalemaster.org?), styles with absolute and relative values (gradients, choropleth/quantiles/nat'lbreaks/etc, lighter, darker, smaller text, larger text), and rendering (like for shields?), interactivity (one layer, multiple layers).
 
 
-#Atomic bits:
+#Atomic bits (nouns):
 
-* **Object geometry type nouns**: point, line, polygon, continuous-field aka raster. Even the component vertex, etc.
-* **Rendering target verbs**: (pivots off geometry type) registration, edge, interior
-* **CSS nouns**: anchor, stroke, fill
-* **Ink with nouns**: rgb, cmyk, hsv, alpha, gradient, image (with repeat options)
+* **Object geometry type**: point, line, polygon, continuous-field aka raster. Even the component vertex, etc.
+* **CSS target**: anchor, stroke, fill
+* **Rendering target** (optional/implied in 2.0): (pivots off geometry type) registration, edge, interior
+* **Ink with**: rgb, cmyk, hsv, alpha, gradient, image (with repeat options)
 
 
 #Selectors, attachments, rules, filters, features, data.
