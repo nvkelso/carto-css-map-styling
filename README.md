@@ -9,7 +9,7 @@ _Notes, sketches, and frameworks inspired by October 2011 map styling workshop h
 
 1. CSS-like map design language. Syntax extends the foundation laid by Cascadenik and Carto (implied 1.0) and the power of Less.js
 2. Better support for reference-style maps by formalizing the use of @variables for color swatches, graphic styles, and text character styles
-3. Add support for thematic data cartography with data statistics like MIN, MAX, MEAN and use of those keywords in high-level filters that are under a dozen lines of code. Allow for both loose and hard connections between data and symbology.
+3. ¿Add support for thematic data cartography with data statistics like MIN, MAX, MEAN and use of those keywords in high-level filters that are under a dozen lines of code? Allow for both loose and hard connections between data and symbology.
 
 
 #Result should be:
@@ -17,7 +17,7 @@ _Notes, sketches, and frameworks inspired by October 2011 map styling workshop h
 1. Reference documentation and examples that are compelling.
 2. Syntax should be easy to write for average designer, reusable, and shareable. 
 3. Syntax should be fast for the renderer draw. Text and shields are special cases we want to allow for. Mike put this as it's </div> friendly.
-4. Should have reasonable style defaults / implementation routines that make sense for the designer and for the renderer. Reasonable defaults make it quick to explore a dataset (not just present the final results). Example: draw points to see a distribution, classify points, lines and polygons by thematic attribute and color quickly.
+4. Should have reasonable style defaults / implementation routines that make sense for the designer and for the renderer. Reasonable defaults make it quick to explore a dataset (not just present the final results). Example: draw points to see a distribution, classify points, lines and polygons by thematic attribute and color quickly. See: [NVK's Thematic Carto Tools repo](https://github.com/nvkelso/thematic-carto-tools)
 5. Core syntax is interoperable with other style languages. Extensions allow extra awesome things. 
 6. Clearly identify ambiguities (and document recommended solutions).
 7. Standard adhers to [Semantic Versioning](http://semver.org/). Watch background video ([youtube](http://www.youtube.com/watch?v=k2h2lvhzMDc)). _- MM and NVK add 18 May 2012._
@@ -43,7 +43,15 @@ NOTE: Extensions might include data formats (csv, shp in zip), data statistics (
 * new  carto  2.0: **Special rendering targets w/r/t attachemtns**: interior, edge, registration.
 * new  carto  2.0: **Selectors** for object **geometry type** (point, line, polygon, raster) and _advanced_ **geometry components**: inner outer rings, vertex index and first, last. eg: _.classname geom_type_selector { ... }_
 * new  carto  2.0: **Rendering/compositing targets** are implied but can be explicate or overridden: fill-, stroke-, anchor-, and data-. _Note: color:#hex is implied as fill-color:#hex._
-* from carto  2.0: **Dependant attachments** (&&) depend on the previous bits being rendered in that selection. Useful for text labels to require the anchor symbolization being placed. eg: point&&stroke
+* new  carto  2.0: **Dependant attachments** (&&) depend on the previous bits being rendered in that selection. Useful for text labels to require the anchor symbolization being placed. eg: point&&stroke
+* from carto  1.0: **@variables** for color swatches
+* new  carto  2.0: **@variables** for graphic styles, and text character styles (kinda in 1.0? AJ please elaborate)
+
+#File structure
+
+* MSS for the CSS styling definition
+* MML for the datasources and their layering
+* cascadnik/carto 2.0: data source definition can be inline or an import in the MML (easy in XML format, harder in JSON?)
 
 
 #Reasonable defaults:
