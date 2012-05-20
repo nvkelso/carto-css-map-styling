@@ -28,17 +28,26 @@ NOTE: Extensions might include data formats (csv, shp in zip), data statistics (
 
 #Atomic bits (nouns):
 
-* **Object geometry type**: point, line, polygon, continuous-field aka raster. Even the component vertex, etc.
-* **CSS target**: anchor, stroke, fill
-* **Rendering target** (optional/implied in 2.0): (pivots off geometry type) registration, edge, interior
-* **Ink with**: rgb, cmyk, hsv, alpha, gradient, image (with repeat options)
+* **Object geometry type**: point, line, polygon, continuous-field aka raster. _Even the component polys, rings, & vertex_
+* **CSS target**: anchor, stroke, fill, label/text, data
+* **Rendering target** (optional/implied in 2.0): (pivots off geometry type) registration, edge, interior, LABEL, INTERACTIVITY. _With optional masks and positioning/attachment hints._
+* **Ink with**: rgb, cmyk, hsv, gradient, image (with repeat options). _With alpha._
+* **Size**: anchors, strokes, and labels have a 2d extrusion measurement (eg: 2px) _For images, the size is implied by a non-repeat dimension of the source image. Others are determined by default style CSS._
 
 
 #Selectors, attachments, rules, filters, features, data.
 
 * from cascadenik: **Filters** for feature attributes (FIELDNAME=value)
-* from carto  1.0: **Attachments** are a repeated version of the exact selection, but with a different styling.
-* new  carto  2.0: **Selectors** for object **geometry type** (point, line, polygon, raster) and -advanced- **geometry components: inner outer rings, vertex index and first, last. 
+* from carto  1.0: **Attachments** (::) are a repeated version of the exact selection, but with a different appearance styling.
+* new  carto  2.0: **Point geoms have an edge** available for stroking.
+* new  carto  2.0: **Special rendering targets w/r/t attachemtns**: interior, edge, registration.
+* new  carto  2.0: **Selectors** for object **geometry type** (point, line, polygon, raster) and -advanced- **geometry components: inner outer rings, vertex index and first, last. eg: .class geom_type { }
+* new  carto  2.0: **Rendering/compositing targets** are implied but can be explicate or overridden: fill-, stroke-, anchor-, and data-. color:#hex is implied as fill-color:#hex.
+* from carto  2.0: **Dependant attachments** (&&) depend on the previous bits being rendered in that selection. Useful for text labels to require the anchor symbolization being placed. eg: point&&stroke
+
+#Reasonable defaults:
+
+tk tk tk
 
 
 #&etc
