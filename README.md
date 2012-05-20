@@ -28,11 +28,11 @@ NOTE: Extensions might include data formats (csv, shp in zip), data statistics (
 
 #Atomic bits (nouns, verbs):
 
-* **Object geometry type**: point, line, polygon, continuous-field aka raster. _Even the component polys, rings, & vertex_
-* **CSS target**: anchor, stroke, fill, label/text, data
+* **Object geometry type**: point, line, polygon, continuous-field aka raster. _Even the component polys, rings, & vertex. New in 2.0_
+* **CSS target**: anchor, stroke, fill, label/text, data. _Anchor is new in 2.0, label/text is better in 2.0, data formalized in 2.0_
 * **Rendering target** (optional/implied in 2.0): (pivots off geometry type) registration, edge, interior, LABEL, INTERACTIVITY. _With optional masks and positioning/attachment hints._
 * **Ink with**: rgb, cmyk, hsv, gradient, image (with repeat options). _With alpha. All color spaces/images/gradient are coallpsed in "ink" in Carto 2.0_
-* **Size by**: anchors, strokes, and labels have a 2d extrusion measurement (eg: 2px) _For images, the size is implied by a non-repeat dimension of the source image. Others are determined by default style CSS._
+* **Size by**: anchors, strokes, and labels have a 2d extrusion measurement (eg: 2px) _For images, the size is implied by a non-repeat dimension of the source image. Others are determined by default style CSS. Continues from Cascadenik/Carto 1.0_
 
 
 #Selectors, attachments, rules, filters, features, data.
