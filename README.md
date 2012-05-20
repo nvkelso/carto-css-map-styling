@@ -68,10 +68,10 @@ NOTE: Extensions might include data formats (csv, shp in zip), data statistics (
 
 #Reasonable defaults:
 
-* Text -> geom_centroid -> Registration/Text : style="size:12px; color:#000000; face:Arial;" --**or**-- { text-size:12px; text-color:#000000; text-face:Arial; }
-* Anchor -> Point -> Registration: style="width:2px; color:#000000; cap:round;" --**or**-- { stroke-width:2px; stroke-color:#000000; cap:round; }
-* Stroke -> Line -> Edge: style="width:1px; color:#000000; cap:square;" --**or**-- { stroke-width:1px; stroke-color:#000000; cap:square; }
-* Fill -> Polygon -> Interior: style="color:#eeeeee;" --**or**-- { fill-color:#eeeeee; }
+* Text -> geom_centroid -> Registration/Text : style="12px black Arial" --**or**-- { text-size:12px; text-color:#000000; text-face:Arial; }
+* Anchor -> Point -> Registration: style="2px #000000 round;" --**or**-- { stroke-width:2px; stroke-color:#000000; cap:round; }
+* Stroke -> Line -> Edge: style="1px #000000 square;" --**or**-- { stroke-width:1px; stroke-color:#000000; cap:square; }
+* Fill -> Polygon -> Interior: style="grey" --**or**-- { fill-color:#eeeeee; }
 * Raster Pixels -> Point > Registration : Per pixel colored by the RGB channel values. CSS tk tk tk. Kinda like a RGB #hex gradient per 0-255 values?
 
 
