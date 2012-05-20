@@ -46,7 +46,7 @@ NOTE: Extensions might include data formats (csv, shp in zip), data statistics (
 * from carto  1.0: **nested styles** from Less.js: tk tk from TMCW and AJ
 * from carto  1.0: **FontSets**: very important for multilingual characters and UTF-8 labels, font fallbacks
 * new  carto  2.0: **Point geoms have an edge** available for stroking.
-* new  carto  2.0: **Special rendering targets w/r/t attachemtns**: interior, edge, registration.
+* new  carto  2.0: **Special rendering targets w/r/t attachements**: interior, edge, registration.
 * new  carto  2.0: **Selectors** for object **geometry type** (point, line, polygon, raster) and _advanced_ **geometry components**: inner outer rings, vertex index and first, last. eg: _.classname geom_type_selector { ... }_
 * new  carto  2.0: **Rendering/compositing targets** are implied but can be explicate or overridden: fill-, stroke-, anchor-, and data-. _Note: color:#hex is implied as fill-color:#hex._
 * new  carto  2.0: **Dependant attachments** (&&) depend on the previous bits being rendered in that selection. Useful for text labels to require the anchor symbolization being placed. eg: point&&stroke
