@@ -87,6 +87,7 @@
 4. Allow remote reference to stylesheet bits (add import directive).
 
 5. @variables for Appearance stuff
+
         -------- Color swatches (rbga)
         -------- Graphic styles (per geometry type?)
         -------- Text character styles
@@ -98,12 +99,14 @@
         -------- Color scheme: multi-hue, single-hue
 
 7. Gradients
+
         -------- Are like Named color swatch groups, just with continuous tone between the stops.
         -------- Tied to absolute or relative data values.
         -------- If relative %s, might have a cached version that uses the actual data values for the dataset it's applied against.
         -------- Can symbolize raster grids, too. Or symbolize geometries versus data.
 
 8. Data statistic keywords:
+
         -------- MIN, MAX, MEAN
         -------- Others?
 
