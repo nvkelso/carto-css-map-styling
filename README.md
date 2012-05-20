@@ -28,10 +28,10 @@ NOTE: Extensions might include data formats (csv, shp in zip), data statistics (
 
 #Atomic bits:
 
-* **Object** geometry types: point, line, polygon, continuous-field aka raster. Even the component vertex, etc.
-* **Rendering** feature part (pivots off geometry types): registration, edge, interior
-* **CSS parts**: anchor, stroke, fill
-* **Ink with**: rgb, cmyk, hsv, alpha, gradient, image (with repeat options)
+* **Object geometry type nouns**: point, line, polygon, continuous-field aka raster. Even the component vertex, etc.
+* **Rendering target verbs**: (pivots off geometry type) registration, edge, interior
+* **CSS nouns**: anchor, stroke, fill
+* **Ink with nouns**: rgb, cmyk, hsv, alpha, gradient, image (with repeat options)
 
 
 #Selectors, attachments, rules, filters, features, data.
