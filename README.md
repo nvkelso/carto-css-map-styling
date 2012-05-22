@@ -40,6 +40,7 @@ NOTE: Extensions might include data formats (csv, shp in zip), data statistics (
 #Core syntax:
 
 * from cascadenik: **Filters** for feature attributes (FIELDNAME=value or FIELDNAME>value)
+* from cascadenik: **DataSourcesConfig** an XML tag similar to the Stylesheet tag that allows you to externalize elements in an easy to manage format. [More info »](https://github.com/mapnik/Cascadenik/wiki/Managing-Data-Sources)
 * from carto  1.0: **@variables** for color swatches
 * from carto  1.0: **FontSets**: very important for multilingual characters and UTF-8 labels, font fallbacks
 * new  carto  2.0: **Point geoms have an edge** available for stroking.
