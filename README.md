@@ -41,7 +41,7 @@ NOTE: Extensions might include data formats (csv, shp in zip), data statistics (
 
 _All these must be supported to meet 1.0 compliance_
 
-* basic from  css: **Basic CSS syntax** - stroke, fill, text. Require RGB and Opactity. 
+* basic from  css: **Basic CSS syntax** - stroke, fill, text. Require RGB and Opacity. 
 * from cascadenik: **Filters** for feature attributes (FIELDNAME=value or FIELDNAME>value)
 * new  carto  2.0: **display:none** - like !important, but for not showing stuff, regarless of other rules. 
 * from cascadenik: **DataSourcesConfig** an XML tag similar to the Stylesheet tag that allows you to externalize elements in an easy to manage format. [More info »](https://github.com/mapnik/Cascadenik/wiki/Managing-Data-Sources)
