@@ -30,12 +30,18 @@ NOTE: Extensions might include data formats (csv, shp in zip), data statistics (
 
 #Atomic bits (nouns, verbs):
 
-1. **CSS target**: anchor, stroke, fill, label/text, data. _Note: reimagined a bit from basic HTML CSS and Cascadenik, Carto. Anchor is new in 1.0, label/text is better in 1.0/2.0/3.0??, data formalized in 1.0/2.0?_
-1. **Size by**: anchors, strokes, and labels have a 2d extrusion measurement (eg: 2px) _For images, the size is implied by a non-repeat dimension of the source image. Others are determined by default style CSS. Continues from Cascadenik/Carto 1.0_
-1. **Ink with** for color (mask) areas (extrusion of stroke, or fill): rgb, cmyk, hsv, gradient, image (with repeat options). _With alpha. All color spaces/images/gradient are coallpsed in "ink" in Carto 2.0_
-1. **Object geometry type filter**: point, line, polygon, continuous-field aka raster. _New in 2.0_
-1. **Object geometry component filter**: The component polys, rings, & vertex. _New in 3.0_
-1. **Rendering target**: (pivots off geometry type) registration, edge, interior, LABEL, INTERACTIVITY. _New in 3.0. With optional masks and positioning/attachment hints._
+1. **CSS target**: anchor, stroke, fill, label/text, data. 
+_Note: reimagined a bit from basic HTML CSS and Cascadenik, Carto. Anchor is new in 1.0, label/text is better in 1.0/2.0/3.0??, data formalized in 1.0/2.0?_
+1. **Size by**: anchors, strokes, and labels have a 2d extrusion measurement (eg: 2px) 
+_For images, the size is implied by a non-repeat dimension of the source image. Others are determined by default style CSS. Continues from Cascadenik/Carto 1.0_
+1. **Ink with** for color (mask) areas (extrusion of stroke, or fill): rgb, cmyk, hsv, gradient, image (with repeat options). 
+_With alpha. All color spaces/images/gradient are coallpsed in "ink" in Carto 2.0_
+1. **Object geometry type filter**: point, line, polygon, continuous-field aka raster. 
+_New in 2.0_
+1. **Object geometry component filter**: The component polys, rings, & vertex. 
+_New in 3.0_
+1. **Rendering target**: (pivots off geometry type) registration, edge, interior, LABEL, INTERACTIVITY. 
+_New in 3.0. With optional masks and positioning/attachment hints._
 
 
 #Core bits (Map CSS 1.0):
