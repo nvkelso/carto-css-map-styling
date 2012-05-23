@@ -91,6 +91,7 @@ _Note: some are likely to remain vender specific implementations, -vender-proper
 * MML for the datasources and their layering. 
 
     _NOTE: Map CSS MML spec can be implemented in either JSON and XML formats._
+    
     _NOTE: Data source definition can be inline or an import in the MML. From cascadnik/carto 2.0. ¿Easy in XML format, harder in JSON?_
 
 
