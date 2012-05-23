@@ -99,7 +99,7 @@ _Note: some are likely to remain vender specific implementations, -vender-proper
 
 #Reasonable defaults:
 
-_Note: the stye="..." examples need to be reworked.
+_Note: the stye="..." examples need to be reworked._
 
 * Text -> geom_centroid -> Registration/Text : 
     `{ text-size:12px; text-color:#000000; text-face:Arial; }` --**or**-- 
