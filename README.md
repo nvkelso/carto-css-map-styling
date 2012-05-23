@@ -39,6 +39,8 @@ NOTE: Extensions might include data formats (csv, shp in zip), data statistics (
 
 #Core syntax (Map CSS 1.0):
 
+_All these must be supported to meet 1.0 compliance_
+
 * basic from  css: **Basic CSS syntax** - stroke, fill, text. Require RGB and Opactity. 
 * from cascadenik: **Filters** for feature attributes (FIELDNAME=value or FIELDNAME>value)
 * new  carto  2.0: **@media zoom selection** [zoom] from Cascadenik and Carto 1.0 allowed, but also now: @media (zoom > 3) and (zoom < 10) {  #lakes {    /* style */   } }
@@ -51,23 +53,30 @@ NOTE: Extensions might include data formats (csv, shp in zip), data statistics (
 
 #Advanced syntax (Map CSS 2.0):
 
+_All these must be supported to meet 2.0 compliance_
+
 * basic from  css: **Advanced CSS syntax** - RGBA, CYMK, HSV, etc other color spaces.
-* from carto  1.x: **RegEx filters** this a new, unversioned bit, grrr. Awesome, though. _Optional?_
-* from carto  1.0: **Nested style attachments** (::) are a repeated version of the exact selection, but with a different appearance styling on a new virtual layer. **OR should we move away to a procedure versus declarative?**
-* from carto  1.0: **style instances** similar to nested styles, but within the same original layer. 
-* from carto  1.0: **expressions** for modifying color swatches, stroke-widths, and @variables, etc. Lighten and darken are special words for these?
 * from cascadenik: **Local versus remote** data files.
-* new  carto  2.0: **Selectors** for object **geometry type** (point, line, polygon, raster) eg: _geom_type_selector.classname { ... }_ or _.classname _geom_type_selector { ... }_ (which is less CSS like, but more like the sketches below)
-* new  carto  2.0: ¿**Dependant attachments**? (&&) depend on the previous bits being rendered in that selection. Useful for text labels to require the anchor symbolization being placed. eg: point&&stroke
+* from carto  1.x: **RegEx filters** this a new, unversioned bit, grrr. Awesome, though. _Optional?_
+* from carto  1.0: **Nested style attachments (layer)** (::) are a repeated version of the exact selection, but with a different appearance styling on a new virtual layer. **OR should we move away to a procedure versus declarative?**
+* from carto  1.0: **style instances (features)** (/) similar to nested styles, but within the same original layer. 
+* from carto  1.0: **variable expresions** evaluation of variable expressions: _( @variable-stroke-width + 5 )_.... modifying color swatches, stroke-widths, and @variables, etc.
+* new  carto  2.0: **geometry type selectors** (point, line, polygon, raster) eg: _geom_type_selector.classname { ... }_ or _.classname _geom_type_selector { ... }_ (which is less CSS like, but more like the sketches below)
 
-#Advanced syntax (Map CSS 3.0):
+#Super advanced syntax (Map CSS 3.0):
 
+_All these must be supported to meet 3.0 compliance_
+_Note: some are likely to remain vender specific implementations, -vender-propertyname eg: -mapnik-line-stroke-gradient, bla bla bla_
+
+* new  carto  2.0: **data variables/expansion** functional expansion of column values per feature [name] but for property values? Held up by upstream Mapnik changes needed.
 * new  carto  2.0: **Selectors** for object _advanced_ **geometry components**: inner outer rings, vertex index and first, last. eg: _.classname geom_type_selector { ... }_
-* from carto  2.0: **data variables** like [name] but for property values? Held up by upstream Mapnik changes needed.
-* new  carto  2.0: **Shorthand style properties** eg: style="" in addition to basic { ... } with first being implied based on the geom type, the second explicate with geom type??????????????????
+* new  carto  2.0: **Dependant attachments** (&&) depend on the previous bits being rendered in that selection. Useful for text labels to require the anchor symbolization being placed. eg: point&&stroke
+* from carto  1.0: **functional expressions** evaluation of variable expressions with a predefined function: _function( @variable-stroke-width )_
+* new  carto  2.0: **Shorthand style properties** eg: `stroke: url(...) #9f0 repeat 20.0;` is now allowed, and expands to `{ stroke-image:url(...); stroke-color:#9f0; stroke-image-repeat:true; stroke-size:20.0px }`
 * new  carto  2.0: **Special rendering targets w/r/t attachements**: interior, edge, registration.
 * new  carto  2.0: **Rendering/compositing targets** are implied but can be explicate or overridden: fill-, stroke-, anchor-, and data-. _Note: color:#hex is implied as fill-color:#hex._
 * new  carto  2.0: **Blending modes** ala Photoshop, Illustrator, new compositing branch of Mapnik, cutting edge CSS.
+* new  carto  2.0: **gradients on strokes** - 
 
 #File structure
 
