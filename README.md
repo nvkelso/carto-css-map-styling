@@ -41,7 +41,7 @@ NOTE: Extensions might include data formats (csv, shp in zip), data statistics (
 
 * basic from  css: **Basic CSS syntax** - stroke, fill, text. Require RGB and Opactity. 
 * from cascadenik: **Filters** for feature attributes (FIELDNAME=value or FIELDNAME>value)
-* new  carto  2.0: **zoom selection syntax**
+* new  carto  2.0: **@media zoom selection** [zoom] from Cascadenik and Carto 1.0 allowed, but also now: @media (zoom > 3) and (zoom < 10) {  #lakes {    /* style */   } }
 * new  carto  2.0: **display:none** - like !important, but for not showing stuff, regarless of other rules. 
 * from carto  1.0: **@variables** for color swatches, this is preprocessor to actual result.
 * new  carto  2.0: **@variables** for graphic styles, and text character styles (kinda in 1.0? AJ please elaborate)
