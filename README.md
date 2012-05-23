@@ -30,20 +30,20 @@ NOTE: Extensions might include data formats (csv, shp in zip), data statistics (
 
 #Atomic bits (nouns, verbs):
 
-* **Object geometry type**: point, line, polygon, continuous-field aka raster. _Even the component polys, rings, & vertex. New in 2.0_
-* **CSS target**: anchor, stroke, fill, label/text, data. _Anchor is new in 2.0, label/text is better in 2.0, data formalized in 2.0_
-* **Rendering target** (optional/implied in 2.0): (pivots off geometry type) registration, edge, interior, LABEL, INTERACTIVITY. _With optional masks and positioning/attachment hints._
-* **Ink with** for color (mask) areas (extrusion of stroke, or fill): rgb, cmyk, hsv, gradient, image (with repeat options). _With alpha. All color spaces/images/gradient are coallpsed in "ink" in Carto 2.0_
-* **Size by**: anchors, strokes, and labels have a 2d extrusion measurement (eg: 2px) _For images, the size is implied by a non-repeat dimension of the source image. Others are determined by default style CSS. Continues from Cascadenik/Carto 1.0_
+1. **CSS target**: anchor, stroke, fill, label/text, data. _Anchor is new in 2.0, label/text is better in 2.0, data formalized in 2.0_
+1. **Size by**: anchors, strokes, and labels have a 2d extrusion measurement (eg: 2px) _For images, the size is implied by a non-repeat dimension of the source image. Others are determined by default style CSS. Continues from Cascadenik/Carto 1.0_
+1. **Ink with** for color (mask) areas (extrusion of stroke, or fill): rgb, cmyk, hsv, gradient, image (with repeat options). _With alpha. All color spaces/images/gradient are coallpsed in "ink" in Carto 2.0_
+1. **Object geometry type**: point, line, polygon, continuous-field aka raster. _Even the component polys, rings, & vertex. New in 2.0_
+1. **Rendering target** (optional/implied in 2.0): (pivots off geometry type) registration, edge, interior, LABEL, INTERACTIVITY. _With optional masks and positioning/attachment hints._
 
 
 #Core bits (Map CSS 1.0):
 
 _All these must be supported to meet 1.0 compliance_
 
-1. basic from  css: **Basic CSS syntax** - stroke, fill, text. Require RGB and Opacity. 
-1. from cascadenik: **Filters** for feature attributes (FIELDNAME=value or FIELDNAME>value)
-1. new  carto  2.0: **display:none** - like !important, but for not showing stuff, regarless of other rules. 
+1. basic from  css: **Basic CSS syntax** - stroke, fill, text. Require `color:#rrggbb` and `opacity=1.0`. 
+1. from cascadenik: **Filters** for feature attributes eg: `FIELDNAME=value` or `FIELDNAME>value`
+1. new  carto  2.0: **display:none** - like `!important`, but for not showing stuff, regarless of other rules. 
 1. from cascadenik: **DataSourcesConfig** an XML tag similar to the Stylesheet tag that allows you to externalize elements in an easy to manage format. [More info »](https://github.com/mapnik/Cascadenik/wiki/Managing-Data-Sources)
 1. from carto  1.0: **FontSets**: very important for multilingual characters and UTF-8 labels, font fallbacks
 1. new  carto  2.0: **Point geoms have an edge** available for stroking. **THIS IS THE ONLY SHOW STOPPER.**
@@ -56,11 +56,11 @@ _All these must be supported to meet 2.0 compliance_
 1. from cascadenik: **Local versus remote** data files.
 1. from carto  1.0: **@variables** for color swatches, this is preprocessor to actual result. also can be used for graphic styles, and text character styles. _Moved 23 May 2012 per TMCW_
 1. from carto  1.x: **RegEx filters** like: `/* a regular expression over name */ #world[name =~ "A.*"]`
-1. from carto  1.0: **Nested style attachments (layer)** (::) are a repeated version of the exact selection, but with a different appearance styling on a new virtual layer. **OR should we move away to a procedure versus declarative?**
-1. from carto  1.0: **style instances (features)** (/) similar to nested styles, but within the same original layer. 
-1. from carto  1.0: **variable expresions** evaluation of variable expressions: _( @variable-stroke-width + 5 )_.... modifying color swatches, stroke-widths, and @variables, etc.
-1. new  carto  2.0: **@media zoom selection** [zoom] from Cascadenik and Carto 1.0 allowed, but also now: @media (zoom > 3) and (zoom < 10) {  #lakes {    /* style */   } }
-1. new  carto  2.0: **geometry type selectors** (point, line, polygon, raster) eg: _geom_type_selector.classname { ... }_ or _.classname _geom_type_selector { ... }_ (which is less CSS like, but more like the sketches below)  **THIS IS THE ONLY SHOW STOPPER.**
+1. from carto  1.0: **Nested style attachments (layer)** `::` are a repeated version of the exact selection, but with a different appearance styling on a new virtual layer. **OR should we move away to a procedure versus declarative?**
+1. from carto  1.0: **style instances (features)** `/` similar to nested styles, but within the same original layer. 
+1. from carto  1.0: **variable expresions** evaluation of variable expressions: `( @variable-stroke-width + 5 )` .... modifying color swatches, stroke-widths, and @variables, etc.
+1. new  carto  2.0: **@media zoom selection** [zoom] from Cascadenik and Carto 1.0 allowed, but also now: `@media (zoom > 3) and (zoom < 10) {  #lakes {    /* style */   } }`
+1. new  carto  2.0: **geometry type selectors** (point, line, polygon, raster) eg: `geom_type_selector.classname { ... }` or `.classname _geom_type_selector { ... }` (which is less CSS like, but more like the sketches below)  **THIS IS THE ONLY SHOW STOPPER.**
 
 #Super advanced bits (Map CSS 3.0):
 
@@ -68,21 +68,21 @@ _All these must be supported to meet 3.0 compliance_
 
 _Note: some are likely to remain vender specific implementations, -vender-propertyname eg: -mapnik-line-stroke-gradient, bla bla bla_
 
-1. new  carto  2.0: **data variables/expansion** functional expansion of column values per feature [name] but for property values? Held up by upstream Mapnik changes.
-1. from carto  1.0: **functional expressions** evaluation of variable expressions with a predefined function: _function( @variable-stroke-width )_
-1. new  carto  2.0: **Selectors** for object _advanced_ **geometry components**: inner outer rings, vertex index and first, last. eg: _.classname geom_type_selector { ... }_
-1. new  carto  2.0: **Dependant attachments** (&&) depend on the previous bits being rendered in that selection. Useful for text labels to require the anchor symbolization being placed. eg: point&&stroke
+1. new  carto  2.0: **data variables/expansion** functional expansion of column values per feature `[name]` but for property values? Held up by upstream Mapnik changes.
+1. from carto  1.0: **functional expressions** evaluation of variable expressions with a predefined function: `function( @variable-stroke-width )`
+1. new  carto  2.0: **Selectors** for object _advanced_ **geometry components**: inner outer rings, vertex index and first, last. eg: `.classname geom_component_selector { ... }`
+1. new  carto  2.0: **Dependant attachments** `&&` depend on the previous bits being rendered in that selection. Useful for text labels to require the anchor symbolization being placed. eg: point&&stroke
 1. new  carto  2.0: **Shorthand style properties** eg: `stroke: url(...) #9f0 repeat 20.0;` is now allowed, and expands to `{ stroke-image:url(...); stroke-color:#9f0; stroke-image-repeat:true; stroke-size:20.0px }`
 1. new  carto  2.0: **Special rendering targets w/r/t attachements**: interior, edge, registration.
 1. new  carto  2.0: **Rendering/compositing targets** are implied but can be explicate or overridden: fill-, stroke-, anchor-, and data-. _Note: color:#hex is implied as fill-color:#hex._
 1. new  carto  2.0: **Blending modes** ala Photoshop, Illustrator, new compositing branch of Mapnik, cutting edge CSS.
-1. new  carto  2.0: **gradients on strokes** - 
+1. new  carto  2.0: **gradients on strokes** - The future come-ith.
 
 #File structure
 
 * MSS for the Map CSS styling definition.
 * MML for the datasources and their layering. _Map CSS MML spec can be implemented in either JSON and XML formats._
-* Note: Data source definition can be inline or an import in the MML. From cascadnik/carto 2.0. _easy in XML format, harder in JSON?_
+* _Note: Data source definition can be inline or an import in the MML. From cascadnik/carto 2.0. ¿Easy in XML format, harder in JSON?_
 
 
 #Reasonable defaults:
