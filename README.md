@@ -101,11 +101,20 @@ _Note: some are likely to remain vender specific implementations, -vender-proper
 
 _Note: the stye="..." examples need to be reworked.
 
-* Text -> geom_centroid -> Registration/Text : `style="12px black Arial"` --**or**-- `{ text-size:12px; text-color:#000000; text-face:Arial; }`
-* Anchor -> Point -> Registration: `style="2px #000000 round;"` --**or**-- `{ stroke-width:2px; stroke-color:#000000; cap:round; }`
-* Stroke -> Line -> Edge: `style="1px #000000 square;"` --**or**-- `{ stroke-width:1px; stroke-color:#000000; cap:square; }`
-* Fill -> Polygon -> Interior: `style="grey"` --**or**-- `{ fill-color:#eeeeee; }`
-* Raster Pixels -> Point > Registration : Per pixel colored by the RGB channel values. CSS tk tk tk. Kinda like a RGB #hex gradient per 0-255 values?
+* Text -> geom_centroid -> Registration/Text : 
+    `{ text-size:12px; text-color:#000000; text-face:Arial; }` --**or**-- 
+    `style="12px black Arial"` (in version 3.0)
+* Anchor -> Point -> Registration: 
+    `{ stroke-width:2px; stroke-color:#000000; cap:round; }` --**or**-- 
+    `style="2px #000000 round;"` (in version 3.0)
+* Stroke -> Line -> Edge: 
+    `{ stroke-width:1px; stroke-color:#000000; cap:square; }` --**or**-- 
+    `style="1px #000000 square;"` (in version 3.0)
+* Fill -> Polygon -> Interior: 
+    `{ fill-color:#eeeeee; }` --**or**-- 
+    `style="grey"` (in version 3.0)
+* Raster Pixels -> Point > Registration : 
+    Per pixel colored by the RGB channel values. CSS tk tk tk. Kinda like a RGB #hex gradient per 0-255 values?
 
 
 #&etc
