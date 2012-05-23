@@ -102,18 +102,31 @@ _Note: some are likely to remain vender specific implementations, -vender-proper
 _Note: the stye="..." examples need to be reworked._
 
 * Text -> geom_centroid -> Registration/Text : 
+
     `{ text-size:12px; text-color:#000000; text-face:Arial; }` --**or**-- 
+
     `style="12px black Arial"` (in version 3.0)
+
 * Anchor -> Point -> Registration: 
+
     `{ stroke-width:2px; stroke-color:#000000; cap:round; }` --**or**-- 
+
     `style="2px #000000 round;"` (in version 3.0)
+
 * Stroke -> Line -> Edge: 
+
     `{ stroke-width:1px; stroke-color:#000000; cap:square; }` --**or**-- 
+
     `style="1px #000000 square;"` (in version 3.0)
+
 * Fill -> Polygon -> Interior: 
+
     `{ fill-color:#eeeeee; }` --**or**-- 
+
     `style="grey"` (in version 3.0)
+
 * Raster Pixels -> Point > Registration : 
+
     Per pixel colored by the RGB channel values. CSS tk tk tk. Kinda like a RGB #hex gradient per 0-255 values?
 
 
