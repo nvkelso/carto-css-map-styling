@@ -87,8 +87,8 @@ _Note: some are likely to remain vender specific implementations, -vender-proper
 
 #File structure
 
-* MSS for the Map CSS styling definition.
-* MML for the datasources and their layering. 
+* **MSS** for the Map CSS styling definition.
+* **MML** for the datasources and their layering. 
 
     _NOTE 1: Map CSS MML spec can embed the MSS part rather than linking to external file (the default)._
 
