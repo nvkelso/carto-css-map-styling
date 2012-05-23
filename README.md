@@ -99,10 +99,12 @@ _Note: some are likely to remain vender specific implementations, -vender-proper
 
 #Reasonable defaults:
 
-* Text -> geom_centroid -> Registration/Text : style="12px black Arial" --**or**-- { text-size:12px; text-color:#000000; text-face:Arial; }
-* Anchor -> Point -> Registration: style="2px #000000 round;" --**or**-- { stroke-width:2px; stroke-color:#000000; cap:round; }
-* Stroke -> Line -> Edge: style="1px #000000 square;" --**or**-- { stroke-width:1px; stroke-color:#000000; cap:square; }
-* Fill -> Polygon -> Interior: style="grey" --**or**-- { fill-color:#eeeeee; }
+_Note: the stye="..." examples need to be reworked.
+
+* Text -> geom_centroid -> Registration/Text : `style="12px black Arial"` --**or**-- `{ text-size:12px; text-color:#000000; text-face:Arial; }`
+* Anchor -> Point -> Registration: `style="2px #000000 round;"` --**or**-- `{ stroke-width:2px; stroke-color:#000000; cap:round; }`
+* Stroke -> Line -> Edge: `style="1px #000000 square;"` --**or**-- `{ stroke-width:1px; stroke-color:#000000; cap:square; }`
+* Fill -> Polygon -> Interior: `style="grey"` --**or**-- `{ fill-color:#eeeeee; }`
 * Raster Pixels -> Point > Registration : Per pixel colored by the RGB channel values. CSS tk tk tk. Kinda like a RGB #hex gradient per 0-255 values?
 
 
