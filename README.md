@@ -68,7 +68,7 @@ _All these must be supported to meet 3.0 compliance_
 
 _Note: some are likely to remain vender specific implementations, -vender-propertyname eg: -mapnik-line-stroke-gradient, bla bla bla_
 
-* new  carto  2.0: **data variables/expansion** functional expansion of column values per feature [name] but for property values? Held up by upstream Mapnik changes needed.
+* new  carto  2.0: **data variables/expansion** functional expansion of column values per feature [name] but for property values? Held up by upstream Mapnik changes.
 * new  carto  2.0: **Selectors** for object _advanced_ **geometry components**: inner outer rings, vertex index and first, last. eg: _.classname geom_type_selector { ... }_
 * new  carto  2.0: **Dependant attachments** (&&) depend on the previous bits being rendered in that selection. Useful for text labels to require the anchor symbolization being placed. eg: point&&stroke
 * from carto  1.0: **functional expressions** evaluation of variable expressions with a predefined function: _function( @variable-stroke-width )_
