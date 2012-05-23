@@ -66,6 +66,7 @@ _All these must be supported to meet 2.0 compliance_
 #Super advanced syntax (Map CSS 3.0):
 
 _All these must be supported to meet 3.0 compliance_
+
 _Note: some are likely to remain vender specific implementations, -vender-propertyname eg: -mapnik-line-stroke-gradient, bla bla bla_
 
 * new  carto  2.0: **data variables/expansion** functional expansion of column values per feature [name] but for property values? Held up by upstream Mapnik changes needed.
