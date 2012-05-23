@@ -55,7 +55,7 @@ _All these must be supported to meet 2.0 compliance_
 * basic from  css: **Advanced CSS syntax** - RGBA, CYMK, HSV, etc other color spaces.
 * from cascadenik: **Local versus remote** data files.
 * from carto  1.0: **@variables** for color swatches, this is preprocessor to actual result. also can be used for graphic styles, and text character styles. _Moved 23 May 2012 per TMCW_
-* from carto  1.x: **RegEx filters** this a new, unversioned bit, grrr. Awesome, though. _Optional?_
+* from carto  1.x: **RegEx filters** like: `/* a regular expression over name */ #world[name =~ "A.*"]`
 * from carto  1.0: **Nested style attachments (layer)** (::) are a repeated version of the exact selection, but with a different appearance styling on a new virtual layer. **OR should we move away to a procedure versus declarative?**
 * from carto  1.0: **style instances (features)** (/) similar to nested styles, but within the same original layer. 
 * from carto  1.0: **variable expresions** evaluation of variable expressions: _( @variable-stroke-width + 5 )_.... modifying color swatches, stroke-widths, and @variables, etc.
