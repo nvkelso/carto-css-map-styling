@@ -60,7 +60,7 @@ _All these must be supported to meet 2.0 compliance_
 * from carto  1.0: **Nested style attachments (layer)** (::) are a repeated version of the exact selection, but with a different appearance styling on a new virtual layer. **OR should we move away to a procedure versus declarative?**
 * from carto  1.0: **style instances (features)** (/) similar to nested styles, but within the same original layer. 
 * from carto  1.0: **variable expresions** evaluation of variable expressions: _( @variable-stroke-width + 5 )_.... modifying color swatches, stroke-widths, and @variables, etc.
-* new  carto  2.0: **geometry type selectors** (point, line, polygon, raster) eg: _geom_type_selector.classname { ... }_ or _.classname _geom_type_selector { ... }_ (which is less CSS like, but more like the sketches below)
+* new  carto  2.0: **geometry type selectors** (point, line, polygon, raster) eg: _geom_type_selector.classname { ... }_ or _.classname _geom_type_selector { ... }_ (which is less CSS like, but more like the sketches below)  **THIS IS THE ONLY SHOW STOPPER.**
 
 #Super advanced syntax (Map CSS 3.0):
 
