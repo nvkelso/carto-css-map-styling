@@ -37,7 +37,7 @@ NOTE: Extensions might include data formats (csv, shp in zip), data statistics (
 * **Size by**: anchors, strokes, and labels have a 2d extrusion measurement (eg: 2px) _For images, the size is implied by a non-repeat dimension of the source image. Others are determined by default style CSS. Continues from Cascadenik/Carto 1.0_
 
 
-#Core syntax (Map CSS 1.0):
+#Core bits (Map CSS 1.0):
 
 _All these must be supported to meet 1.0 compliance_
 
@@ -45,24 +45,24 @@ _All these must be supported to meet 1.0 compliance_
 * from cascadenik: **Filters** for feature attributes (FIELDNAME=value or FIELDNAME>value)
 * new  carto  2.0: **@media zoom selection** [zoom] from Cascadenik and Carto 1.0 allowed, but also now: @media (zoom > 3) and (zoom < 10) {  #lakes {    /* style */   } }
 * new  carto  2.0: **display:none** - like !important, but for not showing stuff, regarless of other rules. 
-* from carto  1.0: **@variables** for color swatches, this is preprocessor to actual result. also can be used for graphic styles, and text character styles.
 * from cascadenik: **DataSourcesConfig** an XML tag similar to the Stylesheet tag that allows you to externalize elements in an easy to manage format. [More info »](https://github.com/mapnik/Cascadenik/wiki/Managing-Data-Sources)
 * from carto  1.0: **FontSets**: very important for multilingual characters and UTF-8 labels, font fallbacks
 * new  carto  2.0: **Point geoms have an edge** available for stroking. **THIS IS THE ONLY SHOW STOPPER.**
 
-#Advanced syntax (Map CSS 2.0):
+#Advanced bits (Map CSS 2.0):
 
 _All these must be supported to meet 2.0 compliance_
 
 * basic from  css: **Advanced CSS syntax** - RGBA, CYMK, HSV, etc other color spaces.
 * from cascadenik: **Local versus remote** data files.
+* from carto  1.0: **@variables** for color swatches, this is preprocessor to actual result. also can be used for graphic styles, and text character styles. _Moved 23 May 2012 per TMCW_
 * from carto  1.x: **RegEx filters** this a new, unversioned bit, grrr. Awesome, though. _Optional?_
 * from carto  1.0: **Nested style attachments (layer)** (::) are a repeated version of the exact selection, but with a different appearance styling on a new virtual layer. **OR should we move away to a procedure versus declarative?**
 * from carto  1.0: **style instances (features)** (/) similar to nested styles, but within the same original layer. 
 * from carto  1.0: **variable expresions** evaluation of variable expressions: _( @variable-stroke-width + 5 )_.... modifying color swatches, stroke-widths, and @variables, etc.
 * new  carto  2.0: **geometry type selectors** (point, line, polygon, raster) eg: _geom_type_selector.classname { ... }_ or _.classname _geom_type_selector { ... }_ (which is less CSS like, but more like the sketches below)  **THIS IS THE ONLY SHOW STOPPER.**
 
-#Super advanced syntax (Map CSS 3.0):
+#Super advanced bits (Map CSS 3.0):
 
 _All these must be supported to meet 3.0 compliance_
 
