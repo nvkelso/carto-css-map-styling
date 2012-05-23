@@ -45,8 +45,7 @@ _All these must be supported to meet 1.0 compliance_
 * from cascadenik: **Filters** for feature attributes (FIELDNAME=value or FIELDNAME>value)
 * new  carto  2.0: **@media zoom selection** [zoom] from Cascadenik and Carto 1.0 allowed, but also now: @media (zoom > 3) and (zoom < 10) {  #lakes {    /* style */   } }
 * new  carto  2.0: **display:none** - like !important, but for not showing stuff, regarless of other rules. 
-* from carto  1.0: **@variables** for color swatches, this is preprocessor to actual result.
-* new  carto  2.0: **@variables** for graphic styles, and text character styles (kinda in 1.0? AJ please elaborate)
+* from carto  1.0: **@variables** for color swatches, this is preprocessor to actual result. also can be used for graphic styles, and text character styles.
 * from cascadenik: **DataSourcesConfig** an XML tag similar to the Stylesheet tag that allows you to externalize elements in an easy to manage format. [More info »](https://github.com/mapnik/Cascadenik/wiki/Managing-Data-Sources)
 * from carto  1.0: **FontSets**: very important for multilingual characters and UTF-8 labels, font fallbacks
 * new  carto  2.0: **Point geoms have an edge** available for stroking. **THIS IS THE ONLY SHOW STOPPER.**
