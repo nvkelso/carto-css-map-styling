@@ -68,6 +68,7 @@ _All these must be supported to meet 2.0 compliance_
 1. from carto  1.0: **variable expresions** evaluation of variable expressions: `( @variable-stroke-width + 5 )` .... modifying color swatches, stroke-widths, and @variables, etc.
 1. new  carto  2.0: **@media zoom selection** [zoom] from Cascadenik and Carto 1.0 allowed, but also now: `@media (zoom > 3) and (zoom < 10) {  #lakes {    /* style */   } }`
 1. new  carto  2.0: **geometry type selectors** (point, line, polygon, raster) eg: `geom_type_selector.classname { ... }` or `.classname _geom_type_selector { ... }` (which is less CSS like, but more like the sketches below)  **THIS IS THE ONLY SHOW STOPPER.**
+1. new  carto  2.0: **interactivity templates**: should apply both to full vector and UTF8 grid approximations.
 
 #Super advanced bits (Map CSS 3.0):
 
