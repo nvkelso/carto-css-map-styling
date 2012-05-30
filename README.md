@@ -392,6 +392,8 @@ _All these must be supported to meet 2.0 compliance_
         `.layer[foo=1] { &[bar=2] { ... } }` versus 
         
         `.layer[foo=1] { [bar=2] { ... } }`
+        
+        Has implications for supporting filtering based on layer metadata, an unsupported feature as of now.
 
 1. **default.css** for geometry type selectors results in layers auto display TRUE instead of FALSE. Override with `display:none;`
 
@@ -419,6 +421,9 @@ _All these must be supported to meet 2.0 compliance_
     _Supported by: GeoServer_
     
         `* { stroke: black, white; }`
+        
+        Question: Should " " space be equivelant to "," comma? 
+        Space implies both, where comma implies fallback (in case of text-name, also for line-array).
         
         
 1. **nested styles** - from Less.js and Carto.
