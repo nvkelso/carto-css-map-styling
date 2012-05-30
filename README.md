@@ -446,7 +446,9 @@ _All these must be supported to meet 2.0 compliance_
     _Supported by: Carto_
         
          `shield-... stub`
-    
+        
+         Question: can you accomplish the same thing with && dependent property rending... 
+         or is this special enough to be a special case, even if that is true?
 
 
 #Super advanced bits (Map CSS 3.0):
