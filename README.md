@@ -67,6 +67,10 @@ _All these must be supported to meet 1.0 compliance_
 
     _Supported by: Cascadenik (only #rgb and #rrggbb, not 'black'), Carto (all), GeoServer (unkown), Gmaps?_
     
+         Properties consist of name/value pairs separated by colons (:).
+         
+         They are grouped per selector by { ... }.
+    
          `fill-color: #rgb;` or `fill-color: #rrggbb;` or `fill-color: black;` or `fill-color: url("image.png");` - Default is none.
     
          `fill-repeat: ...;` only comes to play when fill-color is set to an image. Default is ...
