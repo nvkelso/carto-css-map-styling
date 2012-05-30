@@ -214,7 +214,11 @@ _All these must be supported to meet 1.0 compliance_
 
     [zoom>14] supported by Cascadnik and Carto.
     
-    [@scale>100000] supported by GeoServer.
+    [@scale>100000] supported by GeoServer. JL likes something like this. Elaboration: syntax shouldn't compete with fieldnames.
+
+    Question: 
+    
+    [@zoom>14] should this be our future target?
         
 
 #Advanced bits (Map CSS 2.0):
