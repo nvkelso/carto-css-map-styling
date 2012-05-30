@@ -406,9 +406,12 @@ _All these must be supported to meet 2.0 compliance_
     
 1. **repeated properties** - Like layer-based style attachements (`::`), see above.
 
+    [Read more »](http://docs.geoserver.org/stable/en/user/community/css/multivalues.html)
+
     _Supported by: GeoServer_
     
         `* { stroke: black, white; }`
+        
         
 1. **nested styles** - from Less.js and Carto.
 
