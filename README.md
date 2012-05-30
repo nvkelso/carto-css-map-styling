@@ -148,6 +148,28 @@ _All these must be supported to meet 1.0 compliance_
 
          Both `marker-image: url('...');` and `point-image: url('...');` would translate to `marker-image: url('...');` before exporting to the native rendering environment syntax.
 
+1. **Layers, classes, ids, and layer metadata** - Layers are defined in the MML file and can include class="class1 class2 class3" or id="id1". Layers could have a name. Layers could have metadata.
+
+    _Supported by: Cascadenik, Carto, GeoSever_
+
+        .classname1 { ... }
+        .classname2 { ... }
+        .classname3 { ... }
+
+        #id1 { ... }
+        
+        GeoServer also allows:
+        
+        layername {}
+        
+        The layer metadata isn't built now but could be addressed by:
+        
+        .classname { &[layer_metadata_filter=value] { ... } }
+        
+        versus
+        
+        .classname { [feature_field_filter=value] { ... } }
+        
 
 #Advanced bits (Map CSS 2.0):
 
