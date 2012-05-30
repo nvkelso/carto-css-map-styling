@@ -59,7 +59,7 @@ NOTE: Extensions might include data formats (csv, shp in zip), data statistics (
         New in 3.0. With optional masks and positioning/attachment hints.
 
 
-#Core bits (Map CSS 1.0):
+#Core bits (Mappy CSS 1.0):
 
 _All these must be supported to meet 1.0 compliance_
 
@@ -218,7 +218,7 @@ _All these must be supported to meet 1.0 compliance_
     [@zoom>14] should this be our future target?
         
 
-#Advanced bits (Map CSS 2.0):
+#Advanced bits (Mappy CSS 2.0):
 
 _All these must be supported to meet 2.0 compliance_
 
@@ -451,7 +451,7 @@ _All these must be supported to meet 2.0 compliance_
          or is this special enough to be a special case, even if that is true?
 
 
-#Super advanced bits (Map CSS 3.0):
+#Super advanced bits (Mappy CSS 3.0):
 
 _All these must be supported to meet 3.0 compliance_
 
