@@ -52,25 +52,25 @@ _All these must be supported to meet 1.0 compliance_
 
     _Supported by: Cascadenik (only #rgb and #rrggbb, not 'black'), Carto (all), GeoServer (unkown), Gmaps?_
     
-    * `fill-color: #rgb;` or `fill-color: #rrggbb;` or `fill-color: black;` or `fill-color: url("image.png");` - Default is none.
+        * `fill-color: #rgb;` or `fill-color: #rrggbb;` or `fill-color: black;` or `fill-color: url("image.png");` - Default is none.
     
-    * `fill-repeat: ...;` only comes to play when fill-color is set to an image. Default is ...
+        * `fill-repeat: ...;` only comes to play when fill-color is set to an image. Default is ...
 
-    * `fill-opacity: 1.0;` - ratio range between 0.0 and 1.0. Default is 1.0
+        * `fill-opacity: 1.0;` - ratio range between 0.0 and 1.0. Default is 1.0
 
-    * `stroke-width: 2px;` - Default is none.
-    
-    * `stroke-color: #rrggbb;`  or `stroke-color: black;`.  - Default is none. Note: `stroke-color: url("image.png");` is an advanced feature.
-    
-    * `stroke-opacity: 1.0;`  - ratio range between 0.0 and 1.0. Default is 1.0
-
-    * `stroke-cap: round;` or `stroke-cap: butt;` 
-
-    * `marker-width: 2px;` - Default is none.
-    
-    * `marker-color: #rrggbb;` or `marker-color: url("image.png");` or `marker: url("image.png");` -- the last one of these is weird but interesting
+        * `stroke-width: 2px;` - Default is none.
         
-    * `marker-opacity: 1.0;`  - ratio range between 0.0 and 1.0. Default is 1.0
+        * `stroke-color: #rrggbb;`  or `stroke-color: black;`.  - Default is none. Note: `stroke-color: url("image.png");` is an advanced feature.
+    
+        * `stroke-opacity: 1.0;`  - ratio range between 0.0 and 1.0. Default is 1.0
+
+        * `stroke-cap: round;` or `stroke-cap: butt;` 
+
+        * `marker-width: 2px;` - Default is none.
+    
+        * `marker-color: #rrggbb;` or `marker-color: url("image.png");` or `marker: url("image.png");` -- the last one of these is weird but interesting
+        
+        * `marker-opacity: 1.0;`  - ratio range between 0.0 and 1.0. Default is 1.0
     
 1. **Filters** for feature attributes. Exactly equal, less than, greater than, less than or equal to, greater than or equal to.
 
