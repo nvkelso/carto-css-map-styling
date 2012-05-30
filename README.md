@@ -291,11 +291,13 @@ _All these must be supported to meet 2.0 compliance_
     
         `( @variable-stroke-width + 5 )`
 
-1. **@media zoom selection** [zoom] from Cascadenik and Carto 1.0 allowed, extended like below:  _Proposed by JL._
+1. ~~**@media zoom selection** [zoom] from Cascadenik and Carto 1.0 allowed, extended like below:  _Proposed by JL._~~
 
+    Deprecitated for [@zoom=10], see above in Core section.
+    
     _Supported by: none?_
     
-        `@media (zoom > 3) and (zoom < 10) {  #lakes {    /* style */   } }`
+        ~~`@media (zoom > 3) and (zoom < 10) {  #lakes {    /* style */   } }`~~
 
 1. **geometry type selectors** (point, line, polygon, raster) eg: `geom_type_selector.classname { ... }` or `.classname geom_type_selector { ... }` (which is less CSS like, but more like the sketches below)  Advanced: only test the first feature's type in a data store, assumes homogenious data in a single data store. **THIS IS THE ONLY SHOW STOPPER, might be relatively easy to implement in Cascadenik?** 
 
@@ -334,16 +336,6 @@ _All these must be supported to meet 2.0 compliance_
     _Supported by: Cascadenik (2.1.0)_
     
         .class[filter=value] { display:none; }
-
-1. **DataSourcesConfig** an XML tag similar to the Stylesheet tag that allows you to externalize elements in an easy to manage format. [More info »](https://github.com/mapnik/Cascadenik/wiki/Managing-Data-Sources)
-
-    _Supported by: Cascadenik via native XML property. Hard to accomplish in Carto's JSON format?_
-            
-        [DEFAULT]
-        natural_earth_110m_base_url = http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/110m
-        
-        [natural_earth_land_110m]
-        file = %(natural_earth_110m_base_url)s/physical/110m-land.zip
 
 1. **FontSets**: very important for multilingual characters and UTF-8 labels, font fallbacks
 
@@ -529,6 +521,19 @@ _Note: some are likely to remain vender specific implementations, -vender-proper
     _NOTE 2: Map CSS MML spec can be implemented in either XML (Cascadenik) or JSON (Carto) formats._
     
     _NOTE 3: Data source definition can be inline or an import in the MML. From cascadnik/carto 2.0. ¿Easy in XML format, harder in JSON?_
+
+For the MML layer setup:
+
+
+1. **DataSourcesConfig** an XML tag similar to the Stylesheet tag that allows you to externalize elements in an easy to manage format. [More info »](https://github.com/mapnik/Cascadenik/wiki/Managing-Data-Sources)
+
+    _Supported by: Cascadenik via native XML property. Hard to accomplish in Carto's JSON format?_
+            
+        [DEFAULT]
+        natural_earth_110m_base_url = http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/110m
+        
+        [natural_earth_land_110m]
+        file = %(natural_earth_110m_base_url)s/physical/110m-land.zip
 
 
 #Reasonable defaults:
