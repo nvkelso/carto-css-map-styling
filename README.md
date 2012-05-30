@@ -357,7 +357,7 @@ _All these must be supported to meet 2.0 compliance_
 
 1. **keyword-based style attachments** `.roads name { text-size:12px; text-color:#000; }` and `.roads ref { shield... }` are a repeated version of the exact selection, but with a different appearance styling on a new virtual layer. Useful for applying multiple labels, shields, or graphic styles.
 
-    _Supported by: Cascadenik_
+    _Supported by: Cascadenik, should be depreciated?_
     
         #world NAME {
           text-face-name: "Arial";
