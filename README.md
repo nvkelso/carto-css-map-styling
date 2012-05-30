@@ -152,12 +152,14 @@ _All these must be supported to meet 1.0 compliance_
 
 1. **Basic CSS syntax: text labels** - New "label once" `text-name:[fieldname]` where the [fieldname] grabs attributes per feature on render. This is extended either with `::` layer attachements or `keyword-attachments` to gain multiple text labels, shield symbolizers, etc.
 
-    _Supported by: Carto. Easy to implement in Cascadenik?_
+    _Supported by: Carto. Easy to implement in Cascadenik?, GeoServer._
             
         #world {
           text-name: "[NAME]";
           text-face-name: "Arial";
         }
+        
+        NOTE: In the end, text-name: [NAME] should be the ideal. This is supported only by GeoServer now.
 
 1. **Markers instead of points**: or `anchor`? Marker is more widely supported in Gmaps world. Mapnik's `point` should be hidden in this generic spec. _JL, NVK and NVK on 25 May and 29 May._
 
