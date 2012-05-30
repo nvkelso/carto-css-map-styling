@@ -280,6 +280,8 @@ _All these must be supported to meet 2.0 compliance_
         }
 
 1. **variable expresions** modifying color swatches, stroke-widths, and @variables, etc.
+    
+    The basic set proposed for HTML's CSS 3.0: +, -, *, /. Any others?
 
     _Supported by: Carto_
     
