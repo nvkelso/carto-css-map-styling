@@ -9,7 +9,7 @@ Question: Core bits should be universal. Extras should be wrapped in a Carto 2.0
 
 #Goals:
 
-1. CSS-like map design language. Syntax extends the foundation laid by [Cascadenik](https://github.com/mapnik/Cascadenik/wiki/Dictionary) and [Carto](http://mapbox.com/carto/) and the power of Less.js. [GeoServer](http://docs.geoserver.org/stable/en/user/community/css/index.html) is also joining the mix.
+1. CSS-like map design language. Syntax extends the foundation laid by [Cascadenik](https://github.com/mapnik/Cascadenik/wiki/Dictionary) and [Carto](http://mapbox.com/carto/) ([overview](https://github.com/mapbox/carto)) and the power of Less.js. [GeoServer](http://docs.geoserver.org/stable/en/user/community/css/index.html) is also joining the mix.
 2. Better support for reference-style maps by formalizing the use of @variables for color swatches, and mixins for graphic styles and text character styles.
 3. ~~¿Add support for thematic data cartography with data statistics like MIN, MAX, MEAN and use of those keywords in high-level filters that are under a dozen lines of code? Allow for both loose and hard connections between data and symbology.~~
 
@@ -95,9 +95,12 @@ _All these must be supported to meet 1.0 compliance_
 
 1. **Basic CSS syntax: text labels** - New "label once" `text-name:[fieldname]` where the [fieldname] grabs attributes per feature on render. This is extended either with `::` layer attachements or `keyword-attachments` to gain multiple text labels, shield symbolizers, etc.
 
-    _Supported by: none... Easy to implement in Cascadenik_
-    
-        `text-name:[fieldname]`
+    _Supported by: Carto. Easy to implement in Cascadenik?_
+            
+        #world {
+          text-name: "NAME";       // or text-name: "[NAME]";???
+          text-face-name: "Arial";
+        }
 
 1. **Markers instead of points**: or `anchor`? Marker is more widely supported in Gmaps world. Mapnik's `point` should be hidden in this generic spec. _JL, NVK and NVK on 25 May and 29 May._
 
@@ -123,6 +126,15 @@ _All these must be supported to meet 2.0 compliance_
 1. **Advanced CSS syntax** - RGBA, CYMK, HSV, etc other color spaces.
 
     _Supported by: Carto_
+    
+        #line {
+          line-color: #ff0;
+          line-color: #ffff00;
+          line-color: rgb(255, 255, 0);
+          line-color: rgba(255, 255, 0, 1);
+          line-color: hsl(100, 50%, 50%);
+          line-color: yellow;
+        }
 
 1. **Local versus remote** data files.
 
@@ -131,6 +143,13 @@ _All these must be supported to meet 2.0 compliance_
 1. **@variables** for color swatches, this is preprocessor to actual result. _Moved 23 May 2012 per TMCW, split off graphic styles and text character styles 29 May_
 
     _Supported by: Cascadenik (2.4.0), Carto (1.0)_
+    
+        @orange: #f90;
+        #road-a {  line-width: 2; line-color: @orange; }
+        
+        expands to:
+        
+        #road-b { line-width: 2; line-color: #f90 }
 
 1. **RegEx filters** 
 
@@ -141,22 +160,47 @@ _All these must be supported to meet 2.0 compliance_
 1. **layer-based style attachments** `::` are a repeated version of the exact selection, but with a different appearance styling on a new virtual layer. Useful for applying multiple labels, shields, or graphic styles. **OR should we move away to a procedure versus declarative?** See also, "repeated properties" below.
 
     _Supported by: Carto. Partial support by Cascadenik via keyword-based style attachments, see below._
+    
+        #world {
+          line-color: #fff;
+          line-width: 3;
+          }
+        
+          #world::outline {
+            line-color: #000;
+            line-width: 6;
+            }
 
 1. **feature-based style instances** `/` similar to nested styles, but within the same original layer. 
 
     _Supported by: Carto_
+    
+        #roads {
+          casing/line-width: 6;
+          casing/line-color: #333;
+          line-width: 4;
+          line-color: #666;
+        }
 
-1. **variable expresions** evaluation of variable expressions: `( @variable-stroke-width + 5 )` .... modifying color swatches, stroke-widths, and @variables, etc.
+1. **variable expresions** modifying color swatches, stroke-widths, and @variables, etc.
 
     _Supported by: Carto_
+    
+        `( @variable-stroke-width + 5 )`
 
-1. **@media zoom selection** [zoom] from Cascadenik and Carto 1.0 allowed, but also now: `@media (zoom > 3) and (zoom < 10) {  #lakes {    /* style */   } }` _Proposed by JL._
+1. **@media zoom selection** [zoom] from Cascadenik and Carto 1.0 allowed, extended like below:  _Proposed by JL._
 
     _Supported by: none?_
+    
+        `@media (zoom > 3) and (zoom < 10) {  #lakes {    /* style */   } }`
 
-1. **geometry type selectors** (point, line, polygon, raster) eg: `geom_type_selector.classname { ... }` or `.classname _geom_type_selector { ... }` (which is less CSS like, but more like the sketches below)  Advanced: only test the first feature's type in a data store, assumes homogenious data in a single data store. **THIS IS THE ONLY SHOW STOPPER, might be relatively easy to implement in Cascadenik?**
+1. **geometry type selectors** (point, line, polygon, raster) eg: `geom_type_selector.classname { ... }` or `.classname geom_type_selector { ... }` (which is less CSS like, but more like the sketches below)  Advanced: only test the first feature's type in a data store, assumes homogenious data in a single data store. **THIS IS THE ONLY SHOW STOPPER, might be relatively easy to implement in Cascadenik?** 
 
     _Supported by: GeoServer (eg: mark-geometry: [vertices(geom)];). Should be easy to add to Cascadenik._
+    
+        `geom_type_selector.classname { ... }` or 
+        
+        `.classname geom_type_selector { ... }`
 
 1. **interactivity templates**: should apply both to full vector and UTF8 grid approximations.
 
@@ -171,10 +215,20 @@ _All these must be supported to meet 2.0 compliance_
 1. **display:none** - like `!important`, but for not showing stuff, regardless of other rules. Default is `display:map`
 
     _Supported by: Cascadenik (2.1.0)_
+    
+        .class[filter=value] { display:none; }
 
 1. **DataSourcesConfig** an XML tag similar to the Stylesheet tag that allows you to externalize elements in an easy to manage format. [More info »](https://github.com/mapnik/Cascadenik/wiki/Managing-Data-Sources)
 
     _Supported by: Cascadenik via native XML property. Hard to accomplish in Carto's JSON format?_
+    
+        https://github.com/mapnik/Cascadenik/wiki/Managing-Data-Sources
+        
+        [DEFAULT]
+        natural_earth_110m_base_url = http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/110m
+        
+        [natural_earth_land_110m]
+        file = %(natural_earth_110m_base_url)s/physical/110m-land.zip
 
 1. **FontSets**: very important for multilingual characters and UTF-8 labels, font fallbacks
 
@@ -183,28 +237,65 @@ _All these must be supported to meet 2.0 compliance_
 1. **keyword-based style attachments** `.roads name { text-size:12px; text-color:#000; }` and `.roads ref { shield... }` are a repeated version of the exact selection, but with a different appearance styling on a new virtual layer. Useful for applying multiple labels, shields, or graphic styles.
 
     _Supported by: Cascadenik_
+    
+        #world NAME {
+          text-face-name: "Arial";
+        }
+        
+        expands to:
+        
+        #world {
+          text-name: "[NAME]";
+          text-face-name: "Arial";
+        }
 
 1. **mixins** for graphic styles, and text character styles. _Split off per TMCW, NVK, and MM conversation on 29 May_
 
     _Supported by: none..._
+    
+        @orange: #f90;
+        .roads { line-width: 2; line-color: @orange;  }
+        #road-a { .roads; }
+        #road-b { .roads; line-color: #00c }
+        
+        expands to:
+        
+        #road-a { line-width: 2; line-color: #f90; }
+        #road-b { line-width: 2; line-color: #00c }
+        
 
-1. **nesting combinator filters** `.layer[foo=1] { &[bar=2] { ... } }` versus `.layer[foo=1] { [bar=2] { ... } }`
+1. **nesting combinator filters** 
 
     _Supported by: Cascadenik (2.3.0), Carto_ Debate over the &[] versus [] formatting.
+    
+        `.layer[foo=1] { &[bar=2] { ... } }` versus 
+        
+        `.layer[foo=1] { [bar=2] { ... } }`
 
 1. **default.css** for geometry type selectors results in layers auto display TRUE instead of FALSE. Override with `display:none;`
 
     _Supported by: none... Predicated on "geometry type selectors" above._
+    
+        See section below.
 
-1. **string expressions for keys other than text-name** `text-name: "[fieldname]"` so `text-color: "#[fieldname]"` or `shield-file: "stuff/[fieldname].png"` is valid, too.
+1. **string expressions for keys other than text-name** 
 
+    Is this a duplicate of Super Advanced Bits: **data variables/expansion**???
+    
     _Supported by: Carto (partial)?_
     
-1. **repeated properties** - Like layer-based style attachements (`::`). eg: `* { stroke: black, white; }`
+        `text-name: "[fieldname]"` now
+        
+        future:
+        
+        `text-color: "#[fieldname]"`
+        `shield-file: "stuff/[fieldname].png"
+    
+1. **repeated properties** - Like layer-based style attachements (`::`), see above.
 
     _Supported by: GeoServer_
     
-    
+        `* { stroke: black, white; }`
     
 
 
@@ -218,21 +309,31 @@ _Note: some are likely to remain vender specific implementations, -vender-proper
 
     _Supported by: none..._
 
-1. **functional expressions** evaluation of variable expressions with a predefined function: `function( @variable-stroke-width )`
+1. **functional expressions** evaluation of variable expressions with a predefined function.
 
     _Supported by: Carto_
+    
+        `function( @variable-stroke-width )`
 
-1. **Selectors** for object _advanced_ **geometry components**: inner outer rings, vertex index and first, last. eg: `.classname geom_component_selector { ... }`
+1. **Selectors** for object _advanced_ **geometry components**: inner outer rings, vertex index and first, last.
 
     _Supported by: none..._
+    
+        `.classname geom_component_selector { ... }`
 
 1. **Dependant attachments** `&&` depend on the previous bits being rendered in that selection. Useful for text labels to require the anchor symbolization being placed. eg: point&&stroke
 
     _Supported by: none..._
 
-1. **Shorthand style properties** eg: `stroke: url(...) #9f0 repeat 20.0;` is now allowed, and expands to `{ stroke-image:url(...); stroke-color:#9f0; stroke-image-repeat:true; stroke-size:20.0px }`
+1. **Shorthand style properties** 
 
     _Supported by: none..._
+    
+        `stroke: url(...) #9f0 repeat 20.0;`
+        
+        expands to:
+        
+        `{ stroke-image:url(...); stroke-color:#9f0; stroke-image-repeat:true; stroke-size:20.0px }`
 
 1. **Special rendering targets w/r/t attachements (placement)**: interior, edge, registration, vertexes, parts there-of.
 
