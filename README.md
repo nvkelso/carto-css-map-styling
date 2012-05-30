@@ -235,12 +235,6 @@ _All these must be supported to meet 2.0 compliance_
           line-color: yellow;
         }
 
-1. **Local versus remote** data files.
-
-    _Supported by: Carto, Cascadenik_
-    
-    Carto does this as of the 0.2.0 release via separate [millstone](https://github.com/mapbox/millstone).
-
 1. **@variables** for color swatches, this is preprocessor to actual result. _Moved 23 May 2012 per TMCW, split off graphic styles and text character styles 29 May_
 
     _Supported by: Cascadenik (2.4.0), Carto (1.0)_
@@ -524,6 +518,11 @@ _Note: some are likely to remain vender specific implementations, -vender-proper
 
 For the MML layer setup:
 
+1. **Local versus remote** data files.
+
+    _Supported by: Carto, Cascadenik_
+    
+    Carto does this as of the 0.2.0 release via separate [millstone](https://github.com/mapbox/millstone).
 
 1. **DataSourcesConfig** an XML tag similar to the Stylesheet tag that allows you to externalize elements in an easy to manage format. [More info »](https://github.com/mapnik/Cascadenik/wiki/Managing-Data-Sources)
 
