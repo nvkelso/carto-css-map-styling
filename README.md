@@ -39,7 +39,8 @@ NOTE: Extensions might include data formats (csv, shp in zip), data statistics (
         
 1. **Size by**: anchors, strokes, and labels have a 2d extrusion measurement (eg: 2px) 
 
-        For images, the size is implied by a non-repeat dimension of the source image. Others are determined by default style CSS. Continues from Cascadenik/Carto 1.0
+        For images, the size is implied by a non-repeat dimension of the source image. 
+        Others are determined by default style CSS. Continues from Cascadenik/Carto 1.0.
     
 1. **Ink with** for color (mask) areas (extrusion of stroke, or fill): rgb, cmyk, hsv, gradient, image (with repeat options). 
 
