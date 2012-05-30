@@ -142,9 +142,9 @@ _All these must be supported to meet 1.0 compliance_
 
     _Supported by: none... Should be easy to implement in Cascadenik, Carto for Mapnik using the marker versus point XML syntax?_
     
-         In Map CSS: `marker-width: 2px;` translates to Mapnik XML `point-height: 2px; point-width: 2px;`
+         In Mappy CSS: `marker-width: 2px;` translates to Mapnik XML `point-height: 2px; point-width: 2px;`
 
-         In Map CSS: `marker-image: url('image.png');` translates to Mapnik XML `marker-image: url('image');`
+         In Mappy CSS: `marker-image: url('image.png');` translates to Mapnik XML `marker-image: url('image');`
 
 1. **Basic CSS syntax: text labels** - New "label once" `text-name:[fieldname]` where the [fieldname] grabs attributes per feature on render. This is extended either with `::` layer attachements or `keyword-attachments` to gain multiple text labels, shield symbolizers, etc.
 
@@ -508,7 +508,7 @@ _Note: some are likely to remain vender specific implementations, -vender-proper
 
 #File structure
 
-* **MSS** for the Map CSS styling definition.
+* **MSS** for the Mappy CSS styling definition.
 * **MML** for the datasources and their layering. 
 
     _NOTE 1: Mappy CSS MML spec can embed the MSS part rather than linking to external file (the default)._
