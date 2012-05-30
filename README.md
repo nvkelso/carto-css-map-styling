@@ -387,6 +387,18 @@ _All these must be supported to meet 2.0 compliance_
     
         See section below.
 
+1. **Advanced CSS syntax: shields**
+
+    _Supported by: Carto_
+        
+         `shield-... stub`
+        
+         Question: can you accomplish the same thing with && dependent property rending... 
+         or is this special enough to be a special case, even if that is true?
+
+
+#Super advanced bits (Mappy CSS 3.0):
+
 1. **string expressions for keys other than text-name** 
 
     Is this a duplicate of Super Advanced Bits: **data variables/expansion**???
@@ -426,18 +438,6 @@ _All these must be supported to meet 2.0 compliance_
             polygon-fill: #000;
           }
         }
-
-1. **Advanced CSS syntax: shields**
-
-    _Supported by: Carto_
-        
-         `shield-... stub`
-        
-         Question: can you accomplish the same thing with && dependent property rending... 
-         or is this special enough to be a special case, even if that is true?
-
-
-#Super advanced bits (Mappy CSS 3.0):
 
 
 #Extremely advanced bits (Mappy CSS 4.0):
