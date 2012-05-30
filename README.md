@@ -160,6 +160,15 @@ _All these must be supported to meet 1.0 compliance_
         }
         
         NOTE: In the end, text-name: [NAME] should be the ideal. This is supported only by GeoServer now.
+        
+        NOTE: In GeoServer, this is:
+        
+        {
+            label: [STATE_ABBR];
+            font-family: "Times New Roman";
+            font-style: normal;
+            font-size: 14;
+        }
 
 1. **Markers instead of points**: or `anchor`? Marker is more widely supported in Gmaps world. Mapnik's `point` should be hidden in this generic spec. _JL, NVK and NVK on 25 May and 29 May._
 
