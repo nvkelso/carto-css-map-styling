@@ -126,7 +126,7 @@ _All these must be supported to meet 1.0 compliance_
     _Supported by: Carto. Easy to implement in Cascadenik?_
             
         #world {
-          text-name: "NAME";          // or text-name: "[NAME]";???
+          text-name: "[NAME]";
           text-face-name: "Arial";
         }
 
