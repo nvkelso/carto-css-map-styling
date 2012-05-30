@@ -254,31 +254,6 @@ _All these must be supported to meet 2.0 compliance_
          
          Note: GeoServer also supports: [LIKE](http://docs.geoserver.org/stable/en/user/community/css/filters.html), but not explicate RegEx.
 
-1. **layer-based style attachments** `::` are a repeated version of the exact selection, but with a different appearance styling on a new virtual layer. Useful for applying multiple labels, shields, or graphic styles. **OR should we move away to a procedure versus declarative?** See also, "repeated properties" below.
-
-    _Supported by: Carto. Partial support by Cascadenik via keyword-based style attachments, see below._
-    
-        #world {
-          line-color: #fff;
-          line-width: 3;
-          }
-        
-          #world::outline {
-            line-color: #000;
-            line-width: 6;
-            }
-            
-1. **feature-based style instances** `/` similar to nested styles, but within the same original layer. 
-
-    _Supported by: Carto_
-    
-        #roads {
-          casing/line-width: 6;
-          casing/line-color: #333;
-          line-width: 4;
-          line-color: #666;
-        }
-
 1. **variable expresions** modifying color swatches, stroke-widths, and @variables, etc.
     
     The basic set proposed for HTML's CSS 3.0: +, -, *, /. Any others?
@@ -375,6 +350,31 @@ _All these must be supported to meet 2.0 compliance_
 
 
 #Super advanced bits (Mappy CSS 3.0):
+
+1. **layer-based style attachments** `::` are a repeated version of the exact selection, but with a different appearance styling on a new virtual layer. Useful for applying multiple labels, shields, or graphic styles. **OR should we move away to a procedure versus declarative?** See also, "repeated properties" below.
+
+    _Supported by: Carto. Partial support by Cascadenik via keyword-based style attachments, see below._
+    
+        #world {
+          line-color: #fff;
+          line-width: 3;
+          }
+        
+          #world::outline {
+            line-color: #000;
+            line-width: 6;
+            }
+            
+1. **feature-based style instances** `/` similar to nested styles, but within the same original layer. 
+
+    _Supported by: Carto_
+    
+        #roads {
+          casing/line-width: 6;
+          casing/line-color: #333;
+          line-width: 4;
+          line-color: #666;
+        }
 
 1. **keyword-based style attachments** `.roads name { text-size:12px; text-color:#000; }` and `.roads ref { shield... }` are a repeated version of the exact selection, but with a different appearance styling on a new virtual layer. Useful for applying multiple labels, shields, or graphic styles.
 
