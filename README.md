@@ -67,6 +67,10 @@ _All these must be supported to meet 1.0 compliance_
 
     _Supported by: Cascadenik (only #rgb and #rrggbb, not 'black'), Carto (all), GeoServer (all except those not already supported by GeoTools renderer: fill-repeat, marker-placement, marker-overlap, marker-spacing), Gmaps?_
     
+         Properties consist of name/value pairs separated by colons (:).
+         
+         They are grouped per selector by { ... }.
+    
          `fill-color: #rgb;` or `fill-color: #rrggbb;` or `fill-color: black;` or `fill-color: url("image.png");` - Default is none.
     
          `fill-repeat: ...;` only comes to play when fill-color is set to an image. Default is ...
@@ -108,6 +112,31 @@ _All these must be supported to meet 1.0 compliance_
         #world[population < 100]
         #world[population >= 100]
         #world[population <= 100]
+        
+        Note: GeoServer also supports: [LIKE](http://docs.geoserver.org/stable/en/user/community/css/filters.html)
+        
+        No filter:
+        
+        ?? in Carto and Cascadenik.
+        
+        * { ... } in GeoServer
+        
+        Combining filters:
+        
+        Combination is done in the usual CSS way. A rule with two filters separated by a 
+        comma affects any features that match either filter, while a rule with two filters
+        separated by only whitespace affects only features that match both filters. Here’s
+        an example using a basic attribute filter (described below):
+        
+        /* Matches places where the lake is flooding */
+        [rainfall>12] [lakes>1] {
+            fill: black;
+        }
+        
+        /* Matches wet places */
+        [rainfall>12], [lakes>1] {
+            fill: blue;
+        }
     
 1. ~~**display:none** - like `!important`, but for not showing stuff, regardless of other rules.~~
 1. ~~**DataSourcesConfig** an XML tag similar to the Stylesheet tag that allows you to externalize elements in an easy to manage format. [More info »](https://github.com/mapnik/Cascadenik/wiki/Managing-Data-Sources)~~
@@ -165,6 +194,36 @@ _All these must be supported to meet 1.0 compliance_
 
          Both `marker-image: url('...');` and `point-image: url('...');` would translate to `marker-image: url('...');` before exporting to the native rendering environment syntax.
 
+1. **Layers, classes, ids, and layer metadata** - Layers are defined in the MML file and can include class="class1 class2 class3" or id="id1". Layers could have a name. Layers could have metadata.
+
+    _Supported by: Cascadenik, Carto, GeoSever_
+
+        .classname1 { ... }
+        .classname2 { ... }
+        .classname3 { ... }
+
+        #id1 { ... }
+        
+        GeoServer also allows:
+        
+        layername {}
+        
+        The layer metadata isn't built now but could be addressed by:
+        
+        .classname { &[layer_metadata_filter=value] { ... } }
+        
+        versus
+        
+        .classname { [feature_field_filter=value] { ... } }
+        
+1. **Zoom and scale denominator**
+
+    _Supported by: Cascadenik, Carto, GeoSever_
+
+    [zoom>14] supported by Cascadnik and Carto.
+    
+    [@scale>100000] supported by GeoServer.
+        
 
 #Advanced bits (Map CSS 2.0):
 
@@ -187,7 +246,7 @@ _All these must be supported to meet 2.0 compliance_
 
     _Supported by: Carto, Cascadenik_
     
-    Carto does this as of the 0.2.0 release and [millstone](https://github.com/mapbox/millstone).
+    Carto does this as of the 0.2.0 release via separate [millstone](https://github.com/mapbox/millstone).
 
 1. **@variables** for color swatches, this is preprocessor to actual result. _Moved 23 May 2012 per TMCW, split off graphic styles and text character styles 29 May_
 
@@ -261,6 +320,8 @@ _All these must be supported to meet 2.0 compliance_
     _Supported by: none..._
     
     Note: Carto supports passthru of the interactivity templates in TileMill, but doesn't support it explicately.
+    
+    The interactivity spec Carto wraps is [utfgrid-spec](https://github.com/mapbox/utfgrid-spec/tree/master/1.2).
 
 1. **Advanced CSS syntax: stroke**
 
