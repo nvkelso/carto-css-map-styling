@@ -65,7 +65,7 @@ _All these must be supported to meet 1.0 compliance_
 
 1. **Basic CSS syntax: stroke, fill, marker (was point, also talked about anchor)**
 
-    _Supported by: Cascadenik (only #rgb and #rrggbb, not 'black'), Carto (all), GeoServer (unkown), Gmaps?_
+    _Supported by: Cascadenik (only #rgb and #rrggbb, not 'black'), Carto (all), GeoServer (all except those not already supported by GeoTools renderer: fill-repeat, marker-placement, marker-overlap, marker-spacing), Gmaps?_
     
          `fill-color: #rgb;` or `fill-color: #rrggbb;` or `fill-color: black;` or `fill-color: url("image.png");` - Default is none.
     
@@ -100,8 +100,7 @@ _All these must be supported to meet 1.0 compliance_
     
 1. **Filters** for feature attributes. Exactly equal, not equal, less than, greater than, less than or equal to, greater than or equal to based on class or id selectors.
 
-    _Supported by: Cascadenik, Carto_
-    
+    _Supported by: Cascadenik, Carto, GeoServer (actually embeds [ECQL](http://docs.geoserver.org/latest/en/user/filter/ecql_reference.html))_
         #world[population = 100]
         #world[population != 100]
     
@@ -121,9 +120,29 @@ _All these must be supported to meet 1.0 compliance_
 
          In Map CSS: `marker-image: url('image.png');` translates to Mapnik XML `marker-image: url('image');`
 
+    _In GeoServer, implemented by supporting polygon styling options on a ``:mark`` pseudoelement:
+
+         [prop > 100] {
+             mark: symbol("circle");
+         }
+
+         [prop > 100] :mark {
+             stroke: blue;
+         }
+
+         // or, with nested rules:
+         /////////////////////////
+
+         [prop > 100] {
+             mark: symbol("circle");
+             :mark { 
+                 stroke: blue;
+             }
+         }
+
 1. **Basic CSS syntax: text labels** - New "label once" `text-name:[fieldname]` where the [fieldname] grabs attributes per feature on render. This is extended either with `::` layer attachements or `keyword-attachments` to gain multiple text labels, shield symbolizers, etc.
 
-    _Supported by: Carto. Easy to implement in Cascadenik?_
+    _Supported by: Carto, GeoServer (uses slightly different [notation](http://docs.geoserver.org/stable/en/user/community/css/values.html#labels)) . Easy to implement in Cascadenik?_
             
         #world {
           text-name: "[NAME]";
@@ -153,7 +172,7 @@ _All these must be supported to meet 2.0 compliance_
 
 1. **Advanced CSS syntax** - RGBA, CYMK, HSV, etc other color spaces.
 
-    _Supported by: Carto_
+    _Supported by: Carto_ . GeoServer has support for rgb() but no others
     
         #line {
           line-color: #ff0;
@@ -183,7 +202,7 @@ _All these must be supported to meet 2.0 compliance_
 
 1. **RegEx filters** 
 
-    _Supported by: Carto (1.x)_
+    _Supported by: Carto (1.x), GeoServer (uses alternate [syntax](http://docs.geoserver.org/latest/en/user/filter/ecql_reference.html#predicate))_
     
          `/* a regular expression over name */ #world[name =~ "A.*"]`
 
@@ -245,7 +264,7 @@ _All these must be supported to meet 2.0 compliance_
 
 1. **Advanced CSS syntax: stroke**
 
-    _Supported by: none..._
+    _Supported by: GeoServer (``stroke``, not ``stroke-color``GeoServer (``stroke``, not ``stroke-color``. ``stroke-repeat`` property takes keyword values indicating whether to use the image as a fill pattern or a stroke following the line)_
         
          `stroke-color: url("image.png");` or `stroke-background: url("image.png");`
     
@@ -355,7 +374,7 @@ _All these must be supported to meet 2.0 compliance_
 
 1. **Advanced CSS syntax: shields**
 
-    _Supported by: Carto_
+    _Supported by: Carto, GeoServer_
         
          `shield-... stub`
     
@@ -404,7 +423,7 @@ _Note: some are likely to remain vender specific implementations, -vender-proper
 
 1. **Special rendering targets w/r/t attachements (placement)**: interior, edge, registration, vertexes, parts there-of.
 
-    _Supported by: none... A little in GeoServer?_
+    _Supported by: none... GeoServer gets partway there with the ["geometry transformation"](http://docs.geoserver.org/stable/en/user/styling/sld-extensions/geometry-transformations.html) SLD extension_
         
         In Carto and Cascadnik, this is: ???
         
