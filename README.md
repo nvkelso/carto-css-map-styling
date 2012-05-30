@@ -170,6 +170,14 @@ _All these must be supported to meet 1.0 compliance_
         
         .classname { [feature_field_filter=value] { ... } }
         
+1. **Zoom and scale denominator**
+
+    _Supported by: Cascadenik, Carto, GeoSever_
+
+    [zoom>14] supported by Cascadnik and Carto.
+    
+    [@scale>100000] supported by GeoServer.
+        
 
 #Advanced bits (Map CSS 2.0):
 
