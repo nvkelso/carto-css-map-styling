@@ -511,9 +511,9 @@ _Note: some are likely to remain vender specific implementations, -vender-proper
 * **MSS** for the Map CSS styling definition.
 * **MML** for the datasources and their layering. 
 
-    _NOTE 1: Map CSS MML spec can embed the MSS part rather than linking to external file (the default)._
+    _NOTE 1: Mappy CSS MML spec can embed the MSS part rather than linking to external file (the default)._
 
-    _NOTE 2: Map CSS MML spec can be implemented in either XML (Cascadenik) or JSON (Carto) formats._
+    _NOTE 2: Mappy CSS MML spec can be implemented in either XML (Cascadenik) or JSON (Carto) formats._
     
     _NOTE 3: Data source definition can be inline or an import in the MML. From cascadnik/carto 2.0. ¿Easy in XML format, harder in JSON?_
 
