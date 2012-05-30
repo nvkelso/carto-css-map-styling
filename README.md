@@ -109,6 +109,8 @@ _All these must be supported to meet 1.0 compliance_
         #world[population < 100]
         #world[population >= 100]
         #world[population <= 100]
+        
+        Note: GeoServer also supports: [LIKE](http://docs.geoserver.org/stable/en/user/community/css/filters.html)
     
 1. ~~**display:none** - like `!important`, but for not showing stuff, regardless of other rules.~~
 1. ~~**DataSourcesConfig** an XML tag similar to the Stylesheet tag that allows you to externalize elements in an easy to manage format. [More info »](https://github.com/mapnik/Cascadenik/wiki/Managing-Data-Sources)~~
