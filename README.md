@@ -217,7 +217,12 @@ _All these must be supported to meet 2.0 compliance_
     
         `geom_type_selector.classname { ... }` or 
         
-        `.classname geom_type_selector { ... }`
+        `.classname geom_type_selector { ... }` or 
+        
+        * {
+          marker-symbol: 'circle';
+          maker-geometry: [vertices(the_geom)];
+        }
 
 1. **interactivity templates**: should apply both to full vector and UTF8 grid approximations.
 
