@@ -341,21 +341,6 @@ _All these must be supported to meet 2.0 compliance_
           text-face-name: "Georgia Regular", "Arial Italic";
         }
 
-1. **keyword-based style attachments** `.roads name { text-size:12px; text-color:#000; }` and `.roads ref { shield... }` are a repeated version of the exact selection, but with a different appearance styling on a new virtual layer. Useful for applying multiple labels, shields, or graphic styles.
-
-    _Supported by: Cascadenik_
-    
-        #world NAME {
-          text-face-name: "Arial";
-        }
-        
-        expands to:
-        
-        #world {
-          text-name: "[NAME]";
-          text-face-name: "Arial";
-        }
-
 1. **mixins** for graphic styles, and text character styles. _Split off per TMCW, NVK, and MM conversation on 29 May_
 
     _Supported by: none..._
@@ -389,6 +374,21 @@ _All these must be supported to meet 2.0 compliance_
 
 #Super advanced bits (Mappy CSS 3.0):
 
+1. **keyword-based style attachments** `.roads name { text-size:12px; text-color:#000; }` and `.roads ref { shield... }` are a repeated version of the exact selection, but with a different appearance styling on a new virtual layer. Useful for applying multiple labels, shields, or graphic styles.
+
+    _Supported by: Cascadenik_
+    
+        #world NAME {
+          text-face-name: "Arial";
+        }
+        
+        expands to:
+        
+        #world {
+          text-name: "[NAME]";
+          text-face-name: "Arial";
+        }
+
 1. **nesting combinator filters** 
 
     _Supported by: Cascadenik (2.3.0), Carto_ Debate over the &[] versus [] formatting.
@@ -398,7 +398,6 @@ _All these must be supported to meet 2.0 compliance_
         `.layer[foo=1] { [bar=2] { ... } }`
         
         Has implications for supporting filtering based on layer metadata, an unsupported feature as of now.
-
 
 
 1. **string expressions for keys other than text-name** 
