@@ -280,21 +280,15 @@ _All these must be supported to meet 2.0 compliance_
           maker-geometry: [vertices(the_geom)];
         }
 
-1. **interactivity templates**: should apply both to full vector and UTF8 grid approximations.
-
-    _Supported by: none..._
-    
-    Note: Carto supports passthru of the interactivity templates in TileMill, but doesn't support it explicately.
-    
-    The interactivity spec Carto wraps is [utfgrid-spec](https://github.com/mapbox/utfgrid-spec/tree/master/1.2).
-
 1. **Advanced CSS syntax: stroke**
 
     _Supported by: none..._
         
          `stroke-color: url("image.png");` or `stroke-background: url("image.png");`
     
-1. **display:none** - like `!important`, but for not showing stuff, regardless of other rules. Default is `display:map`
+1. **display:none** - like `!important`, but for not showing stuff, regardless of other rules. 
+
+    Default is `display:map`
 
     _Supported by: Cascadenik (2.1.0)_
     
@@ -308,22 +302,7 @@ _All these must be supported to meet 2.0 compliance_
           text-name: "[NAME]";
           text-size: 11;
           text-face-name: "Georgia Regular", "Arial Italic";
-        }
-
-1. **mixins** for graphic styles, and text character styles. _Split off per TMCW, NVK, and MM conversation on 29 May_
-
-    _Supported by: none..._
-    
-        @orange: #f90;
-        .roads { line-width: 2; line-color: @orange;  }
-        #road-a { .roads; }
-        #road-b { .roads; line-color: #00c }
-        
-        expands to:
-        
-        #road-a { line-width: 2; line-color: #f90; }
-        #road-b { line-width: 2; line-color: #00c }
-        
+        }        
 
 1. **default.css** for geometry type selectors results in layers auto display TRUE instead of FALSE. Override with `display:none;`
 
@@ -441,6 +420,20 @@ _All these must be supported to meet 2.0 compliance_
             polygon-fill: #000;
           }
         }
+        
+1. **mixins** for graphic styles, and text character styles. _Split off per TMCW, NVK, and MM conversation on 29 May_
+
+    _Supported by: none..._
+    
+        @orange: #f90;
+        .roads { line-width: 2; line-color: @orange;  }
+        #road-a { .roads; }
+        #road-b { .roads; line-color: #00c }
+        
+        expands to:
+        
+        #road-a { line-width: 2; line-color: #f90; }
+        #road-b { line-width: 2; line-color: #00c }
 
 
 #Extremely advanced bits (Mappy CSS 4.0):
@@ -518,7 +511,6 @@ _Note: some are likely to remain vender specific implementations, -vender-proper
 * **MSS** for the Map CSS styling definition.
 * **MML** for the datasources and their layering. 
 
-
     _NOTE 1: Map CSS MML spec can embed the MSS part rather than linking to external file (the default)._
 
     _NOTE 2: Map CSS MML spec can be implemented in either XML (Cascadenik) or JSON (Carto) formats._
@@ -542,6 +534,14 @@ For the MML layer setup:
         
         [natural_earth_land_110m]
         file = %(natural_earth_110m_base_url)s/physical/110m-land.zip
+
+1. **interactivity templates**: should apply both to full vector and UTF8 grid approximations.
+
+    _Supported by: UTFGRID spec, passed thru by Carto and Cascadenik?_
+    
+    Note: Carto supports passthru of the interactivity templates in TileMill, but doesn't support it explicately.
+    
+    The interactivity spec Carto wraps is [utfgrid-spec](https://github.com/mapbox/utfgrid-spec/tree/master/1.2).
 
 
 #Reasonable defaults:
