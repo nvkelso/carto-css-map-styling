@@ -243,9 +243,7 @@ _All these must be supported to meet 2.0 compliance_
 1. **DataSourcesConfig** an XML tag similar to the Stylesheet tag that allows you to externalize elements in an easy to manage format. [More info »](https://github.com/mapnik/Cascadenik/wiki/Managing-Data-Sources)
 
     _Supported by: Cascadenik via native XML property. Hard to accomplish in Carto's JSON format?_
-    
-        https://github.com/mapnik/Cascadenik/wiki/Managing-Data-Sources
-        
+            
         [DEFAULT]
         natural_earth_110m_base_url = http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/110m
         
