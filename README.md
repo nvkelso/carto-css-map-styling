@@ -104,7 +104,7 @@ _All these must be supported to meet 1.0 compliance_
     
 1. **Filters** for feature attributes. Exactly equal, not equal, less than, greater than, less than or equal to, greater than or equal to based on class or id selectors.
 
-    _Supported by: Cascadenik, Carto_
+    _Supported by: Cascadenik, Carto, GeoServer._
     
         #world[population = 100]
         #world[population != 100]
@@ -113,14 +113,10 @@ _All these must be supported to meet 1.0 compliance_
         #world[population < 100]
         #world[population >= 100]
         #world[population <= 100]
-        
-        Note: GeoServer also supports: [LIKE](http://docs.geoserver.org/stable/en/user/community/css/filters.html)
-        
+                
         No filter:
         
-        ?? in Carto and Cascadenik.
-        
-        * { ... } in GeoServer
+        * { ... } in Cascadenik and GeoServer, think this is true in Carto too.
         
         Combining filters:
         
@@ -257,9 +253,11 @@ _All these must be supported to meet 2.0 compliance_
 
 1. **RegEx filters** 
 
-    _Supported by: Carto (1.x)_
+    _Supported by: Carto (1.x), Geoserver._
     
          `/* a regular expression over name */ #world[name =~ "A.*"]`
+         
+         Note: GeoServer also supports: [LIKE](http://docs.geoserver.org/stable/en/user/community/css/filters.html), but not explicate RegEx.
 
 1. **layer-based style attachments** `::` are a repeated version of the exact selection, but with a different appearance styling on a new virtual layer. Useful for applying multiple labels, shields, or graphic styles. **OR should we move away to a procedure versus declarative?** See also, "repeated properties" below.
 
