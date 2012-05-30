@@ -239,7 +239,9 @@ _All these must be supported to meet 2.0 compliance_
 
 1. **interactivity templates**: should apply both to full vector and UTF8 grid approximations.
 
-    _Supported by: kinda in Carto?_
+    _Supported by: none..._
+    
+    Note: Carto supports passthru of the interactivity templates in TileMill, but doesn't support it explicately.
 
 1. **Advanced CSS syntax: stroke**
 
