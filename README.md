@@ -79,13 +79,24 @@ _All these must be supported to meet 1.0 compliance_
     
          `stroke-opacity: 1.0;`  - ratio range between 0.0 and 1.0. Default is 1.0
 
-         `stroke-cap: round;` or `stroke-cap: butt;` 
+         `stroke-cap: round;` or `stroke-cap: butt;`  or `stroke-cap: square;` 
 
-         `marker-width: 2px;` - Default is none.
+         `stroke-join: miter;` or `stroke-join: round;` or `stroke-join: bevel;`
+
+         `stroke-dash-array: [a,b...]`
+
+         `marker-width: 2px;` - Default is none. This results in a circle of diameter 2. If an image is specified, it overrides the image's native size.
     
          `marker-color: #rrggbb;` or `marker-color: url("image.png");` or `marker: url("image.png");` -- the last one of these is weird but interesting
         
          `marker-opacity: 1.0;`  - ratio range between 0.0 and 1.0. Default is 1.0
+
+         `marker-placement: point;` or `marker-placement: line;`
+
+         `marker-overlap: false;` or `marker-overlap: true;` - defaults to false.
+
+         `marker-spacing: 100px;` - 
+
     
 1. **Filters** for feature attributes. Exactly equal, not equal, less than, greater than, less than or equal to, greater than or equal to based on class or id selectors.
 
@@ -338,6 +349,11 @@ _All these must be supported to meet 2.0 compliance_
           }
         }
 
+1. **Advanced CSS syntax: shields**
+
+    _Supported by: Carto_
+        
+         `shield-... stub`
     
 
 
@@ -385,6 +401,11 @@ _Note: some are likely to remain vender specific implementations, -vender-proper
 1. **Special rendering targets w/r/t attachements (placement)**: interior, edge, registration, vertexes, parts there-of.
 
     _Supported by: none... A little in GeoServer?_
+        
+        In Carto and Cascadnik, this is: ???
+        
+        line-pattern
+        polygon-pattern
 
 1. **Rendering/compositing targets** are implied but can be explicate or overridden: fill-, stroke-, anchor-, and data-. _Note: color:#hex is implied as fill-color:#hex._
 
