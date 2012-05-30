@@ -242,6 +242,8 @@ _All these must be supported to meet 2.0 compliance_
     _Supported by: none..._
     
     Note: Carto supports passthru of the interactivity templates in TileMill, but doesn't support it explicately.
+    
+    The interactivity spec Carto wraps is [utfgrid-spec](https://github.com/mapbox/utfgrid-spec/tree/master/1.2).
 
 1. **Advanced CSS syntax: stroke**
 
