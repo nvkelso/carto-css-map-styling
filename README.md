@@ -246,14 +246,6 @@ _All these must be supported to meet 2.0 compliance_
         
         #road-b { line-width: 2; line-color: #f90 }
 
-1. **variable expresions** modifying color swatches, stroke-widths, and @variables, etc.
-    
-    The basic set proposed for HTML's CSS 3.0: +, -, *, /. Any others?
-
-    _Supported by: Carto_
-    
-        `( @variable-stroke-width + 5 )`
-
 1. ~~**@media zoom selection** [zoom] from Cascadenik and Carto 1.0 allowed, extended like below:  _Proposed by JL._~~
 
     Deprecitated for [@zoom=10], see above in Core section.
@@ -321,6 +313,14 @@ _All these must be supported to meet 2.0 compliance_
 
 
 #Super advanced bits (Mappy CSS 3.0):
+
+1. **variable expresions** modifying color swatches, stroke-widths, and @variables, etc.
+    
+    The basic set proposed for HTML's CSS 3.0: +, -, *, /. Any others?
+
+    _Supported by: Carto_
+    
+        `( @variable-stroke-width + 5 )`
 
 1. **RegEx filters** 
 
