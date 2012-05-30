@@ -117,6 +117,23 @@ _All these must be supported to meet 1.0 compliance_
         ?? in Carto and Cascadenik.
         
         * { ... } in GeoServer
+        
+        Combining filters:
+        
+        Combination is done in the usual CSS way. A rule with two filters separated by a 
+        comma affects any features that match either filter, while a rule with two filters
+        separated by only whitespace affects only features that match both filters. Here’s
+        an example using a basic attribute filter (described below):
+        
+        /* Matches places where the lake is flooding */
+        [rainfall>12] [lakes>1] {
+            fill: black;
+        }
+        
+        /* Matches wet places */
+        [rainfall>12], [lakes>1] {
+            fill: blue;
+        }
     
 1. ~~**display:none** - like `!important`, but for not showing stuff, regardless of other rules.~~
 1. ~~**DataSourcesConfig** an XML tag similar to the Stylesheet tag that allows you to externalize elements in an easy to manage format. [More info »](https://github.com/mapnik/Cascadenik/wiki/Managing-Data-Sources)~~
