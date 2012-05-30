@@ -31,17 +31,31 @@ NOTE: Extensions might include data formats (csv, shp in zip), data statistics (
 #Atomic bits (nouns, verbs):
 
 1. **CSS target**: anchor, stroke, fill, label/text, data. 
-`Note: reimagined a bit from basic HTML CSS and Cascadenik, Carto. Anchor is new in 1.0, label/text is better in 1.0/2.0/3.0??, data formalized in 1.0/2.0?`
+
+        Note: reimagined a bit from basic HTML CSS and Cascadenik, Carto. 
+        Marker is new in 1.0 (was point).
+        Text is more consistent in 1.0 and powerful in 2.0.
+        Interactivity and data formalized 2/3?
+        
 1. **Size by**: anchors, strokes, and labels have a 2d extrusion measurement (eg: 2px) 
-`For images, the size is implied by a non-repeat dimension of the source image. Others are determined by default style CSS. Continues from Cascadenik/Carto 1.0`
+
+        For images, the size is implied by a non-repeat dimension of the source image. Others are determined by default style CSS. Continues from Cascadenik/Carto 1.0
+    
 1. **Ink with** for color (mask) areas (extrusion of stroke, or fill): rgb, cmyk, hsv, gradient, image (with repeat options). 
-`With alpha. All color spaces/images/gradient are coallpsed in "ink" in Carto 2.0`
+
+        With alpha. All color spaces/images/gradient are coallpsed in "ink" in Carto 2.0
+
 1. **Object geometry type filter**: point, line, polygon, continuous-field aka raster. 
-`New in 2.0`
+
+        New in 2.0
+
 1. **Object geometry component filter**: The component polys, rings, & vertex. 
-`New in 3.0`
-1. **Rendering target**: (pivots off geometry type) registration, edge, interior, LABEL, INTERACTIVITY. 
-`New in 3.0. With optional masks and positioning/attachment hints.`
+    
+        New in 3.0
+    
+1. **Rendering target**: (pivots off geometry type) registration, edge, interior, LABEL, DATA, INTERACTIVITY. 
+        
+        New in 3.0. With optional masks and positioning/attachment hints.
 
 
 #Core bits (Map CSS 1.0):
