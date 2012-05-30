@@ -52,35 +52,35 @@ _All these must be supported to meet 1.0 compliance_
 
     _Supported by: Cascadenik (only #rgb and #rrggbb, not 'black'), Carto (all), GeoServer (unkown), Gmaps?_
     
-        * `fill-color: #rgb;` or `fill-color: #rrggbb;` or `fill-color: black;` or `fill-color: url("image.png");` - Default is none.
+         `fill-color: #rgb;` or `fill-color: #rrggbb;` or `fill-color: black;` or `fill-color: url("image.png");` - Default is none.
     
-        * `fill-repeat: ...;` only comes to play when fill-color is set to an image. Default is ...
+         `fill-repeat: ...;` only comes to play when fill-color is set to an image. Default is ...
 
-        * `fill-opacity: 1.0;` - ratio range between 0.0 and 1.0. Default is 1.0
+         `fill-opacity: 1.0;` - ratio range between 0.0 and 1.0. Default is 1.0
 
-        * `stroke-width: 2px;` - Default is none.
+         `stroke-width: 2px;` - Default is none.
         
-        * `stroke-color: #rrggbb;`  or `stroke-color: black;`.  - Default is none. Note: `stroke-color: url("image.png");` is an advanced feature.
+         `stroke-color: #rrggbb;`  or `stroke-color: black;`.  - Default is none. Note: `stroke-color: url("image.png");` is an advanced feature.
     
-        * `stroke-opacity: 1.0;`  - ratio range between 0.0 and 1.0. Default is 1.0
+         `stroke-opacity: 1.0;`  - ratio range between 0.0 and 1.0. Default is 1.0
 
-        * `stroke-cap: round;` or `stroke-cap: butt;` 
+         `stroke-cap: round;` or `stroke-cap: butt;` 
 
-        * `marker-width: 2px;` - Default is none.
+         `marker-width: 2px;` - Default is none.
     
-        * `marker-color: #rrggbb;` or `marker-color: url("image.png");` or `marker: url("image.png");` -- the last one of these is weird but interesting
+         `marker-color: #rrggbb;` or `marker-color: url("image.png");` or `marker: url("image.png");` -- the last one of these is weird but interesting
         
-        * `marker-opacity: 1.0;`  - ratio range between 0.0 and 1.0. Default is 1.0
+         `marker-opacity: 1.0;`  - ratio range between 0.0 and 1.0. Default is 1.0
     
 1. **Filters** for feature attributes. Exactly equal, less than, greater than, less than or equal to, greater than or equal to.
 
     _Supported by: Cascadenik, Carto_
     
-        * `.class [FIELDNAME=value]`
-        * `.id [FIELDNAME>value]`
-        * `.id [FIELDNAME<value]`
-        * `.class [FIELDNAME<=value]`
-        * `.class [FIELDNAME>=value]`
+         `.class [FIELDNAME=value]`
+         `.id [FIELDNAME>value]`
+         `.id [FIELDNAME<value]`
+         `.class [FIELDNAME<=value]`
+         `.class [FIELDNAME>=value]`
 
 1. <strike>**display:none** - like `!important`, but for not showing stuff, regardless of other rules. </strike>
 1. <strike>**DataSourcesConfig** an XML tag similar to the Stylesheet tag that allows you to externalize elements in an easy to manage format. [More info »](https://github.com/mapnik/Cascadenik/wiki/Managing-Data-Sources)</strike>
@@ -89,9 +89,9 @@ _All these must be supported to meet 1.0 compliance_
 
     _Supported by: none... Should be easy to implement in Cascadenik, Carto for Mapnik using the marker versus point XML syntax?_
     
-        * In Map CSS: `marker-width: 2px;` translates to Mapnik XML `point-height: 2px; point-width: 2px;`
+         In Map CSS: `marker-width: 2px;` translates to Mapnik XML `point-height: 2px; point-width: 2px;`
 
-        * In Map CSS: `marker-image: url('image.png');` translates to Mapnik XML `marker-image: url('image');`
+         In Map CSS: `marker-image: url('image.png');` translates to Mapnik XML `marker-image: url('image');`
 
 1. **Basic CSS syntax: text labels** - New "label once" `text-name:[fieldname]` where the [fieldname] grabs attributes per feature on render. This is extended either with `::` layer attachements or `keyword-attachments` to gain multiple text labels, shield symbolizers, etc.
 
@@ -101,17 +101,17 @@ _All these must be supported to meet 1.0 compliance_
 
     _Supported by: none... should be easy to implement in Cascadenik and Carto?_
 
-        * for an image, like Gmaps now: `marker-image: url('...');`
+         for an image, like Gmaps now: `marker-image: url('...');`
     
-        * for a circle, the default: `stroke-size: 2px;`
+         for a circle, the default: `stroke-size: 2px;`
     
-        * for a square: `stroke-size: 2px; stroke-cap: butt;`
+         for a square: `stroke-size: 2px; stroke-cap: butt;`
 
 1. **For backwards compatability: points are are synonym for markers** Point would have a depreciation, new implementations might optionally support. _MM and NVK 29 May._
 
     _Supported by: none... should be easy to implement in Cascadenik and Carto?_
 
-        * Both `marker-image: url('...');` and `point-image: url('...');` would translate to `marker-image: url('...');` before exporting to the native rendering environment syntax.
+         Both `marker-image: url('...');` and `point-image: url('...');` would translate to `marker-image: url('...');` before exporting to the native rendering environment syntax.
 
 
 #Advanced bits (Map CSS 2.0):
@@ -134,7 +134,7 @@ _All these must be supported to meet 2.0 compliance_
 
     _Supported by: Carto (1.x)_
     
-        * `/* a regular expression over name */ #world[name =~ "A.*"]`
+         `/* a regular expression over name */ #world[name =~ "A.*"]`
 
 1. **layer-based style attachments** `::` are a repeated version of the exact selection, but with a different appearance styling on a new virtual layer. Useful for applying multiple labels, shields, or graphic styles. **OR should we move away to a procedure versus declarative?** See also, "repeated properties" below.
 
@@ -164,7 +164,7 @@ _All these must be supported to meet 2.0 compliance_
 
     _Supported by: none..._
         
-        * `stroke-color: url("image.png");` or `stroke-background: url("image.png");`
+         `stroke-color: url("image.png");` or `stroke-background: url("image.png");`
     
 1. **display:none** - like `!important`, but for not showing stuff, regardless of other rules. Default is `display:map`
 
@@ -274,32 +274,32 @@ _Note: the stye="..." examples need to be reworked._
 
 * **Text -> geom_centroid -> Registration/Text**: 
 
-        * `(optional geom-selector) { text-size:12px; text-color:#000000; text-face:Arial; }` --**or**-- 
+        `(optional geom-selector) { text-size:12px; text-color:#000000; text-face:Arial; }` --**or**-- 
 
-        * `style="12px black Arial"` (in version 3.0)
+        `style="12px black Arial"` (in version 3.0)
 
 * **Anchor -> Point -> Registration**: 
 
-        * `point-geom-selector { stroke-width:2px; stroke-color:#000000; cap:round; }` --**or**-- 
+        `point-geom-selector { stroke-width:2px; stroke-color:#000000; cap:round; }` --**or**-- 
 
-        * `style="2px #000000 round;"` (in version 3.0)
+        `style="2px #000000 round;"` (in version 3.0)
 
 * **Stroke -> Line -> Edge**: 
 
-        * `line-geom-selector { stroke-width:1px; stroke-color:#000000; cap:square; }` --**or**-- 
+        `line-geom-selector { stroke-width:1px; stroke-color:#000000; cap:square; }` --**or**-- 
 
-        * `style="1px #000000 square;"` (in version 3.0)
+        `style="1px #000000 square;"` (in version 3.0)
 
 * **Fill -> Polygon -> Interior**: 
 
-        * `polygon-geom-selector { fill-color:#eeeeee; }` --**or**-- 
+         `polygon-geom-selector { fill-color:#eeeeee; }` --**or**-- 
 
-        * `style="grey"` (in version 3.0)
+         `style="grey"` (in version 3.0)
 
 * **Raster Pixels -> Point > Registration**: 
 
-        * Per pixel colored by the RGB channel values. Kinda like a RGB #hex gradient per 0-255 values?
-        * CSS tk tk tk.
+         Per pixel colored by the RGB channel values. Kinda like a RGB #hex gradient per 0-255 values?
+         CSS tk tk tk.
 
 
 #&etc
