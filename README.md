@@ -168,7 +168,7 @@ _All these must be supported to meet 2.0 compliance_
 
     _Supported by: Carto, Cascadenik_
     
-        Carto does this as of the 0.2.0 release and [millstone](https://github.com/mapbox/millstone).
+    Carto does this as of the 0.2.0 release and [millstone](https://github.com/mapbox/millstone).
 
 1. **@variables** for color swatches, this is preprocessor to actual result. _Moved 23 May 2012 per TMCW, split off graphic styles and text character styles 29 May_
 
@@ -241,7 +241,7 @@ _All these must be supported to meet 2.0 compliance_
 
     _Supported by: none..._
     
-        Note: Carto supports passthru of the interactivity templates in TileMill, but doesn't support it explicately.
+    Note: Carto supports passthru of the interactivity templates in TileMill, but doesn't support it explicately.
 
 1. **Advanced CSS syntax: stroke**
 
@@ -321,7 +321,7 @@ _All these must be supported to meet 2.0 compliance_
 
 1. **string expressions for keys other than text-name** 
 
-        Is this a duplicate of Super Advanced Bits: **data variables/expansion**???
+    Is this a duplicate of Super Advanced Bits: **data variables/expansion**???
     
     _Supported by: Carto (partial)?_
     
