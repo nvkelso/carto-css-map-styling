@@ -371,16 +371,6 @@ _All these must be supported to meet 2.0 compliance_
         #road-b { line-width: 2; line-color: #00c }
         
 
-1. **nesting combinator filters** 
-
-    _Supported by: Cascadenik (2.3.0), Carto_ Debate over the &[] versus [] formatting.
-    
-        `.layer[foo=1] { &[bar=2] { ... } }` versus 
-        
-        `.layer[foo=1] { [bar=2] { ... } }`
-        
-        Has implications for supporting filtering based on layer metadata, an unsupported feature as of now.
-
 1. **default.css** for geometry type selectors results in layers auto display TRUE instead of FALSE. Override with `display:none;`
 
     _Supported by: none... Predicated on "geometry type selectors" above._
@@ -398,6 +388,18 @@ _All these must be supported to meet 2.0 compliance_
 
 
 #Super advanced bits (Mappy CSS 3.0):
+
+1. **nesting combinator filters** 
+
+    _Supported by: Cascadenik (2.3.0), Carto_ Debate over the &[] versus [] formatting.
+    
+        `.layer[foo=1] { &[bar=2] { ... } }` versus 
+        
+        `.layer[foo=1] { [bar=2] { ... } }`
+        
+        Has implications for supporting filtering based on layer metadata, an unsupported feature as of now.
+
+
 
 1. **string expressions for keys other than text-name** 
 
