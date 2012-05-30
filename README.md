@@ -304,10 +304,14 @@ _All these must be supported to meet 2.0 compliance_
 
 1. **Advanced CSS syntax: shields**
 
-    _Supported by: Carto_
+    _Supported by: Carto, Cascadnik_
         
-         `shield-... stub`
+         In Carto:
+         .class::layer_attachment { `shield-... }`
         
+         In Cascadenik:
+         .class NAME { `shield-... }`
+
          Question: can you accomplish the same thing with && dependent property rending... 
          or is this special enough to be a special case, even if that is true?
 
