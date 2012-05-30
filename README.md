@@ -11,7 +11,7 @@ Question: Core bits should be universal. Extras should be wrapped in a Carto 2.0
 
 1. CSS-like map design language. Syntax extends the foundation laid by [Cascadenik](https://github.com/mapnik/Cascadenik/wiki/Dictionary) and [Carto](http://mapbox.com/carto/) and the power of Less.js. [GeoServer](http://docs.geoserver.org/stable/en/user/community/css/index.html) is also joining the mix.
 2. Better support for reference-style maps by formalizing the use of @variables for color swatches, and mixins for graphic styles and text character styles.
-3. <strike>¿Add support for thematic data cartography with data statistics like MIN, MAX, MEAN and use of those keywords in high-level filters that are under a dozen lines of code? Allow for both loose and hard connections between data and symbology.</strike>
+3. ~~¿Add support for thematic data cartography with data statistics like MIN, MAX, MEAN and use of those keywords in high-level filters that are under a dozen lines of code? Allow for both loose and hard connections between data and symbology.~~
 
 
 #Result should be:
@@ -82,9 +82,9 @@ _All these must be supported to meet 1.0 compliance_
          `.class [FIELDNAME<=value]`
          `.class [FIELDNAME>=value]`
 
-1. <strike>**display:none** - like `!important`, but for not showing stuff, regardless of other rules. </strike>
-1. <strike>**DataSourcesConfig** an XML tag similar to the Stylesheet tag that allows you to externalize elements in an easy to manage format. [More info »](https://github.com/mapnik/Cascadenik/wiki/Managing-Data-Sources)</strike>
-1. <strike>**FontSets**: very important for multilingual characters and UTF-8 labels, font fallbacks</strike>
+1. ~~**display:none** - like `!important`, but for not showing stuff, regardless of other rules. ~~
+1. ~~**DataSourcesConfig** an XML tag similar to the Stylesheet tag that allows you to externalize elements in an easy to manage format. [More info »](https://github.com/mapnik/Cascadenik/wiki/Managing-Data-Sources)~~
+1. ~~**FontSets**: very important for multilingual characters and UTF-8 labels, font fallbacks~~
 1. **Point geoms have an edge** available for stroking.
 
     _Supported by: none... Should be easy to implement in Cascadenik, Carto for Mapnik using the marker versus point XML syntax?_
