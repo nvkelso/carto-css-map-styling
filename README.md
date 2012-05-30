@@ -72,16 +72,18 @@ _All these must be supported to meet 1.0 compliance_
         
          `marker-opacity: 1.0;`  - ratio range between 0.0 and 1.0. Default is 1.0
     
-1. **Filters** for feature attributes. Exactly equal, less than, greater than, less than or equal to, greater than or equal to.
+1. **Filters** for feature attributes. Exactly equal, not equal, less than, greater than, less than or equal to, greater than or equal to based on class or id selectors.
 
     _Supported by: Cascadenik, Carto_
     
-         `.class [FIELDNAME=value]`
-         `.id [FIELDNAME>value]`
-         `.id [FIELDNAME<value]`
-         `.class [FIELDNAME<=value]`
-         `.class [FIELDNAME>=value]`
-
+        #world[population = 100]
+        #world[population != 100]
+    
+        #world[population > 100]
+        #world[population < 100]
+        #world[population >= 100]
+        #world[population <= 100]
+    
 1. ~~**display:none** - like `!important`, but for not showing stuff, regardless of other rules.~~
 1. ~~**DataSourcesConfig** an XML tag similar to the Stylesheet tag that allows you to externalize elements in an easy to manage format. [More info »](https://github.com/mapnik/Cascadenik/wiki/Managing-Data-Sources)~~
 1. ~~**FontSets**: very important for multilingual characters and UTF-8 labels, font fallbacks~~
@@ -98,7 +100,7 @@ _All these must be supported to meet 1.0 compliance_
     _Supported by: Carto. Easy to implement in Cascadenik?_
             
         #world {
-          text-name: "NAME";       // or text-name: "[NAME]";???
+          text-name: "NAME";          // or text-name: "[NAME]";???
           text-face-name: "Arial";
         }
 
@@ -170,7 +172,7 @@ _All these must be supported to meet 2.0 compliance_
             line-color: #000;
             line-width: 6;
             }
-
+            
 1. **feature-based style instances** `/` similar to nested styles, but within the same original layer. 
 
     _Supported by: Carto_
@@ -232,7 +234,13 @@ _All these must be supported to meet 2.0 compliance_
 
 1. **FontSets**: very important for multilingual characters and UTF-8 labels, font fallbacks
 
-    _Supported by: Carto?_
+    _Supported by: Carto_
+    
+        #world {
+          text-name: "[NAME]";
+          text-size: 11;
+          text-face-name: "Georgia Regular", "Arial Italic";
+        }
 
 1. **keyword-based style attachments** `.roads name { text-size:12px; text-color:#000; }` and `.roads ref { shield... }` are a repeated version of the exact selection, but with a different appearance styling on a new virtual layer. Useful for applying multiple labels, shields, or graphic styles.
 
@@ -296,6 +304,22 @@ _All these must be supported to meet 2.0 compliance_
     _Supported by: GeoServer_
     
         `* { stroke: black, white; }`
+        
+1. **nested styles** - from Less.js and Carto.
+
+    _Supported by: Carto_
+
+        /* Applies to all layers with .land class */
+        .land {
+          line-color: #ccc;
+          line-width: 0.5;
+          polygon-fill: #eee;
+          /* Applies to #lakes.land */
+          #lakes {
+            polygon-fill: #000;
+          }
+        }
+
     
 
 
@@ -314,6 +338,11 @@ _Note: some are likely to remain vender specific implementations, -vender-proper
     _Supported by: Carto_
     
         `function( @variable-stroke-width )`
+        
+        #world {
+          polygon-fill: @mybackground + #222;
+          line-color: darken(@mybackground, 10%);
+        }
 
 1. **Selectors** for object _advanced_ **geometry components**: inner outer rings, vertex index and first, last.
 
