@@ -246,14 +246,6 @@ _All these must be supported to meet 2.0 compliance_
         
         #road-b { line-width: 2; line-color: #f90 }
 
-1. **RegEx filters** 
-
-    _Supported by: Carto (1.x), Geoserver._
-    
-         `/* a regular expression over name */ #world[name =~ "A.*"]`
-         
-         Note: GeoServer also supports: [LIKE](http://docs.geoserver.org/stable/en/user/community/css/filters.html), but not explicate RegEx.
-
 1. **variable expresions** modifying color swatches, stroke-widths, and @variables, etc.
     
     The basic set proposed for HTML's CSS 3.0: +, -, *, /. Any others?
@@ -350,6 +342,14 @@ _All these must be supported to meet 2.0 compliance_
 
 
 #Super advanced bits (Mappy CSS 3.0):
+
+1. **RegEx filters** 
+
+    _Supported by: Carto (1.x), Geoserver._
+    
+         `/* a regular expression over name */ #world[name =~ "A.*"]`
+         
+         Note: GeoServer also supports: [LIKE](http://docs.geoserver.org/stable/en/user/community/css/filters.html), but not explicate RegEx.
 
 1. **layer-based style attachments** `::` are a repeated version of the exact selection, but with a different appearance styling on a new virtual layer. Useful for applying multiple labels, shields, or graphic styles. **OR should we move away to a procedure versus declarative?** See also, "repeated properties" below.
 
