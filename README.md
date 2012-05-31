@@ -639,7 +639,7 @@ WARNING: if the defaults.mss file is included, the default for layer visibilty b
 
     _NOTE 2: Mappy CSS MML spec can be implemented in either [XML](https://github.com/mapnik/Cascadenik/wiki/Examples) (Cascadenik) or [JSON]() (Carto) formats._
     
-    XML:
+    **XML:**
     
         <?xml version="1.0" encoding="utf-8"?>
         <Map srs="+proj=latlong +ellps=WGS84 +datum=WGS84 +no_defs">
@@ -664,7 +664,7 @@ WARNING: if the defaults.mss file is included, the default for layer visibilty b
             </Layer>
         </Map>
         
-    JSON:
+    **JSON:**
     
         {
             "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
