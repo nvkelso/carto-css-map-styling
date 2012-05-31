@@ -483,7 +483,7 @@ _All these must be supported to meet 2.0 compliance_
         #road-a { .roads; }
         #road-b { .roads; line-color: #00c }
         
-        expands to:
+    expands to: 
         
         #road-a { line-width: 2; line-color: #f90; }
         #road-b { line-width: 2; line-color: #00c }
