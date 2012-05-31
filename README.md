@@ -574,14 +574,55 @@ _Note: some are likely to remain vender specific implementations, -vender-proper
 
 #File structure
 
-* **MSS** for the Mappy CSS styling definition.
-* **MML** for the datasources and their layering. 
+* **MSS** for the Mappy CSS styling definition. See above.
+* **MML** for the datasources and their layering. See below.
 
     _NOTE 1: Mappy CSS MML spec can embed the MSS part rather than linking to external file (the default)._
 
-    _NOTE 2: Mappy CSS MML spec can be implemented in either XML (Cascadenik) or JSON (Carto) formats._
+    _NOTE 2: Mappy CSS MML spec can be implemented in either [XML](https://github.com/mapnik/Cascadenik/wiki/Examples) (Cascadenik) or [JSON]() (Carto) formats._
     
-    _NOTE 3: Data source definition can be inline or an import in the MML. From cascadnik/carto 2.0. ¿Easy in XML format, harder in JSON?_
+    XML:
+    
+        <?xml version="1.0" encoding="utf-8"?>
+        <Map srs="+proj=latlong +ellps=WGS84 +datum=WGS84 +no_defs">
+            <Stylesheet><![CDATA[
+                Map
+                {
+                    map-bgcolor: #69f;
+                }
+        
+                Layer
+                {
+                    line-width: 1;
+                    line-color: #696;
+                    polygon-fill: #6f9;
+                }
+            ]]></Stylesheet>
+            <Layer srs="+proj=latlong +ellps=WGS84 +datum=WGS84 +no_defs">
+                <Datasource>
+                    <Parameter name="type">shape</Parameter>
+                    <Parameter name="file">world_borders</Parameter>
+                </Datasource>
+            </Layer>
+        </Map>
+        
+    JSON:
+    
+        {
+            "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+            "Stylesheet": [{"id":"style.mss","data":"Map {\n  background-color: #fff;\n}\n\n#world {\n  line-color: #ccc;\n  line-width: 0.5;\n  polygon-fill: #eee;\n}"}],
+            "Layer": [{
+                "id": "world",
+                "name": "world",
+                "srs": "+proj=latlong +ellps=WGS84 +datum=WGS84 +no_defs",
+                "Datasource": {
+                    "file": "world_borders",
+                    "type": "shape"
+                }
+            }]
+        }
+    
+    _NOTE 3: Data source definition can be inline or an import in the MML. Cascadnik now. Easy in XML format, harder in JSON?_
 
 ##For the MML layer setup:
 
