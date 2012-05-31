@@ -139,9 +139,9 @@ _All these must be supported to meet 1.0 compliance_
 
     _Supported by: none... Should be easy to implement in Cascadenik, Carto for Mapnik using the marker versus point XML syntax?_
     
-         In Mappy CSS: `marker-width: 2px;` translates to Mapnik XML `point-height: 2px; point-width: 2px;`
+    In Mappy CSS: `marker-width: 2px;` translates to Mapnik XML `point-height: 2px; point-width: 2px;`
 
-         In Mappy CSS: `marker-image: url('image.png');` translates to Mapnik XML `marker-image: url('image');`
+    In Mappy CSS: `marker-image: url('image.png');` translates to Mapnik XML `marker-image: url('image');`
 
     _In GeoServer, implemented by supporting polygon styling options on a ``:mark`` pseudoelement:_
 
