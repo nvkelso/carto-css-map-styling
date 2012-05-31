@@ -418,7 +418,7 @@ _All these must be supported to meet 2.0 compliance_
           text-face-name: "Arial";
         }
         
-        expands to:
+    expands to:
         
         #world {
           text-name: "[NAME]";
