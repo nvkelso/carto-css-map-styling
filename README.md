@@ -204,11 +204,11 @@ _All these must be supported to meet 1.0 compliance_
 
     _Supported by: none... should be easy to implement in Cascadenik and Carto?_
 
-         for an image, like Gmaps now: `marker-image: url('...');`
+    `marker-image: url('...');` - for an image, like Gmaps now
     
-         for a circle, the default: `stroke-size: 2px;`
+    `stroke-size: 2px;` - for a circle, the Mappy CSS default in 2.0 which expands to `stroke-size: 2px; stroke-cap: cap;`
     
-         for a square: `stroke-size: 2px; stroke-cap: butt;`
+    `stroke-size: 2px; stroke-cap: butt;` - for a square
 
 1. **For backwards compatability: points are are synonym for markers** Point would have a depreciation, new implementations might optionally support. _MM and NVK 29 May._
 
