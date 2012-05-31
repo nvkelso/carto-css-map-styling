@@ -491,7 +491,7 @@ _All these must be supported to meet 2.0 compliance_
 
 #Extremely advanced bits (Mappy CSS 4.0):
 
-_All these must be supported to meet 3.0 compliance_
+_All these must be supported to meet 4.0 compliance_
 
 _Note: some are likely to remain vender specific implementations, -vender-propertyname eg: -mapnik-line-stroke-gradient, bla bla bla_
 
