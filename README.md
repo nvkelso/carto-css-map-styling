@@ -375,6 +375,18 @@ _All these must be supported to meet 2.0 compliance_
     
         I don't see actual highway shields detailed here:    
         http://docs.geoserver.org/stable/en/user/community/css/styled-marks.html
+        
+        From David:
+        
+        In GeoServer SLD we support Graphic elements as a child of TextSymbolizer elements. 
+        If present, such a graphic will be positioned behind the label regardless of where
+        the label is actually rendered (due to conflict resolution, etc.) and hidden if
+        the label is hidden.  Optionally, the graphic is also stretched to ensure that the
+        label fits within it.  I think this is similar to how shield graphics behave in Mapnik, right?
+
+        There are some screenshots and SLD examples in Andrea Aime's talk from FOSS4G 2010:
+        http://2010.foss4g.org/presentations_show.php?id=3588
+        I don't think the GeoServer user manual has caught up yet.
 
     Question: can you accomplish the same thing with && dependent property rending... 
     or is this special enough to be a special case, even if that is true?
