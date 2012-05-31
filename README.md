@@ -261,17 +261,17 @@ _All these must be supported to meet 1.0 compliance_
 
 _All these must be supported to meet 2.0 compliance_
 
-1. **Advanced CSS syntax** - RGBA, CYMK, HSV, etc other color spaces.
+1. **Advanced CSS syntax for colors** - RGBA, CYMK, HSV, etc other color spaces.
 
     _Supported by: Carto rgb(), rgba(), hsl(). GeoServer has support for only rgb()._
     
         #line {
-          line-color: #ff0;                   # Carto, Cascadenik, GeoServer
-          line-color: #ffff00;                # Carto, Cascadenik, GeoServer
-          line-color: yellow;                 # Carto, Cascadenik, GeoServer
-          line-color: rgb(255, 255, 0);       # Carto, GeoServer
-          line-color: rgba(255, 255, 0, 1);   # Carto
-          line-color: hsl(100, 50%, 50%);     # Carto
+          line-color: #ff0;                   /* Carto, Cascadenik, GeoServer */
+          line-color: #ffff00;                /* Carto, Cascadenik, GeoServer */
+          line-color: yellow;                 /* Carto, Cascadenik, GeoServer */
+          line-color: rgb(255, 255, 0);       /* Carto, GeoServer */
+          line-color: rgba(255, 255, 0, 1);   /* Carto */
+          line-color: hsl(100, 50%, 50%);     /* Carto */
         }
 
 1. **@variables** for color swatches, this is preprocessor to actual result. _Moved 23 May 2012 per TMCW, split off graphic styles and text character styles 29 May_
