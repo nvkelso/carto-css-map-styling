@@ -517,9 +517,13 @@ _Note: some are likely to remain vender specific implementations, -vender-proper
         .classname [@geom_part=vertex[0]] { ... }
         .classname [@geom_part=vertex[vertex.len-1]] { ... }
 
-1. **Dependant attachments** `&&` depend on the previous bits being rendered in that selection. Useful for text labels to require the anchor symbolization being placed. eg: point&&stroke
+1. **Dependant attachments** `&&` depend on the previous bits being rendered in that selection. Useful for text labels to require the anchor symbolization being placed. eg: point&&text.
 
     _Supported by: none..._
+    
+        point&&text { ... }
+        
+    Needs a better example.
 
 1. **Shorthand style properties** 
 
