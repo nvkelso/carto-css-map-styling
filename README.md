@@ -590,7 +590,7 @@ _Note: some are likely to remain vender specific implementations, -vender-proper
 
 * **Text -> geom_centroid -> Registration/Text**: 
 
-        .class[@geom=text?] { text-size:12px; text-color:#000000; text-face:Arial; }
+        .class[@geom=*] { text-size:12px; text-color:#000000; text-face:Arial; text-placement: [point, line, centroid, etc?] }
 
 * **Marker -> Point -> Registration**: 
 
