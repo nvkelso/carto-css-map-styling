@@ -65,9 +65,9 @@ _All these must be supported to meet 1.0 compliance_
 
 1. **Basic CSS syntax: stroke, fill, marker (was point, also talked about anchor)**
 
-    Properties consist of name/value pairs separated by colons (:).
+    * Properties consist of name/value pairs separated by colons (:).
          
-    They are grouped per selector by { ... }.
+    * They are grouped per selector by { ... }.
 
     _Supported by: Cascadenik (only #rgb and #rrggbb, not 'black'), Carto (all), GeoServer (all except those not already supported by GeoTools renderer: fill-repeat, marker-placement, marker-overlap, marker-spacing), Gmaps?_
         
