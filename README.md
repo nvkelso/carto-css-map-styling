@@ -604,7 +604,7 @@ _Note: some are likely to remain vender specific implementations, -vender-proper
         
 #Reasonable Mappy CSS 2.0 defaults:
 
-WARNING: if the defaults.mss file is included, the default for layer visibilty becomes ON instead of off
+        WARNING: if the defaults.mss file is included, the default for layer visibilty becomes ON instead of off
 
 * **Text -> geom_centroid -> Registration/Text**: 
 
