@@ -375,13 +375,13 @@ _All these must be supported to meet 2.0 compliance_
 
     _Supported by: Carto_
     
-        `( @variable-stroke-width + 5 )`
+        ( @variable-stroke-width + 5 )
 
 1. **RegEx filters** 
 
     _Supported by: Carto (1.x), GeoServer (uses alternate [syntax](http://docs.geoserver.org/latest/en/user/filter/ecql_reference.html#predicate))_
     
-         `/* a regular expression over name */ #world[name =~ "A.*"]`
+         /* a regular expression over name */ #world[name =~ "A.*"]
          
          Note: GeoServer also supports: [LIKE](http://docs.geoserver.org/stable/en/user/community/css/filters.html), but not explicate RegEx.
 
