@@ -659,29 +659,23 @@ _Note: the stye="..." examples need to be reworked._
 
 * **Text -> geom_centroid -> Registration/Text**: 
 
-        `(optional geom-selector) { text-size:12px; text-color:#000000; text-face:Arial; }` --**or**-- 
+        .class[@geom=text?] { text-size:12px; text-color:#000000; text-face:Arial; }
 
-        `style="12px black Arial"` (in version 3.0)
+* **Marker -> Point -> Registration**: 
 
-* **Anchor -> Point -> Registration**: 
-
-        `point-geom-selector { stroke-width:2px; stroke-color:#000000; cap:round; }` --**or**-- 
-
-        `style="2px #000000 round;"` (in version 3.0)
+        .class[@geom=point] { stroke-width:2px; stroke-color:#000000; cap:round; }
 
 * **Stroke -> Line -> Edge**: 
 
-        `line-geom-selector { stroke-width:1px; stroke-color:#000000; cap:square; }` --**or**-- 
-
-        `style="1px #000000 square;"` (in version 3.0)
+        .class[@geom=line] { stroke-width:1px; stroke-color:#000000; cap:square; }
 
 * **Fill -> Polygon -> Interior**: 
 
-         `polygon-geom-selector { fill-color:#eeeeee; }` --**or**-- 
-
-         `style="grey"` (in version 3.0)
+         .class[@geom=polygon] { fill-color:#eeeeee; }
 
 * **Raster Pixels -> Point > Registration**: 
+
+         .class[@geom=raster] { ... }
 
          Per pixel colored by the RGB channel values. Kinda like a RGB #hex gradient per 0-255 values?
          CSS tk tk tk.
