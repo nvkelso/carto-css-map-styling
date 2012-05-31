@@ -214,7 +214,7 @@ _All these must be supported to meet 1.0 compliance_
 
     _Supported by: Cascadenik, Carto use points instead of markers now. Shouldbe depreciated?_
 
-         Both `marker-image: url('...');` and `point-image: url('...');` would translate to `marker-image: url('...');` before exporting to the native rendering environment syntax.
+    Both `marker-image: url('...');` and `point-image: url('...');` would translate to `marker-image: url('...');` before exporting to the native rendering environment syntax.
 
 1. **Layers, classes, ids, and layer metadata** - Layers are defined in the MML file and can include class="class1 class2 class3" or id="id1". Layers could have a name. Layers could have metadata.
 
