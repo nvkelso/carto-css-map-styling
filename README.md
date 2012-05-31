@@ -435,7 +435,7 @@ _All these must be supported to meet 2.0 compliance_
         
         .layer[foo=1] { [bar=2] { ... } }
         
-    Has implications for supporting filtering based on layer metadata, an unsupported feature as of now.
+    WARNING: Has implications for supporting filtering based on layer metadata, an unsupported feature as of now. Cascadenik can easily do the [] instead of &[], but in light of the other question. And it makes it less Less.js like?
 
 
 1. **string expressions for keys other than text-name** 
