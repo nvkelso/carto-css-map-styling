@@ -548,13 +548,13 @@ _Note: some are likely to remain vender specific implementations, -vender-proper
 
 1. **Rendering/compositing targets** are implied but can be explicate or overridden: fill-, stroke-, anchor-, and data-. _Note: color:#hex is implied as fill-color:#hex._
 
-    _Supported by: Carto?..._
-    
-    In the new branch targeting Mapnik 2.2?
+    _Supported by: none..._
 
 1. **Blending modes** ala Photoshop, Illustrator, new compositing branch of Mapnik, cutting edge CSS.
 
-    _Supported by: none..._
+    _Supported by: Carto?..._
+    
+    In the new branch targeting Mapnik 2.2?
 
 1. **gradients on strokes** - The future come-ith.
 
@@ -563,7 +563,14 @@ _Note: some are likely to remain vender specific implementations, -vender-proper
 1. **heterogenious geometry type selectors** (point, line, polygon, raster) eg: `geom_type_selector.classname { ... }` or `.classname _geom_type_selector { ... }` (which is less CSS like, but more like the sketches below)  Advanced: tests per feature for feature type, important for GeoJSON etc. **THIS IS THE ONLY SHOW STOPPER.**
 
     _Supported by: none..._
+    
+    Per feature evaluation of, versus assuming the layer's first feature is indicative of homogenous feature types.
 
+        .classname[@geom=polygon] { ... }
+        .classname[@geom=line] { ... } 
+        .classname[@geom=point] { ... }
+        
+        
 
 #File structure
 
