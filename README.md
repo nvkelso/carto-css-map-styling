@@ -595,6 +595,12 @@ _Note: some are likely to remain vender specific implementations, -vender-proper
         .classname[@geom=line] { ... } 
         .classname[@geom=point] { ... }
         
+    or?
+    
+        .classname { [@geom=polygon] { ... } }
+        .classname { [@geom=line] { ... } }
+        .classname { [@geom=point] { ... } }
+
         
 #Reasonable Mappy CSS 2.0 defaults:
 
