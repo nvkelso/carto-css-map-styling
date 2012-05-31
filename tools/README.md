@@ -27,7 +27,7 @@ The following layers are included per map feature class:
 
 These conform to common OpenStreetMap and other geodata feature categories.
 
-To change the **colors**, double click on the solid color chip in the layers panel. These are adjustment layers with masks. Changing 
+Change the colors in Photoshop or Illustrator and then run the scripts.
 
 #Photoshop and Illustrator Scripts
 
