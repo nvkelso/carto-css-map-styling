@@ -548,7 +548,9 @@ _Note: some are likely to remain vender specific implementations, -vender-proper
 
 1. **Rendering/compositing targets** are implied but can be explicate or overridden: fill-, stroke-, anchor-, and data-. _Note: color:#hex is implied as fill-color:#hex._
 
-    _Supported by: none..._
+    _Supported by: Carto?..._
+    
+    In the new branch targeting Mapnik 2.2?
 
 1. **Blending modes** ala Photoshop, Illustrator, new compositing branch of Mapnik, cutting edge CSS.
 
