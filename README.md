@@ -721,12 +721,16 @@ Syntax details, implementation recommendations, avoids, demos, open questions, h
 
 **Basic:**
 
-![Carto2_basic](https://github.com/nvkelso/carto-css-map-styling/raw/master/images/carto_simple.png)
+![MappyCSS_basic](https://github.com/nvkelso/carto-css-map-styling/raw/master/images/carto_simple.png)
 
 **Medium:**
 
-![Carto2_medium](https://github.com/nvkelso/carto-css-map-styling/raw/master/images/carto_medium.png)
+![MappyCSS_medium](https://github.com/nvkelso/carto-css-map-styling/raw/master/images/carto_medium.png)
 
 **Complex:**
 
-![Carto2_complex](https://github.com/nvkelso/carto-css-map-styling/raw/master/images/carto_complex.png)
+![MappyCSS_complex](https://github.com/nvkelso/carto-css-map-styling/raw/master/images/carto_complex.png)
+
+**Extended examples:**
+
+![MappyCSS_Extended](https://github.com/nvkelso/carto-css-map-styling/raw/master/images/carto_complex.png)
