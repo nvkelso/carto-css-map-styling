@@ -116,6 +116,8 @@ _All these must be supported to meet 1.0 compliance_
 
     _Supported by: Cascadenik, Carto, GeoServer (actually embeds [ECQL](http://docs.geoserver.org/latest/en/user/filter/ecql_reference.html))_
 
+    **Basic filters:**
+
         #world[population = 100]
         #world[population != 100]
     
