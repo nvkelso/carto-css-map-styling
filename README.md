@@ -456,6 +456,7 @@ _All these must be supported to meet 2.0 compliance_
         * { stroke: black, white; }
         
     Question: Should " " space be equivelant to "," comma? 
+    
     Space implies both, where comma implies fallback (in case of text-name, also for line-array).        
         
 1. **nested styles** - from Less.js and Carto.
