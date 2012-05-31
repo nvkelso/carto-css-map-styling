@@ -529,11 +529,11 @@ _Note: some are likely to remain vender specific implementations, -vender-proper
 
     _Supported by: none..._
     
-        `stroke: url(...) #9f0 repeat 20.0;`
+        stroke: url(...) #9f0 repeat 20.0;
         
-        expands to:
+    expands to:
         
-        `{ stroke-image:url(...); stroke-color:#9f0; stroke-image-repeat:true; stroke-size:20.0px }`
+        { stroke-image:url(...); stroke-color:#9f0; stroke-image-repeat:true; stroke-size:20.0px }
 
 1. **Special rendering targets w/r/t attachements (placement)**: interior, edge, registration, vertexes, parts there-of.
 
