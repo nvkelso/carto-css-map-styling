@@ -195,7 +195,7 @@ _All these must be supported to meet 1.0 compliance_
 
 1. **For backwards compatability: points are are synonym for markers** Point would have a depreciation, new implementations might optionally support. _MM and NVK 29 May._
 
-    _Supported by: none... should be easy to implement in Cascadenik and Carto?_
+    _Supported by: Cascadenik, Carto use points instead of markers now. Shouldbe depreciated?_
 
          Both `marker-image: url('...');` and `point-image: url('...');` would translate to `marker-image: url('...');` before exporting to the native rendering environment syntax.
 
