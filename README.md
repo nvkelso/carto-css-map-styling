@@ -429,11 +429,13 @@ _All these must be supported to meet 2.0 compliance_
 
     _Supported by: Cascadenik (2.3.0), Carto_ Debate over the &[] versus [] formatting.
     
-        `.layer[foo=1] { &[bar=2] { ... } }` versus 
+        .layer[foo=1] { &[bar=2] { ... } }
         
-        `.layer[foo=1] { [bar=2] { ... } }`
+    versus 
         
-        Has implications for supporting filtering based on layer metadata, an unsupported feature as of now.
+        .layer[foo=1] { [bar=2] { ... } }
+        
+    Has implications for supporting filtering based on layer metadata, an unsupported feature as of now.
 
 
 1. **string expressions for keys other than text-name** 
