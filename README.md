@@ -30,21 +30,25 @@ NOTE: Extensions might include data formats (csv, shp in zip), data statistics (
 
 #Atomic bits (nouns, verbs):
 
-1. **CSS target**: anchor, stroke, fill, label/text, data. 
+1. **CSS target**: marker, stroke, fill, label/text, data. 
 
         Note: reimagined a bit from basic HTML CSS and Cascadenik, Carto. 
-        Marker is new in 1.0 (was point).
+        Marker is new in 1.0 (was `point`, for a while `anchor`).
         Text is more consistent in 1.0 and powerful in 2.0.
-        Interactivity and data formalized 2/3?
+        Interactivity and data formalized 2/3/4? Separate but parellel formats?
         
-1. **Size by**: anchors, strokes, and labels have a 2d extrusion measurement (eg: 2px) 
+1. **Size by**: markers, strokes, and labels have a 2d extrusion measurement (eg: 2px) 
 
         For images, the size is implied by a non-repeat dimension of the source image. 
         Others are determined by default style CSS. Continues from Cascadenik/Carto 1.0.
     
 1. **Ink with** for color (mask) areas (extrusion of stroke, or fill): rgb, cmyk, hsv, gradient, image (with repeat options). 
 
-        With alpha. All color spaces/images/gradient are coallpsed in "ink" in Carto 2.0
+    Note: All color spaces/images/gradient are coallpsed in "ink" verb in Carto 2.0?
+
+        1.0: `color:#rgb` and `color:#rrggbb` with `opacity:1.0`
+            
+        2.0: Other color spaces. See below.
 
 1. **Object geometry type filter**: point, line, polygon, continuous-field aka raster. 
 
@@ -52,11 +56,11 @@ NOTE: Extensions might include data formats (csv, shp in zip), data statistics (
 
 1. **Object geometry component filter**: The component polys, rings, & vertex. 
     
-        New in 3.0
+        New in 4.0
     
 1. **Rendering target**: (pivots off geometry type) registration, edge, interior, LABEL, DATA, INTERACTIVITY. 
         
-        New in 3.0. With optional masks and positioning/attachment hints.
+        New in 4.0. With optional masks and positioning/attachment hints.
 
 
 #Core bits (Mappy CSS 1.0):
