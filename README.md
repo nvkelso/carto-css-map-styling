@@ -437,15 +437,6 @@ _All these must be supported to meet 2.0 compliance_
         
     WARNING: Has implications for supporting filtering based on layer metadata, an unsupported feature as of now. Cascadenik can easily do the [] instead of &[], but in light of the other question. And it makes it less Less.js like?
 
-
-1. **string expressions for keys other than text-name** 
-
-    Is this a duplicate of Super Advanced Bits: **data variables/expansion**???
-    
-    _Supported by: Carto (partial)?_
-           
-        text-color: #[fieldname]
-        shield-file: "stuff/[fieldname].png"
     
 1. **repeated properties** - Like layer-based style attachements (`::`), see above.
 
@@ -495,9 +486,14 @@ _All these must be supported to meet 4.0 compliance_
 
 _Note: some are likely to remain vender specific implementations, -vender-propertyname eg: -mapnik-line-stroke-gradient, bla bla bla_
 
-1. **data variables/expansion** functional expansion of column values per feature `[name]` but for property values? Held up by upstream Mapnik changes.
+1. **data variables/expansion** aka string expressions for keys other than text-name. 
 
-    _Supported by: none..._
+    Functional expansion of column values per feature `[name]` but for property values? Held up by upstream Mapnik changes?
+
+    _Supported by: Carto (partial)?_
+               
+        text-color: #[fieldname]
+        shield-file: "stuff/[fieldname].png"
 
 1. **functional expressions** evaluation of variable expressions with a predefined function.
 
