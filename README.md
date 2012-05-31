@@ -267,9 +267,9 @@ _All these must be supported to meet 2.0 compliance_
 
     Deprecitated for [@zoom=10], see above in Core section!
     
-    _Supported by: none?_
+    ~~_Supported by: none?_~~
     
-        ~~`@media (zoom > 3) and (zoom < 10) {  #lakes {    /* style */   } }`~~
+    ~~`@media (zoom > 3) and (zoom < 10) {  #lakes {    /* style */   } }`~~
 
 1. **geometry type selectors** (point, line, polygon, raster) eg: `geom_type_selector.classname { ... }` or `.classname geom_type_selector { ... }` (which is less CSS like, but more like the sketches below)  Advanced: only test the first feature's type in a data store, assumes homogenious data in a single data store. **THIS IS THE ONLY SHOW STOPPER, might be relatively easy to implement in Cascadenik?** 
 
