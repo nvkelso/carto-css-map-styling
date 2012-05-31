@@ -254,11 +254,10 @@ _All these must be supported to meet 1.0 compliance_
         
 1. **Zoom and scale denominator**
 
-    _Supported by: Cascadenik, Carto, GeoSever_
+    _Supported by: Varients by Cascadenik, Carto, GeoSever_
 
-    `[@zoom>14]` - new. Kinda Carto and Cascadenik.
-    
-    `[@scale>100000]` - newish. GeoServer, kinda Cascadenik already implement.
+        [@zoom>14]
+        [@scale>100000]
 
     Now:
     
