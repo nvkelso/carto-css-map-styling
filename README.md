@@ -733,4 +733,4 @@ Syntax details, implementation recommendations, avoids, demos, open questions, h
 
 **Extended examples:**
 
-![MappyCSS_Extended](https://github.com/nvkelso/carto-css-map-styling/raw/master/images/carto_complex.png)
+![MappyCSS_Extended](https://github.com/nvkelso/carto-css-map-styling/raw/master/images/carto_extended.png)
