@@ -383,7 +383,7 @@ _All these must be supported to meet 2.0 compliance_
     
          /* a regular expression over name */ #world[name =~ "A.*"]
          
-         Note: GeoServer also supports: [LIKE](http://docs.geoserver.org/stable/en/user/community/css/filters.html), but not explicate RegEx.
+    Note: GeoServer also supports: [LIKE](http://docs.geoserver.org/stable/en/user/community/css/filters.html), but not explicate RegEx.
 
 1. **layer-based style attachments** `::` are a repeated version of the exact selection, but with a different appearance styling on a new virtual layer. Useful for applying multiple labels, shields, or graphic styles. **OR should we move away to a procedure versus declarative?** See also, "repeated properties" below.
 
