@@ -499,12 +499,14 @@ _Note: some are likely to remain vender specific implementations, -vender-proper
 
     _Supported by: Carto_
     
-        `function( @variable-stroke-width )`
+        function( @variable-stroke-width )
         
         #world {
           polygon-fill: @mybackground + #222;
           line-color: darken(@mybackground, 10%);
         }
+    
+    This example doesn't make sense to me: NVK.
 
 1. **Selectors** for object _advanced_ **geometry components**: inner outer rings, vertex index and first, last.
 
