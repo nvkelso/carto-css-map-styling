@@ -297,9 +297,9 @@ _All these must be supported to meet 2.0 compliance_
 
     _Supported by: GeoServer kinda sorta (eg: mark-geometry: [vertices(geom)];). Should be easy to add to Cascadenik._
     
-        `.classname[@geom=polygon] { ... }` 
-        `.classname[@geom=line] { ... }` 
-        `.classname[@geom=point] { ... }` 
+        .classname[@geom=polygon] { ... }
+        .classname[@geom=line] { ... } 
+        .classname[@geom=point] { ... }
         
     or ~~`geom_type_selector.classname { ... }`~~
         
