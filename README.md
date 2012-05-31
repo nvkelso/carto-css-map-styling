@@ -65,41 +65,41 @@ _All these must be supported to meet 1.0 compliance_
 
 1. **Basic CSS syntax: stroke, fill, marker (was point, also talked about anchor)**
 
-        * Properties consist of name/value pairs separated by colons (:).
+    Properties consist of name/value pairs separated by colons (:).
              
-        * They are grouped per selector by { ... }.
+    They are grouped per selector by { ... }.
 
     _Supported by: Cascadenik (only #rgb and #rrggbb, not 'black'), Carto (all), GeoServer (all except those not already supported by GeoTools renderer: fill-repeat, marker-placement, marker-overlap, marker-spacing), Gmaps?_
         
-         `fill-color: #rgb;` or `fill-color: #rrggbb;` or `fill-color: black;` or `fill-color: url("image.png");` - Default is none.
+    `fill-color: #rgb;` or `fill-color: #rrggbb;` or `fill-color: black;` or `fill-color: url("image.png");` - Default is none.
     
-         `fill-repeat: ...;` only comes to play when fill-color is set to an image. Default is ...
+    `fill-repeat: ...;` only comes to play when fill-color is set to an image. Default is ...
 
-         `fill-opacity: 1.0;` - ratio range between 0.0 and 1.0. Default is 1.0
+    `fill-opacity: 1.0;` - ratio range between 0.0 and 1.0. Default is 1.0
 
-         `stroke-width: 2px;` - Default is none.
+    `stroke-width: 2px;` - Default is none.
         
-         `stroke-color: #rrggbb;`  or `stroke-color: black;`.  - Default is none. Note: `stroke-color: url("image.png");` is an advanced feature.
+    `stroke-color: #rrggbb;`  or `stroke-color: black;`.  - Default is none. Note: `stroke-color: url("image.png");` is an advanced feature.
     
-         `stroke-opacity: 1.0;`  - ratio range between 0.0 and 1.0. Default is 1.0
+    `stroke-opacity: 1.0;`  - ratio range between 0.0 and 1.0. Default is 1.0
 
-         `stroke-cap: round;` or `stroke-cap: butt;`  or `stroke-cap: square;` 
+    `stroke-cap: round;` or `stroke-cap: butt;`  or `stroke-cap: square;` 
 
-         `stroke-join: miter;` or `stroke-join: round;` or `stroke-join: bevel;`
+    `stroke-join: miter;` or `stroke-join: round;` or `stroke-join: bevel;`
 
-         `stroke-dash-array: 1.1, 2.2, 3.3;`
+    `stroke-dash-array: 1.1, 2.2, 3.3;`
 
-         `marker-width: 2px;` - Default is none. This results in a circle of diameter 2. If an image is specified, it overrides the image's native size.
+    `marker-width: 2px;` - Default is none. This results in a circle of diameter 2. If an image is specified, it overrides the image's native size.
     
-         `marker-color: #rrggbb;` or `marker-color: url("image.png");` or `marker: url("image.png");` -- the last one of these is weird but interesting
+    `marker-color: #rrggbb;` or `marker-color: url("image.png");` or `marker: url("image.png");` -- the last one of these is weird but interesting
         
-         `marker-opacity: 1.0;`  - ratio range between 0.0 and 1.0. Default is 1.0
+    `marker-opacity: 1.0;`  - ratio range between 0.0 and 1.0. Default is 1.0
 
-         `marker-placement: point;` or `marker-placement: line;`
+    `marker-placement: point;` or `marker-placement: line;`
 
-         `marker-overlap: false;` or `marker-overlap: true;` - defaults to false.
+    `marker-overlap: false;` or `marker-overlap: true;` - defaults to false.
 
-         `marker-spacing: 100px;` - 
+    `marker-spacing: 100px;` - tk tk tk
 
     
 1. **Filters** for feature attributes. Exactly equal, not equal, less than, greater than, less than or equal to, greater than or equal to based on class or id selectors.
