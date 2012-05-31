@@ -443,13 +443,9 @@ _All these must be supported to meet 2.0 compliance_
     Is this a duplicate of Super Advanced Bits: **data variables/expansion**???
     
     _Supported by: Carto (partial)?_
-    
-        `text-name: "[fieldname]"` now
-        
-        future:
-        
-        `text-color: "#[fieldname]"`
-        `shield-file: "stuff/[fieldname].png"
+           
+        text-color: #[fieldname]
+        shield-file: "stuff/[fieldname].png"
     
 1. **repeated properties** - Like layer-based style attachements (`::`), see above.
 
