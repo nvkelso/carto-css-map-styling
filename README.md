@@ -512,10 +512,10 @@ _Note: some are likely to remain vender specific implementations, -vender-proper
 
     _Supported by: none..._
     
-        `.classname [@geom_part=outer_ring] { ... }`
-        `.classname [@geom_part=inner_ring] { ... }`
-        `.classname [@geom_part=vertex[0]] { ... }`
-        `.classname [@geom_part=vertex[vertex.len-1]] { ... }`
+        .classname [@geom_part=outer_ring] { ... }
+        .classname [@geom_part=inner_ring] { ... }
+        .classname [@geom_part=vertex[0]] { ... }
+        .classname [@geom_part=vertex[vertex.len-1]] { ... }
 
 1. **Dependant attachments** `&&` depend on the previous bits being rendered in that selection. Useful for text labels to require the anchor symbolization being placed. eg: point&&stroke
 
