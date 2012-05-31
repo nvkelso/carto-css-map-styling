@@ -172,9 +172,9 @@ _All these must be supported to meet 1.0 compliance_
           text-face-name: "Arial";
         }
         
-        NOTE: In the end, text-name: [NAME] should be the ideal. This is supported only by GeoServer now.
+    NOTE: In the end, text-name: [NAME] should be the ideal. This is supported only by GeoServer now.
         
-        NOTE: In GeoServer, this is:
+    NOTE: In GeoServer, this is:
         
         {
             label: [STATE_ABBR];
