@@ -244,14 +244,15 @@ _All these must be supported to meet 1.0 compliance_
 
     _Supported by: Cascadenik, Carto, GeoSever_
 
-    `[zoom>14]` - supported by Cascadnik and Carto.
-    
-    `[@scale>100000]` - supported by GeoServer. JL likes something like this. Elaboration: syntax shouldn't compete with fieldnames.
-    `[scale-denominator>100000]` - suppored by Cascadenik now.
+    `[@zoom>14]` - new. Kinda Carto and Cascadenik.
+    `[@scale>100000]` - newish. GeoServer, kinda Cascadenik already implement.
 
-    Question: 
+    Now:
     
-    `[@zoom>14]` - should this be our future target?
+    `[zoom>14]` - supported by Cascadnik and Carto. Should be depreciated?
+    `[@scale>100000]` - supported by GeoServer. JL likes something like this. Elaboration: syntax shouldn't compete with fieldnames.
+    `[scale-denominator>100000]` - suppored by Cascadenik now, could support @scale instead in the future?.
+   
         
 
 #Advanced bits (Mappy CSS 2.0):
