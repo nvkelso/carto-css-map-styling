@@ -167,14 +167,29 @@ _All these must be supported to meet 1.0 compliance_
 
     _Supported by: Carto, GeoServer (uses slightly different [notation](http://docs.geoserver.org/stable/en/user/community/css/values.html#labels)). Easy to implement in Cascadenik?_
             
+    NOTE: In the end, text-name: [NAME] should be the ideal. This is supported only by GeoServer now.
+
+    Mappy CSS:
+
+        #world {
+          text-name: [NAME];
+          text-face-name: "Arial";
+        }
+
+    Carto:
+    
         #world {
           text-name: "[NAME]";
           text-face-name: "Arial";
         }
         
-    NOTE: In the end, text-name: [NAME] should be the ideal. This is supported only by GeoServer now.
-        
-    NOTE: In GeoServer, this is:
+    Cascadenik:
+    
+        #world NAME {
+          text-face-name: "Arial";
+        }
+
+    GeoServer:
         
         {
             label: [STATE_ABBR];
