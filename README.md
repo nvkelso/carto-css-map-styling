@@ -266,13 +266,9 @@ _All these must be supported to meet 2.0 compliance_
         
         #road-b { line-width: 2; line-color: #f90 }
 
-<<<<<<< HEAD
-1. ~~**@media zoom selection** [zoom] from Cascadenik and Carto 1.0 allowed, extended like below:  _Proposed by JL._~~
+1. ~~**@media zoom selection** [zoom] from Cascadenik and Carto 1.0 allowed, extended like below:  _Proposed by JL, liked by NVK and MM._~~
 
-1. **variable expresions** modifying color swatches, stroke-widths, and @variables, etc.
->>>>>>> 6eb51f8e8800f78b1065a515d693481f29b72292
-
-    Deprecitated for [@zoom=10], see above in Core section.
+    Deprecitated for [@zoom=10], see above in Core section!
     
     _Supported by: none?_
     
