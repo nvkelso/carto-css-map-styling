@@ -182,6 +182,8 @@ _All these must be supported to meet 1.0 compliance_
             font-style: normal;
             font-size: 14;
         }
+        
+    Note: GeoServer allows string constants, not just fieldnames! Cool: http://docs.geoserver.org/stable/en/user/community/css/values.html
 
 1. **Markers instead of points**: or `anchor`? Marker is more widely supported in Gmaps world. Mapnik's `point` should be hidden in this generic spec. _JL, NVK and NVK on 25 May and 29 May._
 
@@ -326,17 +328,24 @@ _All these must be supported to meet 2.0 compliance_
 
 1. **Advanced CSS syntax: shields**
 
-    _Supported by: Carto, Cascadnik, GeoServer_
+    _Supported by: Carto, Cascadnik, GeoServer?_
         
-         In Carto:
+    In Carto:
+
          .class::layer_attachment { `shield-... }`
         
-         In Cascadenik:
+    In Cascadenik:
+    
          .class NAME { `shield-... }`
 
-         Question: can you accomplish the same thing with && dependent property rending... 
-         or is this special enough to be a special case, even if that is true?
+    For GeoServer:
+    
+        I don't see actual highway shields detailed here:    
+        http://docs.geoserver.org/stable/en/user/community/css/styled-marks.html
 
+    Question: can you accomplish the same thing with && dependent property rending... 
+    or is this special enough to be a special case, even if that is true?
+         
 
 #Super advanced bits (Mappy CSS 3.0):
 
