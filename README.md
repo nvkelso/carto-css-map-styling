@@ -575,6 +575,35 @@ _Note: some are likely to remain vender specific implementations, -vender-proper
         .classname[@geom=point] { ... }
         
         
+#Reasonable Mappy CSS 2.0 defaults:
+
+_Note: if the defaults.mss file is included, the default for layers is ON instead of off"_
+
+_Note: the stye="..." examples need to be reworked._
+
+* **Text -> geom_centroid -> Registration/Text**: 
+
+        .class[@geom=text?] { text-size:12px; text-color:#000000; text-face:Arial; }
+
+* **Marker -> Point -> Registration**: 
+
+        .class[@geom=point] { stroke-width:2px; stroke-color:#000000; cap:round; }
+
+* **Stroke -> Line -> Edge**: 
+
+        .class[@geom=line] { stroke-width:1px; stroke-color:#000000; cap:square; }
+
+* **Fill -> Polygon -> Interior**: 
+
+         .class[@geom=polygon] { fill-color:#eeeeee; }
+
+* **Raster Pixels -> Point > Registration**: 
+
+         .class[@geom=raster] { ... }
+
+         Per pixel colored by the RGB channel values. Kinda like a RGB #hex gradient per 0-255 values?
+         CSS tk tk tk.
+
 
 #File structure
 
@@ -654,35 +683,6 @@ _Note: some are likely to remain vender specific implementations, -vender-proper
     
     The interactivity spec Carto wraps is [utfgrid-spec](https://github.com/mapbox/utfgrid-spec/tree/master/1.2).
 
-
-#Reasonable defaults:
-
-_Note: if the defaults.mss file is included, the default for layers is ON instead of off"_
-
-_Note: the stye="..." examples need to be reworked._
-
-* **Text -> geom_centroid -> Registration/Text**: 
-
-        .class[@geom=text?] { text-size:12px; text-color:#000000; text-face:Arial; }
-
-* **Marker -> Point -> Registration**: 
-
-        .class[@geom=point] { stroke-width:2px; stroke-color:#000000; cap:round; }
-
-* **Stroke -> Line -> Edge**: 
-
-        .class[@geom=line] { stroke-width:1px; stroke-color:#000000; cap:square; }
-
-* **Fill -> Polygon -> Interior**: 
-
-         .class[@geom=polygon] { fill-color:#eeeeee; }
-
-* **Raster Pixels -> Point > Registration**: 
-
-         .class[@geom=raster] { ... }
-
-         Per pixel colored by the RGB channel values. Kinda like a RGB #hex gradient per 0-255 values?
-         CSS tk tk tk.
 
 
 #&etc
