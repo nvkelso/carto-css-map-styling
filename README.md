@@ -261,7 +261,7 @@ _All these must be supported to meet 1.0 compliance_
     `[scale-denominator>100000]` - suppored by Cascadenik now, could support @scale instead in the future?.
         
 
-#Advanced bits (Mappy CSS 2.0):
+#Basic bits (Mappy CSS 2.0):
 
 _All these must be supported to meet 2.0 compliance_
 
@@ -371,7 +371,7 @@ _All these must be supported to meet 2.0 compliance_
     or is this special enough to be a special case, even if that is true?
          
 
-#Super advanced bits (Mappy CSS 3.0):
+#Advanced bits (Mappy CSS 3.0):
 
 1. **variable expresions** modifying color swatches, stroke-widths, and @variables, etc.
     
