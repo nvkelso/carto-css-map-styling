@@ -209,15 +209,15 @@ _All these must be supported to meet 1.0 compliance_
 
         #id1 { ... }
         
-        GeoServer also allows:
+    GeoServer also allows:
         
         layername {}
         
-        The layer metadata isn't built now but could be addressed by:
+    The layer metadata isn't built now but could be addressed by:
         
         .classname { &[layer_metadata_filter=value] { ... } }
         
-        versus
+    versus
         
         .classname { [feature_field_filter=value] { ... } }
         
