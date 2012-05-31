@@ -67,7 +67,7 @@ NOTE: Extensions might include data formats (csv, shp in zip), data statistics (
 
 _All these must be supported to meet 1.0 compliance_
 
-1. **Basic CSS syntax: stroke, fill, marker (was point, also talked about anchor)**
+1. **Basic CSS syntax: stroke, fill, marker** - marker was point, also talked about anchor
 
     Properties consist of name/value pairs separated by colons (:).
              
@@ -75,11 +75,15 @@ _All these must be supported to meet 1.0 compliance_
 
     _Supported by: Cascadenik (only #rgb and #rrggbb, not 'black'), Carto (all), GeoServer (all except those not already supported by GeoTools renderer: fill-repeat, marker-placement, marker-overlap, marker-spacing), Gmaps?_
         
+    **fill**
+    
     `fill-color: #rgb;` or `fill-color: #rrggbb;` or `fill-color: black;` or `fill-color: url("image.png");` - Default is none.
     
     `fill-repeat: ...;` only comes to play when fill-color is set to an image. Default is ...
 
     `fill-opacity: 1.0;` - ratio range between 0.0 and 1.0. Default is 1.0
+
+    **stroke**
 
     `stroke-width: 2px;` - Default is none.
         
@@ -92,6 +96,8 @@ _All these must be supported to meet 1.0 compliance_
     `stroke-join: miter;` or `stroke-join: round;` or `stroke-join: bevel;`
 
     `stroke-dash-array: 1.1, 2.2, 3.3;`
+
+    **marker**
 
     `marker-width: 2px;` - Default is none. This results in a circle of diameter 2. If an image is specified, it overrides the image's native size.
     
