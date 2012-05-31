@@ -273,17 +273,22 @@ _All these must be supported to meet 2.0 compliance_
 
 1. **geometry type selectors** (point, line, polygon, raster) eg: `geom_type_selector.classname { ... }` or `.classname geom_type_selector { ... }` (which is less CSS like, but more like the sketches below)  Advanced: only test the first feature's type in a data store, assumes homogenious data in a single data store. **THIS IS THE ONLY SHOW STOPPER, might be relatively easy to implement in Cascadenik?** 
 
-    _Supported by: GeoServer (eg: mark-geometry: [vertices(geom)];). Should be easy to add to Cascadenik._
+    _Supported by: GeoServer kinda sorta (eg: mark-geometry: [vertices(geom)];). Should be easy to add to Cascadenik._
     
-        `.classname [@geom=polygon] { ... }` 
-        `.classname [@geom=line] { ... }` 
-        `.classname [@geom=point] { ... }` 
+        `.classname[@geom=polygon] { ... }` 
+        `.classname[@geom=line] { ... }` 
+        `.classname[@geom=point] { ... }` 
         
-        or
+    or
 
-        `geom_type_selector.classname { ... }` or 
-        `.classname geom_type_selector { ... }` or
+        ~~`geom_type_selector.classname { ... }`~~
+        
+    or
+    
+        ~~`.classname geom_type_selector { ... }`~~
                 
+    GeoServer does it now like:
+    
         * {
           marker-symbol: 'circle';
           maker-geometry: [vertices(the_geom)];
