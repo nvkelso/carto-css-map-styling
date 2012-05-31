@@ -259,7 +259,7 @@ _All these must be supported to meet 2.0 compliance_
         @orange: #f90;
         #road-a {  line-width: 2; line-color: @orange; }
         
-        expands to:
+    expands to:
         
         #road-b { line-width: 2; line-color: #f90 }
 
