@@ -114,16 +114,16 @@ _All these must be supported to meet 1.0 compliance_
         #world[population >= 100]
         #world[population <= 100]
                 
-        No filter:
+    No filter:
         
         * { ... } in Cascadenik and GeoServer, think this is true in Carto too.
         
-        Combining filters:
+    Combining filters:
         
-        Combination is done in the usual CSS way. A rule with two filters separated by a 
-        comma affects any features that match either filter, while a rule with two filters
-        separated by only whitespace affects only features that match both filters. Here’s
-        an example using a basic attribute filter (described below):
+    Combination is done in the usual CSS way. A rule with two filters separated by a 
+    comma affects any features that match either filter, while a rule with two filters
+    separated by only whitespace affects only features that match both filters. Here’s
+    an example using a basic attribute filter (described below):
         
         /* Matches places where the lake is flooding */
         [rainfall>12] [lakes>1] {
