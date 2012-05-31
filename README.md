@@ -87,7 +87,7 @@ _All these must be supported to meet 1.0 compliance_
 
          `stroke-join: miter;` or `stroke-join: round;` or `stroke-join: bevel;`
 
-         `stroke-dash-array: [a,b...]`
+         `stroke-dash-array: 1.1, 2.2, 3.3;`
 
          `marker-width: 2px;` - Default is none. This results in a circle of diameter 2. If an image is specified, it overrides the image's native size.
     
