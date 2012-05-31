@@ -292,9 +292,13 @@ _All these must be supported to meet 2.0 compliance_
 
 1. **Advanced CSS syntax: stroke**
 
-    _Supported by: GeoServer (``stroke``, not ``stroke-color``GeoServer (``stroke``, not ``stroke-color``. ``stroke-repeat`` property takes keyword values indicating whether to use the image as a fill pattern or a stroke following the line)_
+    _Supported by: GeoServer kinda sorta._
         
          `stroke-color: url("image.png");` or `stroke-background: url("image.png");`
+
+    Note: GeoServer uses ``stroke`` instead of ``stroke-color``. 
+    
+    Note: Geoserver uses ``stroke-repeat`` property takes keyword values indicating whether to use the image as a fill pattern or a stroke following the line).
     
 1. **display:none** - like `!important`, but for not showing stuff, regardless of other rules. 
 
