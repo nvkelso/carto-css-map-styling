@@ -279,13 +279,9 @@ _All these must be supported to meet 2.0 compliance_
         `.classname[@geom=line] { ... }` 
         `.classname[@geom=point] { ... }` 
         
-    or
-
-    ~~`geom_type_selector.classname { ... }`~~
+    or ~~`geom_type_selector.classname { ... }`~~
         
-    or
-    
-    ~~`.classname geom_type_selector { ... }`~~
+    or ~~`.classname geom_type_selector { ... }`~~
                 
     GeoServer does it now like:
     
