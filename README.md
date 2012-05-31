@@ -583,7 +583,7 @@ _Note: some are likely to remain vender specific implementations, -vender-proper
     
     _NOTE 3: Data source definition can be inline or an import in the MML. From cascadnik/carto 2.0. ¿Easy in XML format, harder in JSON?_
 
-**For the MML layer setup:**
+##For the MML layer setup:
 
 1. **Local versus remote** data files.
 
