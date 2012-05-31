@@ -25,7 +25,11 @@ The following layers are included per map feature class:
 
 These conform to common OpenStreetMap and other geodata feature categories.
 
-To change the **colors**, double click on the solid color chip in the layers panel. These are adjustment layers with masks. Changing 
+To change the **colors**, double click on the solid color chip in the layers panel. These are adjustment layers with masks. 
+
+Changing the color values in the resulting dialog will affect the 4 zooms for the 3 places. 
+
+Once you're happy with the design, run the script from the File > Scripts > Other script... menu command and the .mss file next to the .psd will update.
 
 #Photoshop Script
 
