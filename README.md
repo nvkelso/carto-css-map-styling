@@ -238,6 +238,8 @@ _All these must be supported to meet 1.0 compliance_
         
         .classname { [feature_field_filter=value] { ... } }
         
+    Warning: two differeint &[] and [] implementations especially re layer meta data has other implications, promts other discussions and incompatabilities.
+        
 1. **Zoom and scale denominator**
 
     _Supported by: Cascadenik, Carto, GeoSever_
