@@ -847,4 +847,6 @@ Syntax details, implementation recommendations, avoids, demos, open questions, h
 
 **Extended examples:**
 
+WARNING: the `.layer interior {marker-image: url() }` example below is incorrect. It should show markers just inside the polygon, with none spilling outside. More like a mask or a `polygon-fill: url()`? Or is there a slight difference?
+
 ![MappyCSS_Extended](https://github.com/nvkelso/carto-css-map-styling/raw/master/images/carto_extended.png)
