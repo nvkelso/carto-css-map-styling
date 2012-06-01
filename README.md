@@ -546,7 +546,9 @@ _All these must be supported to meet 2.0 compliance_
     WARNING: Has implications for supporting filtering based on layer metadata, an unsupported feature as of now. Cascadenik can easily do the [] instead of &[], but in light of the other question. And it makes it less Less.js like?
 
     
-1. **repeated properties** - Like layer-based style attachements (`::`), see above.
+1. **repeated properties** - Like anonymous layer-based style attachements (`::`), see above. 
+
+    Technically the ::name bit after the :: is fluff anyway? :: is still useful for grouping multiple graphic appearances onto a single duplicate of the layer (both of these are useful).
 
     [Read more »](http://docs.geoserver.org/stable/en/user/community/css/multivalues.html)
 
