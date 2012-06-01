@@ -224,6 +224,19 @@ _All these must be supported to meet 1.0 compliance_
     
         { stroke-size: 2px; stroke-cap: butt; }     /* for a square */
 
+    Question: How do we size a maker? px values? are % allowed?
+    
+        { marker-image: url('...'); }                        /* native size of that image asset */
+        { marker-image: url('...'); marker-size: 200%; }     /* 200% of the native size */
+        { marker-image: url('...'); marker-size: 4px; }      /* absolute 4px dimension, expands to
+                                                                         marker-width:4px; 
+                                                                         marker-height:4px; */
+
+    Are marker-width and marker-height allowed as well as marker-size? 
+
+        { marker-image: url('...'); marker-width: 4px; 
+                                    marker-height: 8px; }    /* for an image, like Gmaps now */
+
 1. **For backwards compatability: points are are synonym for markers** Point would have a depreciation, new implementations might optionally support. _MM and NVK 29 May._
 
     _Supported by: Cascadenik, Carto use points instead of markers now. Shouldbe depreciated?_
