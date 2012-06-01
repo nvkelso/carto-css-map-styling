@@ -79,6 +79,14 @@ _All these must be supported to meet 1.0 compliance_
     
     `fill-color: #rgb;` or `fill-color: #rrggbb;` or `fill-color: black;` or `fill-color: url("image.png");` - Default is none.
     
+        WARNING: Carto/Cascadenik seems to accomplish fill-color: url("image.png") this way now:
+        
+        polygon-pattern-file: url()
+        polygon-pattern-width 4px;
+        polygon-pattern-height: 4px;
+        
+        It would need to take fill-color and expand it to the Mapnik native syntax.
+    
     `fill-repeat: ...;` only comes to play when fill-color is set to an image. Default is ...
 
     `fill-opacity: 1.0;` - ratio range between 0.0 and 1.0. Default is 1.0
@@ -87,7 +95,9 @@ _All these must be supported to meet 1.0 compliance_
 
     `stroke-width: 2px;` - Default is none.
         
-    `stroke-color: #rrggbb;`  or `stroke-color: black;`.  - Default is none. Note: `stroke-color: url("image.png");` is an advanced feature.
+    `stroke-color: #rrggbb;`  or `stroke-color: black;`.  - Default is none. 
+    
+    WARNING: `stroke-color: url("image.png");` is an advanced feature, see below.
     
     `stroke-opacity: 1.0;`  - ratio range between 0.0 and 1.0. Default is 1.0
 
