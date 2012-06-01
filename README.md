@@ -72,6 +72,12 @@ _All these must be supported to meet 1.0 compliance_
     Properties consist of name/value pairs separated by colons (:).
              
     They are grouped per selector by { ... }.
+    
+    To be visible:
+        
+        stroke needs **both** stroke-width and stroke-color defined.
+        fill needs **only** fill defined.
+        markers need either a) **both** stroke-width and stroke-color or b) **only** marker-image set.
 
     _Supported by: Cascadenik (only #rgb and #rrggbb, not 'black'), Carto (all), GeoServer (all except those not already supported by GeoTools renderer: fill-repeat, marker-placement, marker-overlap, marker-spacing), Gmaps?_
         
