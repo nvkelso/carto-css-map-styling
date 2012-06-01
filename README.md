@@ -152,7 +152,7 @@ _All these must be supported to meet 1.0 compliance_
                 
     **No filter:**
         
-    `* { ... }` - in Cascadenik and GeoServer, think this is true in Carto too.
+    `* { ... }` - in Cascadenik, Carto, and GeoServer.
         
     **Combining filters:**
         
