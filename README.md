@@ -49,6 +49,8 @@ NOTE: Extensions might include data formats (csv, shp in zip), data statistics (
         1.0: `color:#rgb` and `color:#rrggbb` with `opacity:1.0`
             
         2.0: Other color spaces. See below.
+        
+        3.0: gradients as colors? see **gradients on strokes** section far below.
 
 1. **Object geometry type filter**: point, line, polygon, continuous-field aka raster. 
 
@@ -129,6 +131,10 @@ _All these must be supported to meet 1.0 compliance_
 
     `marker-spacing: 100px;` - tk tk tk
 
+    **rasters**
+    
+    Seems like this should just be gradient stretches like described in **gradients on strokes** section far below.
+    
     
 1. **Filters** for feature attributes. Exactly equal, not equal, less than, greater than, less than or equal to, greater than or equal to based on class or id selectors.
 
@@ -715,6 +721,77 @@ _Note: some are likely to remain vender specific implementations, -vender-proper
 1. **gradients on strokes** - The future come-ith.
 
     _Supported by: none..._
+
+
+    1. GRADIENT-TYPE: linear|radial
+    
+        Note: This should already be supported for classifying a raster image
+        (which hasn't been spec'd here).
+        
+        1a. Type: linear|radial - Default is linear.
+        
+    2. GRADIENT-ANGLE: value
+    3. GRADIENT-ASPECT-RATIO: value
+    
+            Default: 0 - measured in degrees. for angle. default: left to right with no tilt applied.
+            Default: 100% - measured in %. for aspect-ratio. for the circle width, height.
+            
+    4. GRADIENT-RAMP-TYPE: ratio|absolute
+        
+            Ratio: lowest data value to highest data value, so the renderer
+        needs to be able to do that basic stat. Stops at % in between with color
+        chips (color + opacity) associated.
+        
+            Absolute values: user specified data values with color chips (color + 
+            opacity) associated.
+                    
+    5. GRADIENT-RAMP-STOPS: array of positions either in value or % format.
+
+            Default: 0%, 100%;      - starting at the first vertex, ending at the last vertex
+
+    5. GRADIENT-RAMP-COLORS: array of color and optional opacity values.
+    
+            Default: #fff, #000;      - white to black at 100% opacity, starting at the first vertex, ending at the last vertex
+
+            ~~Default: #fff 100% 0, #000 100% 100;      - white to black at 100% opacity, starting at the first vertex, ending at the last vertex~~
+            
+            Problem that opacity is % but position is either number or a percent. Ambiguity.
+        
+    5. GRADIENT-RAMP-OPACITY: array of color and optional opacity values.
+
+            Default: 100%, 100%;     - at 100% opacity, starting at the first vertex, ending at the last vertex
+
+    6. GRADIENT-ALIGNMENT: within|along|across
+    
+            Default: within
+    
+        `within` - Default. The stroke is just treated like a mask onto
+        a polygon-based gradient. Default since it's easy to engineer, relatively
+        speaking, and similar to polygon implementation.
+        
+        `along` - End to end: first vertex to last vertex.
+        
+        `across` - Side to side out from the center of the line to the 
+        edges of the stroke width.
+        
+    7. GRAIDENT-REGISTRATIONS: array of values either ratio|absolute type.
+    
+            Default: 0%, 100%;      - starting at the lowest value up to the highest value.
+    
+        think about this the same as `stretch, but where the
+        measure is % ratio distance along a line, or absolute page units (px at the
+        current zoom scale) across a line.
+        
+        For absolute values, the design tool would figure this out for you and hard code 
+        it? The renderer shouldn't need to know that?
+        
+    8. GRADIENT-REVERSED: true|false
+            
+            Default: false.
+            
+        a nice to have. Often data comes inverted, this is a quick fix around that. 
+        More GISy less designy. But makes both happy in the end.
+
 
 1. **heterogenious geometry type selectors** (point, line, polygon, raster) eg: `geom_type_selector.classname { ... }` or `.classname _geom_type_selector { ... }` (which is less CSS like, but more like the sketches below)  Advanced: tests per feature for feature type, important for GeoJSON etc. **THIS IS THE ONLY SHOW STOPPER.**
 
