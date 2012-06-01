@@ -271,10 +271,12 @@ _All these must be supported to meet 1.0 compliance_
 
         #id1 { ... }
         
-    GeoServer also allows (kinda possible in Carto?):
+    GeoServer also allows:
         
         layername {}
         
+    QUESTION: Should that be embrased in Mappy CSS? Not in the 1.0, but somewhere 2.0 to 4.0?
+
     The layer metadata isn't built now but could be addressed by:
         
         .classname { &[layer_metadata_filter=value] { ... } }
