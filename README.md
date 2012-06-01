@@ -263,7 +263,7 @@ _All these must be supported to meet 1.0 compliance_
 
         #id1 { ... }
         
-    GeoServer also allows:
+    GeoServer also allows (kinda possible in Carto?):
         
         layername {}
         
@@ -760,7 +760,28 @@ WARNING: if the defaults.mss file is included, the default for layer visibilty b
 
     _NOTE 2: Mappy CSS MML spec can be implemented in either [XML](https://github.com/mapnik/Cascadenik/wiki/Examples) (Cascadenik) or [JSON]() (Carto) formats._
     
-    **XML:**
+    **Overview**
+    
+        Map object with several properties including:
+            srs string --- for the projection, usually web mercator but can be any proj4 string.
+            background-color: #rrggbb etc.
+            background-image (should be background-color: url(...); ?)
+            buffer: 20px;
+            base:path/subdir/
+            font-directory: path/subdir
+        Stylesheet usually as an external (local) include. Inline MSS is allowed.
+            See above for spec.
+        Layer definitions with properties:     
+            "class": "name1",
+            "id": "value2",
+            "name": "name3",
+            "srs": "+proj=latlong +ellps=WGS84 +datum=WGS84 +no_defs",
+            "Datasource": {
+                "file": "world_borders",
+                "type": "shape"
+            }
+    
+    **XML:** Used by Cascadenik.
     
         <?xml version="1.0" encoding="utf-8"?>
         <Map srs="+proj=latlong +ellps=WGS84 +datum=WGS84 +no_defs">
@@ -784,8 +805,15 @@ WARNING: if the defaults.mss file is included, the default for layer visibilty b
                 </Datasource>
             </Layer>
         </Map>
-        
-    **JSON:**
+    
+    Use XML when any of these are important:
+    
+        1. Allows multi-line DB queries in MML where JSON does not allow unescaped line breaks. This creates more legible code.
+        2. Can add inline comments using standard XML <!-- comment --> syntax. This allows notes to now self and future self and for collaborators.
+        3. Can temporarily disable a block of code, also using <!-- disabled --> syntax.
+        4. DataSourcesConfig, see below.
+    
+    **JSON:** Used by Carto.
     
         {
             "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
