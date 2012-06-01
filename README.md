@@ -291,6 +291,14 @@ _All these must be supported to meet 1.0 compliance_
     `[@scale>100000]` - supported by GeoServer. JL likes something like this. Elaboration: syntax shouldn't compete with fieldnames.
     
     `[scale-denominator>100000]` - suppored by Cascadenik now, could support @scale instead in the future?.
+    
+1. **!important** - ensure your setting takes precedence in the CSS parser over filters, appearance styling that would otherwise be more important in order-of-operations.
+
+    _Supported by: Cascadenik, Carto_
+    
+        .class {
+          line-color: #ff0 !important; 
+        }
         
 
 #Basic bits (Mappy CSS 2.0):
