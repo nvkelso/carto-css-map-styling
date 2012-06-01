@@ -17,10 +17,10 @@ Question: Core bits should be universal. Extras should be wrapped in a Carto 2.0
 #Result should be:
 
 1. Reference documentation and examples that are compelling.
-2. Syntax should be easy to write for average designer, reusable, and shareable. 
+2. Syntax should be easy to write for average designer, reusable, and shareable. _- NVK stubbed out designer focused bridge tools 30 May._
 3. Syntax should be fast for the renderer draw. Text and shields are special cases we want to allow for. Mike put this as it's &#60;/div&#62; friendly.
 4. Should have reasonable style defaults / implementation routines that make sense for the designer and for the renderer. Reasonable defaults make it quick to explore a dataset (not just present the final results). Example: draw points to see a distribution, classify points, lines and polygons by thematic attribute and color quickly. See: [NVK's Thematic Carto Tools repo](https://github.com/nvkelso/thematic-carto-tools)
-5. Core syntax is interoperable with other style languages. Extensions allow extra awesome things. 
+5. Core syntax is interoperable ~~with other style languages~~ between renderer implementations (Mapnik, GeoServer, etc) and between flavors for the same renderer. Extensions allow extra awesome things. _NVK on 31 May._
 6. Clearly identify ambiguities (and document recommended solutions).
 7. Standard adhers to [Semantic Versioning](http://semver.org/). Watch background video ([youtube](http://www.youtube.com/watch?v=k2h2lvhzMDc)). _- MM and NVK add 18 May 2012._
 8. First principles based so it's easy to implement across software. _- NVK add 19 May 2012._
