@@ -117,7 +117,7 @@ _All these must be supported to meet 1.0 compliance_
 
     `marker-width: 2px;` - Default is none. This results in a circle of diameter 2. If an image is specified, it overrides the image's native size.
     
-    `marker-color: #rrggbb;` or `marker-color: url("image.png");` or `marker: url("image.png");` -- the last one of these is weird but interesting
+    `marker-color: #rrggbb;` or `marker-color: url("image.png");` or `marker: url("image.png");` -- the last one of these is weird but interesting. More like GeoServer, too?
         
     `marker-cap: round;` or `marker-cap: butt;`  or `marker-cap: square;`. Default is butt, resulting in a square marker? In Mappy CSS 2.0 defaults, does this turn into `marker-cap: round;` as default to get circles instead of squares with the fallback of squares?
 
