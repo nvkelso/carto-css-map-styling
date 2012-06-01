@@ -348,7 +348,7 @@ _All these must be supported to meet 2.0 compliance_
           maker-geometry: [vertices(the_geom)];
         }
 
-1. **Advanced CSS syntax: stroke**
+1. **Advanced CSS syntax: stroke background color and attached markers**
 
     _Supported by: Cascadenik, Carto, GeoServer kinda sorta._
         
@@ -358,17 +358,33 @@ _All these must be supported to meet 2.0 compliance_
     
         stroke-background: url("image.png");
     
-    Carto and Cascadenik kinda implement this now:
-    
-        line-pattern-file: url()
-        line-pattern-width: 4px;        
-        line-pattern-height 4px;
+    WARNING: GeoServer uses `stroke` instead of `stroke-color`. That could change, @David?
 
-    But that doesn't use the pattern >>inside<< the color inkable area. Rather it attaches a pattern to the edge of the line as a series of markers? See rendering targets below.
-
-    WARNING: GeoServer uses ``stroke`` instead of ``stroke-color``. 
+    **attached markers on the stroke** now in Carto and Cascadenik:
     
-    Note: Geoserver uses ``stroke-repeat`` property takes keyword values indicating whether to use the image as a fill pattern or a stroke following the line).
+        .class {
+            line-pattern-file: url()
+            line-pattern-width: 4px;        
+            line-pattern-height 4px;
+        }
+
+    But that doesn't use the pattern >>**inside**<< the color inkable area, like in the stroke-color / stroke-background section above. 
+    
+    Rather it attaches a pattern to the edge of the line as a series of markers? See rendering targets section below, overview here.
+
+    Should the syntax be cleaned up?
+    
+        .class {
+            marker-image: url()
+            marker-position: registration (default)|
+                             line (kinda in Cascadenik/Carto/Mapnik)|
+                             interior (kinda a polygon fill)|
+                             edge|
+                             vertex|
+                             complex-geom-operators] 
+        }
+    
+    Note: Geoserver uses `stroke-repeat` property takes keyword values indicating whether to use the image as a fill pattern or a stroke following the line).
     
 1. **display:none** - like `!important`, but for not showing stuff, regardless of other rules. 
 
