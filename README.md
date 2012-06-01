@@ -340,11 +340,23 @@ _All these must be supported to meet 2.0 compliance_
 
 1. **Advanced CSS syntax: stroke**
 
-    _Supported by: GeoServer kinda sorta._
+    _Supported by: Cascadenik, Carto, GeoServer kinda sorta._
         
-         `stroke-color: url("image.png");` or `stroke-background: url("image.png");`
+        stroke-color: url("image.png");
 
-    Note: GeoServer uses ``stroke`` instead of ``stroke-color``. 
+    or 
+    
+        stroke-background: url("image.png");
+    
+    Carto and Cascadenik kinda implement this now:
+    
+        line-pattern-file: url()
+        line-pattern-width: 4px;        
+        line-pattern-height 4px;
+
+    But that doesn't use the pattern >>inside<< the color inkable area. Rather it attaches a pattern to the edge of the line as a series of markers? See rendering targets below.
+
+    WARNING: GeoServer uses ``stroke`` instead of ``stroke-color``. 
     
     Note: Geoserver uses ``stroke-repeat`` property takes keyword values indicating whether to use the image as a fill pattern or a stroke following the line).
     
@@ -414,7 +426,13 @@ _All these must be supported to meet 2.0 compliance_
           marker-image: symbol(circle);
         }
 
-    Versus arbitrary url():
+    or, ala GeoServer:
+    
+        .class {
+            marker-symbol: 'circle';
+        }
+
+    Versus arbitrary/generic url():
 
         .class {
           marker-image: url(path/circle.png);
