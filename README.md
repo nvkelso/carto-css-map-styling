@@ -20,7 +20,7 @@ Question: Core bits should be universal. Extras should be wrapped in a Carto 2.0
 2. Syntax should be easy to write for average designer, reusable, and shareable. _- NVK stubbed out designer focused bridge tools 30 May._
 3. Syntax should be fast for the renderer draw. Text and shields are special cases we want to allow for. Mike put this as it's &#60;/div&#62; friendly.
 4. Should have reasonable style defaults / implementation routines that make sense for the designer and for the renderer. Reasonable defaults make it quick to explore a dataset (not just present the final results). Example: draw points to see a distribution, classify points, lines and polygons by thematic attribute and color quickly. See: [NVK's Thematic Carto Tools repo](https://github.com/nvkelso/thematic-carto-tools)
-5. Core syntax is interoperable ~~with other style languages~~ between renderer implementations (Mapnik, GeoServer, etc) and between flavors for the same renderer. Extensions allow extra awesome things. _NVK on 31 May._
+5. Core syntax is interoperable ~~with other style languages~~ between renderer implementations (Mapnik, GeoServer, etc) and between flavors for the same renderer. Extensions allow extra awesome things. _- NVK on 31 May._
 6. Clearly identify ambiguities (and document recommended solutions).
 7. Standard adhers to [Semantic Versioning](http://semver.org/). Watch background video ([youtube](http://www.youtube.com/watch?v=k2h2lvhzMDc)). _- MM and NVK add 18 May 2012._
 8. First principles based so it's easy to implement across software. _- NVK add 19 May 2012._
@@ -391,6 +391,48 @@ _All these must be supported to meet 2.0 compliance_
     Question: can you accomplish the same thing with && dependent property rending... 
     or is this special enough to be a special case, even if that is true?
          
+1. **well-known-symbols marker images** - where image could be png, gif, jpg, svg, etc?. Ideally vector so sizing can be applied and still looks good.
+
+    _Supported by: GeoServer_
+    
+    For w-k-s symbol() syntax:
+    
+        .class {
+          marker-image: symbol(circle);
+        }
+
+    Versus arbitrary url():
+
+        .class {
+          marker-image: url(path/circle.png);
+        }
+
+    For instance, GeoServer’s CSS module provides a collection of predefined symbols that you can use and combine to create simple marks, strokes, and fill patterns without needing an image editing program. You can access these symbols via the symbol() CSS function. For example, the built-in circle symbol makes it easy to create a simple ‘dot’ marker for a point layer:
+
+        * {
+          mark: symbol(circle);
+        }
+    
+    Symbols work anywhere you can use a url() to reference an image (ie, you can use symbols for stroke and fill patterns as well as markers.)
+        
+    **Symbol Names:**
+        
+    _GeoServer extensions can add extra symbols (such as the chart:// symbol family which allows the use of charts as symbols via a naming scheme similar to the Google Charts API). However, there are a few symbols that are always available:_
+        
+        circle
+        square
+        triangle
+        arrow
+        cross
+        star
+        x
+        shape://horizline
+        shape://vertline
+        shape://backslash
+        shape://slash
+        shape://plus
+        shape://times
+
 
 #Advanced bits (Mappy CSS 3.0):
 
