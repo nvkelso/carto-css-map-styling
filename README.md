@@ -656,7 +656,14 @@ _Note: some are likely to remain vender specific implementations, -vender-proper
 
 1. **Rendering/compositing targets** are implied but can be explicate or overridden: fill-, stroke-, anchor-, and data-. _Note: color:#hex is implied as fill-color:#hex._
 
-    _Supported by: none..._
+    _Supported by: Kinda Carto, Cascadenik for line-pattern-symbolizer only, see above._
+    
+        .class[@position=registration|edge|interior|vertex|complex-geom-operators] { ... }
+
+    or
+        
+        .class { marker-position:registration|edge|interior|vertex|complex-geom-operators; }
+
 
 1. **Blending modes** ala Photoshop, Illustrator, new compositing branch of Mapnik, cutting edge CSS.
 
