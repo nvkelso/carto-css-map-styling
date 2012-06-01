@@ -107,7 +107,7 @@ _All these must be supported to meet 1.0 compliance_
     
     `stroke-opacity: 1.0;`  - ratio range between 0.0 and 1.0. Default is 1.0
 
-    `stroke-cap: round;` or `stroke-cap: butt;`  or `stroke-cap: square;` 
+    `stroke-cap: round;` or `stroke-cap: butt;`  or `stroke-cap: square;` Default is butt, matching all other styling languages?
 
     `stroke-join: miter;` or `stroke-join: round;` or `stroke-join: bevel;`
 
@@ -119,6 +119,8 @@ _All these must be supported to meet 1.0 compliance_
     
     `marker-color: #rrggbb;` or `marker-color: url("image.png");` or `marker: url("image.png");` -- the last one of these is weird but interesting
         
+    `marker-cap: round;` or `marker-cap: butt;`  or `marker-cap: square;`. Default is butt, resulting in a square marker? In Mappy CSS 2.0 defaults, does this turn into `marker-cap: round;` as default to get circles instead of squares with the fallback of squares?
+
     `marker-opacity: 1.0;`  - ratio range between 0.0 and 1.0. Default is 1.0
 
     `marker-placement: point;` or `marker-placement: line;`
