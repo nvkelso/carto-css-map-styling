@@ -390,9 +390,14 @@ _All these must be supported to meet 2.0 compliance_
 
     Default is `display:map`
 
-    _Supported by: Cascadenik (2.1.0)_
+    _Supported by: Cascadenik (2.1.0) as display:none, but not yet attr of 0._
     
         .class[filter=value] { display:none; }
+    
+    Attributes of 0 should be parsed as display:none;
+    
+        .class[filter=value] { stroke-width:0px; }
+
 
 1. **FontSets**: very important for multilingual characters and UTF-8 labels, font fallbacks
 
