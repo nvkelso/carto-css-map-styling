@@ -2,7 +2,7 @@ Two tools for turning either a sample **Photoshop PSD** with custom colors or a 
 
 #Sample files
 
-4 zooms in three places (SF, ? and Tokyo). 
+4 zooms in three places (SF, Berlin, and Tokyo). 
 
 ![PSD file preview image](https://github.com/nvkelso/carto-css-map-styling/raw/master/tools/psd_to_mss/MAP_colors.png)
 

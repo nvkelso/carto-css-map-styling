@@ -1,6 +1,6 @@
 #PSD file
 
-A layered Photoshop file with 4 zooms in three places (SF, ? and Tokyo). 
+A layered Photoshop file with 4 zooms in three places (SF, Berlin, and Tokyo). 
 
 ![PSD file preview image](https://github.com/nvkelso/carto-css-map-styling/raw/master/tools/psd_to_mss/MAP_colors.png)
 
