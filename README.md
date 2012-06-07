@@ -987,7 +987,13 @@ WARNING: if the defaults.mss file is included, the default for layer visibilty b
     
     The interactivity spec Carto wraps is [utfgrid-spec](https://github.com/mapbox/utfgrid-spec/tree/master/1.2).
 
+1. **building symbolizer**
 
+    _Supported by: Carto._
+    
+        building-fill: #ffffff;
+        building-opacity: 1.0;
+        building-height: 0;
 
 #&etc
 
