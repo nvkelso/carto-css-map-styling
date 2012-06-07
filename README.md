@@ -414,7 +414,7 @@ _All these must be supported to meet 2.0 compliance_
     
     Note: Geoserver uses `stroke-repeat` property takes keyword values indicating whether to use the image as a fill pattern or a stroke following the line).
     
-1. **display:none** - like `!important`, but for not showing stuff, regardless of other rules. 
+1. **display:none** - like `!important`, but for not showing stuff, regardless of other rules. Speeds up stylesheets by ignoring unused elements in renderer specific export.
 
     Default is `display:map`
 
