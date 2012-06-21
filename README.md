@@ -80,6 +80,7 @@ _All these must be supported to meet 1.0 compliance_
         stroke needs **both** stroke-width and stroke-color defined.
         fill needs **only** fill defined.
         markers need either a) **both** stroke-width and stroke-color or b) **only** marker-image set.
+        rasters are visible by default?
 
     _Supported by: Cascadenik (only #rgb and #rrggbb, not 'black'), Carto (all), GeoServer (all except those not already supported by GeoTools renderer: fill-repeat, marker-placement, marker-overlap, marker-spacing), Gmaps?_
         
@@ -131,10 +132,13 @@ _All these must be supported to meet 1.0 compliance_
 
     `marker-spacing: 100px;` - tk tk tk
 
-    **rasters**
+    **raster**
+
+    `raster-opacity: 1.0;`  - ratio range between 0.0 and 1.0. Default is 1.0
     
-    Seems like this should just be gradient stretches like described in **gradients on strokes** section far below.
-    
+     NOTE: Colorizing a raster outside of it's default RGB channel values is an advanced feature, see below.
+     
+     See: [Mapnik's RasterSymbolizer](https://github.com/mapnik/mapnik/wiki/RasterSymbolizer).
     
 1. **Filters** for feature attributes. Exactly equal, not equal, less than, greater than, less than or equal to, greater than or equal to based on class or id selectors.
 
@@ -410,7 +414,7 @@ _All these must be supported to meet 2.0 compliance_
     
     Note: Geoserver uses `stroke-repeat` property takes keyword values indicating whether to use the image as a fill pattern or a stroke following the line).
     
-1. **display:none** - like `!important`, but for not showing stuff, regardless of other rules. 
+1. **display:none** - like `!important`, but for not showing stuff, regardless of other rules. Speeds up stylesheets by ignoring unused elements in renderer specific export.
 
     Default is `display:map`
 
@@ -519,6 +523,45 @@ _All these must be supported to meet 2.0 compliance_
         shape://plus
         shape://times
 
+1. **Advanced Mappy CSS: raster colorizer**
+
+    Seems like this should just be gradient stretches like described in **gradients on strokes** section far below.
+
+    See [Mapnik's RasterColorizer](https://github.com/mapnik/mapnik/wiki/RasterColorizer). 
+    
+    3. RASTER-RAMP-MODE: linear|discrete - like in Mapnik.
+
+    4. RASTER-RAMP-TYPE: ratio (stretch based on percent from MIN and MAX)|absolute (stretch based on real values, default in Mapnik)
+        
+            Ratio: lowest data value to highest data value, so the renderer
+        needs to be able to do that basic stat. Stops at % in between with color
+        chips (color + opacity) associated.
+        
+            Absolute values: user specified data values with color chips (color + 
+            opacity) associated.
+                    
+    5. RASTER-RAMP-STOPS: array of positions either in value (Mapnik default) or % format.
+
+            Default: 0%, 100%;      - starting at the first vertex, ending at the last vertex
+
+    5. RASTER-RAMP-COLORS: array of color and optional opacity values.
+    
+            Default: #fff, #000;      - white to black at 100% opacity, starting at the first vertex, ending at the last vertex
+
+            ~~Default: #fff 100% 0, #000 100% 100;      - white to black at 100% opacity, starting at the first vertex, ending at the last vertex~~
+            
+            Problem that opacity is % but position is either number or a percent. Ambiguity.
+        
+    5. RASTER-RAMP-OPACITY: array of color and optional opacity values.
+
+            Default: 100%, 100%;     - at 100% opacity, starting at the first vertex, ending at the last vertex
+                
+    8. RASTER-REVERSED: true|false
+            
+            Default: false.
+            
+        a nice to have. Often data comes inverted, this is a quick fix around that. 
+        More GISy less designy. But makes both happy in the end.
 
 #Advanced bits (Mappy CSS 3.0):
 
@@ -809,6 +852,15 @@ _Note: some are likely to remain vender specific implementations, -vender-proper
         .classname { [@geom=line] { ... } }
         .classname { [@geom=point] { ... } }
 
+1. **building symbolizer**
+
+    _Supported by: Carto._
+    
+        building-fill: #ffffff;
+        building-opacity: 1.0;
+        building-height: 0;
+
+
         
 #Reasonable Mappy CSS 2.0 defaults:
 
@@ -943,7 +995,6 @@ WARNING: if the defaults.mss file is included, the default for layer visibilty b
     Note: Carto supports passthru of the interactivity templates in TileMill, but doesn't support it explicately.
     
     The interactivity spec Carto wraps is [utfgrid-spec](https://github.com/mapbox/utfgrid-spec/tree/master/1.2).
-
 
 
 #&etc
