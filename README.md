@@ -41,6 +41,7 @@ NOTE: Extensions might include data formats (csv, shp in zip), data statistics (
 
         For images, the size is implied by a non-repeat dimension of the source image. 
         Others are determined by default style CSS. Continues from Cascadenik/Carto 1.0.
+        Note: Lines can end either with or without semicolons at block ends, per CSS spec. Cascadenik (2.3.0)
     
 1. **Ink with** for color (mask) areas (extrusion of stroke, or fill): rgb, cmyk, hsv, gradient, image (with repeat options). 
 
