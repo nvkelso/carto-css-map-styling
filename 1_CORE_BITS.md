@@ -39,7 +39,9 @@ _All these must be supported to meet 1.0 compliance_
         
     `stroke-color: #rrggbb;`  or `stroke-color: black;`.  - Default is none. 
     
-    WARNING: `stroke-color: url("image.png");` is an advanced feature, see below.
+    	WARNING: `stroke-color: url("image.png");` is an advanced feature, see below.
+    	
+		WARNING: GeoServer CSS assumes stroke-width: 1px; Carto and Cascadenik assume 0.    
     
     `stroke-opacity: 1.0;`  - ratio range between 0.0 and 1.0. Default is 1.0
 
