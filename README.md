@@ -11,7 +11,7 @@ Question: Core bits should be universal. Extras should be wrapped in a Carto 2.0
 
 1. CSS-like map design language. Syntax extends the foundation laid by [Cascadenik](https://github.com/mapnik/Cascadenik/wiki/Dictionary) and [Carto](http://mapbox.com/carto/) ([overview](https://github.com/mapbox/carto)) and the power of Less.js. [GeoServer](http://docs.geoserver.org/stable/en/user/community/css/index.html) is also joining the mix.
 2. Better support for reference-style maps by formalizing the use of @variables for color swatches, and mixins for graphic styles and text character styles.
-3. ~~¿Add support for thematic data cartography with data statistics like MIN, MAX, MEAN and use of those keywords in high-level filters that are under a dozen lines of code? Allow for both loose and hard connections between data and symbology.~~ [GeoServer has 3 great simple functions for much of this now in SLD](http://blog.opengeo.org/2012/08/02/thematic-map-creation-with-sld-is-now-much-easier/) - [Direct link to reference docs](http://docs.geoserver.org/latest/en/user/filter/function_reference.html#transformation-functions)
+3. ~~¿Add support for thematic data cartography with data statistics like MIN, MAX, MEAN and use of those keywords in high-level filters that are under a dozen lines of code? Allow for both loose and hard connections between data and symbology.~~ [1. GeoServer has 3 great simple functions for much of this now in SLD](http://blog.opengeo.org/2012/08/02/thematic-map-creation-with-sld-is-now-much-easier/) ---- [2. Direct link to reference docs](http://docs.geoserver.org/latest/en/user/filter/function_reference.html#transformation-functions)
 
 
 #Result should be:
