@@ -126,23 +126,23 @@ WARNING: if the defaults.mss file is included, the default for layer visibilty b
 
 * **Text -> geom_centroid -> Registration/Text**: 
 
-        .class[@geom=*] { text-size:12px; text-color:#000000; text-face:Arial; text-placement: [point, line, centroid, etc?] }
+        .class * { text-size:12px; text-color:#000000; text-face:Arial; text-placement: [point, line, centroid, etc?] }
 
 * **Marker -> Point -> Registration**: 
 
-        .class[@geom=point] { stroke-width:2px; stroke-color:#000000; cap:round; }
+        .class Point { stroke-width:2px; stroke-color:#000000; cap:round; }
 
 * **Stroke -> Line -> Edge**: 
 
-        .class[@geom=line] { stroke-width:1px; stroke-color:#000000; cap:square; }
+        .class Line { stroke-width:1px; stroke-color:#000000; cap:square; }
 
 * **Fill -> Polygon -> Interior**: 
 
-         .class[@geom=polygon] { fill-color:#eeeeee; }
+         .class Polygon { fill-color:#eeeeee; }
 
 * **Raster Pixels -> Point > Registration**: 
 
-         .class[@geom=raster] { ... }
+         .class Raster { ... }
 
          Per pixel colored by the RGB channel values. Kinda like a RGB #hex gradient per 0-255 values?
          CSS tk tk tk.
