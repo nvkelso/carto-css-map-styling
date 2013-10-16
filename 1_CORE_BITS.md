@@ -249,7 +249,7 @@ _All these must be supported to meet 1.0 compliance_
     
 1. **!important** - ensure your setting takes precedence in the CSS parser over filters, appearance styling that would otherwise be more important in order-of-operations.
 
-    _Supported by: Cascadenik, Carto_
+    _Supported by: Cascadenik_
     
         .class {
           line-color: #ff0 !important; 
